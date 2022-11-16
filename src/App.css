@@ -1,17 +1,20 @@
-/* .swiper-slide {
+.filter .swiper-slide {
   width: auto !important;
 }
 
-.swiper-slide .active {
+.filter .swiper-slide .active {
   width: auto !important;
 }
 
-.swiper {
+.shop_slider.swiper-slide {
+  width: auto I !important;
+}
+
+/* .swiper {
   overflow: inherit !important;
   position: static !important;
-}
+} */
 
-.swiper-wrapper {
-  overflow: hidden;
-  width: fit-content;
+/* .swiper-wrapper {
+  width: 100%;
 } */

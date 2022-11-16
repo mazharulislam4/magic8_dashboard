@@ -8,7 +8,7 @@ function StoreCard({content}) {
     <div >
       <h2 className="medium-font text-dark my-3 ml-2">Brand Name</h2>
       {/* card  */}
-      <div className="w-[18.5rem] h-[320px] px-[21px] py-[16px] bg-light   rounded-md  bg-no-repeat bg-center  bg-cardBg ">
+      <div className="sm:w-[18.5rem] h-[320px] px-[21px] py-[16px] bg-light   rounded-md  bg-no-repeat bg-center  bg-cardBg ">
         {/* content body */}
         <div className="flex justify-between  ">
           <div>

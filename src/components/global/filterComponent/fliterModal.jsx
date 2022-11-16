@@ -82,11 +82,11 @@ const FilterModalContainer = styled.div`
     height: 25px;
     background-color: #efefef;
     border-radius: 100%;
-    border: 4px solid #262525;
+    border: 4px solid #c1ace157;
   }
 
   .radio_label input[type="radio"]:checked ~ .checkmark {
-    background-color: #15ead8;
+    background-color: #7942d1;
   }
 `;
 
@@ -110,6 +110,7 @@ window.localStorage.setItem("userSelectedData", JSON.stringify(userCustomSelectD
   return (
     <FilterModalContainer
       className={`${openModal[name] ? "modal_active" : ""} shadow-xl `}
+    
     >
       <div
         className={`modal ${openModal[name] ? "active" : "modal"} shadow-xl `}
@@ -117,29 +118,32 @@ window.localStorage.setItem("userSelectedData", JSON.stringify(userCustomSelectD
         <div className="px-[14px] mt-[10px]">
           {/* user Data and input radio  */}
 
-          {data[name].map((data) => (
-            <div
-              key={data.id}
-              className="flex justify-between items-center my-[8px] relative  "
-            >
-              <label
-                htmlFor={data[name]}
-                className="radio_label"
-                onClick={() => {
-                  closeHandler(data.value);
-                }}
-              >
-                <span> {data.value}</span>
-                <input
-                  type="radio"
-                  name="revenue "
-                  className="initial-font text-secondary"
-                  id={data[name]}
-                />
-                <span className="checkmark"></span>
-              </label>
-            </div>
-          ))}
+          {data[name].map((data) => {
+
+return (
+  <div
+    key={data.id}
+    className="flex justify-between items-center my-[8px] relative  "
+  >
+    <label
+      htmlFor={data[name]}
+      className="radio_label"
+      onClick={() => {
+        closeHandler(data.value);
+      }}
+    >
+      <span> {data.value}</span>
+      <input
+        type="radio"
+        name="revenue "
+        className="initial-font text-secondary"
+        id={data[name]}
+      />
+      <span className="checkmark"></span>
+    </label>
+  </div>
+);
+          })}
 
           {/* -----------------------user input--------------------  */}
           <h3 className="mb-[7px] extra-small-font text-dark mt-[10px] ">
@@ -153,7 +157,9 @@ window.localStorage.setItem("userSelectedData", JSON.stringify(userCustomSelectD
               type="text"
               name="min"
               value={userCustomSelectData.min}
-              onChange={(e)=>{userSelectDataHandler(e)}}
+              onChange={(e) => {
+                userSelectDataHandler(e);
+              }}
               placeholder="min"
               className="block w-full  px-2  py-[6px] border-2 border-[#DEDEDE] shadow-sm rounded-md"
             />
@@ -161,13 +167,17 @@ window.localStorage.setItem("userSelectedData", JSON.stringify(userCustomSelectD
               type="text"
               name="max"
               value={userCustomSelectData.max}
-              onChange={(e)=>{userSelectDataHandler(e)}}
+              onChange={(e) => {
+                userSelectDataHandler(e);
+              }}
               placeholder="max"
               className="block w-full px-2 py-[6px]  border-2 border-[#DEDEDE] shadow-sm rounded-md"
             />
             <button
               type="submit"
-              onSubmit={(e)=>{userSubmitHandler(e)}}
+              onSubmit={(e) => {
+                userSubmitHandler(e);
+              }}
               className="block w-full placeholder:text-center px-[5px] py-[6px]  border-2 border-[#DEDEDE] shadow-sm rounded-md"
             >
               Submit

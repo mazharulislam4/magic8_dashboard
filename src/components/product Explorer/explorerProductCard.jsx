@@ -1,7 +1,6 @@
 /* eslint-disable no-mixed-operators */
 import React, { useRef } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
-import { HiOutlineHeart } from 'react-icons/hi';
 import { Link } from "react-router-dom";
 import { Autoplay, Navigation } from "swiper";
 import "swiper/css";
@@ -9,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import bottol from "../../assets/icon/bottol.svg";
 import heart from "../../assets/icon/heart.svg";
 import leftArrow from "../../assets/icon/leftArrow.svg";
+import productSaveHeart from "../../assets/icon/productSaveHeart.svg";
 import rightArrow from "../../assets/icon/rightArrow.svg";
 import graph from "../../assets/image/graph.svg";
 import sellerImg from "../../assets/image/seller.svg";
@@ -23,7 +23,7 @@ const nextBtn = useRef();
       {/* card  */}
 
       <div
-        className={`card w-[18.06rem] min-h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md shadow-md ShopExplorerProductCard ${
+        className={`card sm:w-[289px] min-h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md shadow-lg ShopExplorerProductCard ${
           content && content.status === "brand"
             ? "bg-light"
             : "bg-cardBg bg-center bg-no-repeat object-cover"
@@ -55,9 +55,9 @@ const nextBtn = useRef();
                 <span className="font-[400]">+{content?.avgRevenue}%</span>
               </p>
               <p className="text-secondary flex gap-1 items-center mt-[13px]">
-                <span className="text-[#FF4545]">
-                  <HiOutlineHeart />
-                </span>
+               
+                  <img src={productSaveHeart} alt="save prodcut" />
+
                 <span> {content?.tracking} Other Tracking</span>
               </p>
             </div>

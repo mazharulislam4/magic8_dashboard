@@ -36,14 +36,14 @@ function ShopExplorer() {
             {/* products  */}
             {isMobile ? (
               <Swiper
-                slidesPerView={4}
-                spaceBetween={30}
+                slidesPerView={2}
+                spaceBetween={5}
                 freeMode={true}
                 modules={[FreeMode]}
                 breakpoints={{
                   0: {
-                    slidesPerView: 1,
-                    spaceBetween: 15,
+                    slidesPerView:1,
+                    spaceBetween: 10,
                   },
                   440: {
                     slidesPerView: 2,
@@ -54,10 +54,10 @@ function ShopExplorer() {
                     spaceBetween: 15,
                   },
                 }}
-                className="mySwiper w-full my-[30px]"
+                className="mySwiper w-[100%] my-[30px]"
               >
                 {stores.map((data) => (
-                  <SwiperSlide key={data.id}>
+                  <SwiperSlide key={data.id} className = "shop_slider" >
                     <ShopStoreCard content={data} />
                   </SwiperSlide>
                 ))}

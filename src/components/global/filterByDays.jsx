@@ -51,7 +51,7 @@ function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , pl
       </div>
       {/* date list  */}
       <ul
-        className={`w-[220px] modal initial-font px-[15px]  py-[16px] rounded-md  shadow-xl bg-light ${
+        className={`w-[220px] modal initial-font px-[15px]  py-[16px] rounded-md z-50 shadow-xl bg-light ${
           isDropdown ? "open" : ""
         } `}
       >

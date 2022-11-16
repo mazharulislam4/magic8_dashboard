@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FreeMode } from "swiper";
+import { Autoplay, FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,7 +23,7 @@ const ProductCardGrid = styled.div`
 function Shop() {
   const isMobile = useIsMobile();
   return (
-    <div className="w-[100%] lg:h-screen md:pb-20 bg-softDark l overflow-x-hidden  overflow-y-auto custom-container ">
+    <div className="w-[100%] lg:h-screen md:pb-20 pb-[20px] bg-softDark l overflow-x-hidden  overflow-y-auto custom-container ">
       <div className=" bg-light rounded-t-x  lg:px-[20px] py-[10px]">
         <div className="my-[30px]">
           {/* filter section  */}
@@ -45,10 +45,14 @@ function Shop() {
           {/* products  */}
           {isMobile ? (
             <Swiper
-              slidesPerView={4}
+              slidesPerView={3}
               spaceBetween={30}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
               freeMode={true}
-              modules={[FreeMode]}
+              modules={[FreeMode, Autoplay]}
               breakpoints={{
                 0: {
                   slidesPerView: 1,

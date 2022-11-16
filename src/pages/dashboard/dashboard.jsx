@@ -54,12 +54,13 @@ function Dashboard() {
             {isMobile ? (
               <div className="overflow-x-hidden relative">
                 <Swiper
-                  slidesPerView={4}
+                  slidesPerView={3}
+                 
                   autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,
                   }}
-                  spaceBetween={15}
+                  spaceBetween={20}
                   freeMode={true}
                   modules={[FreeMode, Autoplay]}
                   breakpoints={{
@@ -116,11 +117,11 @@ function Dashboard() {
                   slidesPerView={4}
                   spaceBetween={15}
                   freeMode={true}
-                  utoplay={{
+                  autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,
                   }}
-                  modules={[FreeMode , Autoplay]}
+                  modules={[FreeMode, Autoplay]}
                   breakpoints={{
                     0: {
                       slidesPerView: 1,

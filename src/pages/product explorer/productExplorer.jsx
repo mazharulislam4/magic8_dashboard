@@ -1,6 +1,5 @@
-import { FreeMode } from "swiper";
+import { Autoplay } from "swiper";
 import "swiper/css";
-import "swiper/css/free-mode";
 import { Swiper, SwiperSlide } from "swiper/react";
 import FilterComponent from "../../components/global/filterComponent/FilterComponent";
 import { products } from "../../components/global/productCardData";
@@ -12,8 +11,7 @@ import styled from "styled-components";
 const ProductCardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.18rem, 1fr));
-  grid-row-gap: 60px;
-  grid-column: 30px;
+grid-gap: 18px;
   place-items: center;
   @media (max-width: 1024px) {
     place-items: center;
@@ -34,25 +32,29 @@ function ProductExplorer() {
           {/* products  */}
           {isMobile ? (
             <Swiper
-              slidesPerView={4}
-              spaceBetween={15}
-              freeMode={true}
-              modules={[FreeMode]}
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                  spaceBetween: 15,
-                },
-                440: {
-                  slidesPerView: 2,
-                  spaceBetween: 15,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 15,
-                },
-              }}
-              className="mySwiper w-full my-[30px]"
+              slidesPerView={3}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  spaceBetween={15}
+                  centeredSlides = {true}
+                  modules={[ Autoplay]}
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 1,
+                      spaceBetween:10,
+                    },
+                    440: {
+                      slidesPerView: 2,
+                      spaceBetween: 20,
+                    },
+                    768: {
+                      slidesPerView: 4,
+                      spaceBetween: 40,
+                    },
+                  }}
+                  className="mySwiper w-[100%] "
             >
               {products.map((data) => (
                 <SwiperSlide key={data.id}>

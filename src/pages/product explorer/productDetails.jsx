@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FreeMode } from "swiper";
+import { Autoplay, FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -59,7 +59,7 @@ function ProductDetails() {
                   }}
                   preData={size}
                   data={selectData}
-                  styles = {{width:'250px'}}
+                  styles={{ width: "250px" }}
                 />
               </div>
               {/* vendor and product from vendor.jsx details  */}
@@ -85,21 +85,25 @@ function ProductDetails() {
           <div className=" ">
             {isMobile ? (
               <Swiper
-                slidesPerView={4}
-                spaceBetween={15}
+                slidesPerView={3}
+                spaceBetween={20}
                 freeMode={true}
-                modules={[FreeMode]}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                modules={[FreeMode, Autoplay]}
                 breakpoints={{
                   0: {
-                    slidesPerView: 1,
-                    spaceBetween: 15,
+                    slidesPerView: 2,
+                    spaceBetween: 20,
                   },
                   440: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                     spaceBetween: 15,
                   },
                   768: {
-                    slidesPerView: 3,
+                    slidesPerView: 4,
                     spaceBetween: 15,
                   },
                 }}

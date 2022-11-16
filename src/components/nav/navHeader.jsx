@@ -80,7 +80,7 @@ const NavHeader = ({data}) => {
 
   return (
     <NavHead className="flex justify-between items-center  xl:gap-[70px] ">
-      <Title className="lg:text-center leading-[30px]   2xl:extra-lagre-font xl:large-font lg:medium-font md:small-font ">
+      <Title className="lg:text-center leading-[30px] py-[10px]  2xl:extra-lagre-font xl:large-font lg:medium-font md:small-font ">
         {/* title  */}
         <h1 className="sm:text-left md:text-center">
           {title && title.includes(highLight)

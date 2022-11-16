@@ -75,10 +75,10 @@ const FilterComponent = () => {
     <>
       {/* ----------------------------------- Filter Section ---------------------------------- */}
 
-      <div className="w-full flex flex-col justify-center items-center">
+      <div className="w-full flex flex-col justify-center items-center px-1">
         {/*---------------------------------- Search Form------------------------------- */}
 
-        <form className="md:w-[700px] sm:w-[629px] px-[15px] sm:px-[0] w-full flex justify-between items-center bg-softDark shadow-sm rounded-lg">
+        <form className="md:w-[700px] sm:w-[629px] px-[5px] sm:px-[0] w-full flex justify-between items-center bg-softDark shadow-sm rounded-lg">
           <div className=" small-font sm:w-full pl-[16px] w-[80%] text-center flex  items-center gap-x-[13px] py-[19px] ">
             <label htmlFor="search">
               <FiSearch />
@@ -106,12 +106,13 @@ const FilterComponent = () => {
         {isMobile ? (
           <>
             <Swiper
-              className="my-[18px] w-[100%] pr-[30px] mySwiper"
-              slidesPerView={"auto"}
+              className="my-[18px] w-[100%] mySwiper filter"
+              slidesPerView={'auto'}
+            
               breakpoints={{
                 0: {
                   slidesPerView: 2,
-                  spaceBetween: 10,
+                  spaceBetween: 15,
                 },
                 440: {
                   slidesPerView: 3,
@@ -124,7 +125,7 @@ const FilterComponent = () => {
               }}
             >
               {/* revenue filter  */}
-              <SwiperSlide>
+              <SwiperSlide >
                 <DatePicker
                   className={`px-[5px] flex  gap-2 items-center py-[4px] border-[#EAEAEA]  border-2 rounded-md w-[146px] relative`}
                 >

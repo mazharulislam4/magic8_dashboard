@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FreeMode } from "swiper";
+import { Autoplay, FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -43,7 +43,7 @@ function ShopDetails() {
             <BackButton />
           </div>
 
-         <StatistikCard/>
+          <StatistikCard />
           {/*----------------------- product graph------------------  ---------*/}
           <div className="flex gap-x-6 gap-y-5 lg:flex-nowrap flex-wrap">
             <RevenueOverTime />
@@ -57,10 +57,13 @@ function ShopDetails() {
             {isMobile ? (
               <div className="overflow-x-hidden relative">
                 <Swiper
-                  slidesPerView={4}
-                  spaceBetween={30}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  spaceBetween={20}
                   freeMode={true}
-                  modules={[FreeMode]}
+                  modules={[FreeMode, Autoplay]}
                   breakpoints={{
                     0: {
                       slidesPerView: 1,

@@ -12,9 +12,9 @@ const profileData = {
 
 function Profile() {
   return (
-    <div className="custom-container">
-      <div className="xl:h-screen overflow-y-auto overflow-x-hidden xl:pb-[130px] pb-[30px] bg-light rounded-t-xl ">
-        <div className='my-[10px] mx-2'>
+    <div className="custom-container ">
+      <div className="xl:h-screen overflow-y-auto overflow-x-hidden xl:pb-[130px] pb-[30px] bg-light rounded-t-xl px-2">
+        <div className="my-[10px] mx-2 ">
           <BackButton />
         </div>
         <div className="flex flex-col items-center">

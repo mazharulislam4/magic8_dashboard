@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import { FiArrowUpRight } from "react-icons/fi";
 import signalIcon from "../../assets/icon/fi-rr-signal-alt.svg";
-import graph from '../../assets/image/revenueGraph.svg';
 import FilterByDays from '../global/filterByDays';
-
+import RevenueChart from './revenuChart';
 
 const days = [
-  { value: "This Mouth", label: "7days" },
-  { value: "Past Mouth", label: "14days" },
-  { value: "Last Three Mouth", label: "20days" },
-  { value: "Last Six Mouth", label: "28days" },
-  { value: "Past Year", label: "28days" },
+  { value: "This Mouth", label: "1" },
+  { value: "Past Mouth", label: "2" },
+  { value: "Last Three Mouth", label: "3" },
+  { value: "Last Six Mouth", label: "4" },
+  { value: "Past Year", label: "5" },
 ];
 
 function RevenueOverTime() {
     const [isSelectOpen, setSelectOpen] = useState(false);
     const [selectData, setSelectData] = useState(null);
-console.log(selectData);
+
   return (
     <div className="lg:w-[500px] w-full min-h-[400px] px-[20px] bg-[#F8F4FF] ">
       {/* header  */}
@@ -67,7 +66,7 @@ console.log(selectData);
 
       {/* graph  */}
       <div>
-        <img src={graph} alt="" />
+       <RevenueChart cWidth={450} />
       </div>
     </div>
   );

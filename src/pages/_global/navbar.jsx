@@ -51,9 +51,9 @@ export default function Navbar({hambar}) {
 
     return (
       <nav
-        className={`custom-container  md:py-[18px] py-[10px]   w-[100%] top-0 static z-[100]  bg-[] ${sticky ? 'fixed  bg-light  transition-all duration-400 shadow-md ' : 'static'}  `}
+        className={`custom-container  md:py-[18px] py-[10px]    w-[100%] top-0 static z-[100]  bg-softDark  ${sticky ? 'fixed  bg-light  transition-all duration-400 shadow-md ' : 'static'}  `}
       >
-        <div className={`flex justify-between gap-2`}>
+        <div className={`flex justify-between items-center gap-2`}>
           <button
             type="button"
             className="hover:text-primary"
