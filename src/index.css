@@ -1,13 +1,100 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --body-width: 1920px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  max-width: var(--body-width);
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  background-color: #f5f5f5;
+}
+
+.sidebarNav .active {
+  background-position: center;
+}
+
+.sidebarNav .active.autoCollaps {
+  background-image: none;
+  background-color: #5a4dad;
+}
+
+/* custom scrollbar  */
+
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: #e4e4e4;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #c1bdbd;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(215, 215, 215);
+  border-radius: 20px;
+}
+
+.sidebarNav .active {
+  background-image: url("./assets/image/navbg.svg");
+  background-position: center;
+}
+
+.sidebarNav .active.autoCollaps {
+  background-image: none;
+  background-color: #5a4dad;
+}
+
+.slider_item {
+  width: 255px !important;
+}
+
+/* containers */
+
+.custom-container {
+  max-width: 1530px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+@media (max-width: 1024px) {
+  .custom-container {
+    padding: 0 10px;
+  }
+}
+
+.extra-large-font {
+  @apply not-italic font-[700] text-[2.5rem] leading-[1.56rem];
+}
+
+.small-font {
+  @apply not-italic font-[300] text-[0.93rem] leading-[1.56rem];
+}
+
+.initial-font {
+  @apply not-italic font-[400] text-[1rem] leading-[1.56rem];
+}
+
+.medium-font {
+  @apply not-italic font-[400] text-[1.12rem] leading-[1.56rem];
+}
+
+.large-font {
+  @apply not-italic font-[500] text-[1.56rem] leading-[1.56rem];
+}
+
+.extra-small-font {
+  @apply not-italic font-[400] text-[0.825rem] leading-[1.25rem];
+}
+
+.big-font {
+  @apply not-italic font-[600] text-[3.4rem] leading-[1.56rem];
 }
