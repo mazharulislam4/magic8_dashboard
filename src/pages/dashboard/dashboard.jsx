@@ -19,8 +19,8 @@ import { productData, storeData } from "./productData";
 const ProductCardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.18rem, 1fr));
-  grid-row-gap: 30px;
-  grid-column: 20px;
+  grid-gap: 15px;
+
   place-items: center stretch;
   @media (max-width: 1024px) {
     place-items: center;
