@@ -5,10 +5,10 @@ import bottol from '../../assets/icon/bottol.svg';
 import signalIcon from '../../assets/icon/fi-rr-signal-alt.svg';
 function StoreCard({content}) {
   return (
-    <div >
+    <div>
       <h2 className="medium-font text-dark my-3 ml-2">Brand Name</h2>
       {/* card  */}
-      <div className="sm:w-[18.5rem] h-[320px] px-[21px] py-[16px] bg-light   rounded-md  bg-no-repeat bg-center  bg-cardBg ">
+      <div className="sm:w-[18.5rem] h-[320px] px-[21px] py-[16px] bg-light   rounded-md  bg-no-repeat bg-center  product_card_shadow  bg-cardBg ">
         {/* content body */}
         <div className="flex justify-between  ">
           <div>
@@ -28,17 +28,17 @@ function StoreCard({content}) {
               <span>
                 <img src={signalIcon} alt="mana icon" width={16} height={12} />
               </span>
-              <span>{content?.tracking}Other Tracking</span>
+              <span>{content?.tracking} Other Tracking</span>
             </p>
           </div>
           <div>
             {/* -------------------revenue value -------------------------- */}
-            <p className="small-font text-dark ">Revenue</p>
-            <h3 className="medium-font text-secondary font-bold my-[7px]">
+            <p className="small-font text-dark text-right ">Revenue</p>
+            <h3 className="medium-font text-secondary text-right font-bold my-[7px]">
               ${content?.revenue}
             </h3>
             {/* ------------------revenue avg value ----------------- */}
-            <p className="small-font text-green  flex gap-1 items-center my-[4px]">
+            <p className="small-font text-green text-right flex gap-1 items-center my-[4px]">
               <span>
                 <FiArrowUpRight />
               </span>
@@ -57,7 +57,7 @@ function StoreCard({content}) {
           type="button"
           className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px]"
         >
-          <Link path={'/'}>Reveal This Stores</Link>
+          <Link path={"/"}>Reveal This Stores</Link>
         </button>
       </div>
     </div>

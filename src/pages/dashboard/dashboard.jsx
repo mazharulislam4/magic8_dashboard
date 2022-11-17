@@ -34,9 +34,9 @@ function Dashboard() {
     <div className="custom-container ">
       {/* <FreeManaModal status={earnManaModal} /> */}
 
-      <div className="xl:h-screen xl:flex  xl:overflow-hidden  bg-[#f4f4f4] rounded-t-xl">
+      <div className="xl:h-screen xl:flex  xl:overflow-hidden  bg-light rounded-t-xl">
         <motion.div
-          className="md:px-[20px] xl:h-screen overflow-y-auto overflow-x-hidden px-[10px] py-[20px] xl:pb-[120px] bg-[#f1f1f1]  xl:grow"
+          className="md:px-[20px] xl:h-screen overflow-y-auto overflow-x-hidden px-[10px] py-[20px] xl:pb-[120px] bg-light xl:grow"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
@@ -166,10 +166,10 @@ function Dashboard() {
           </div>
         </motion.div>
         {/*--------------------- --------------right sidebar layout -------------------------------- */}
-        <div className="xl:w-[455px] xl:h-screen overflow-y-auto overflow-x-hidden  border-l-2 border-[#E4E4E4]  ">
+        <div className="xl:w-[455px] xl:h-screen overflow-y-auto overflow-x-hidden  border-l-2 border-[#E4E4E4]  bg-light ">
           {/* container  */}
           <div className=" px-[12px]  ">
-            <h2 className="medium-font text-secondary pt-4 text-left ">
+            <h2 className="large-font text-secondary pt-4 text-left ">
               Global Order Feed
             </h2>
             {customersData

@@ -30,16 +30,16 @@ body {
 
 ::-webkit-scrollbar {
   width: 3px;
-  background-color: #e4e4e4;
+  background-color: #efe4ff;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 20px;
-  background-color: #c1bdbd;
+  background-color: #7942d1;
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px rgb(215, 215, 215);
+  box-shadow: inset 0 0 5px #efe4ff;
   border-radius: 20px;
 }
 
@@ -57,6 +57,9 @@ body {
   width: 255px !important;
 }
 
+.product_card_shadow {
+  box-shadow: 0 0 40px -24px #aeaeae;
+}
 /* containers */
 
 .custom-container {

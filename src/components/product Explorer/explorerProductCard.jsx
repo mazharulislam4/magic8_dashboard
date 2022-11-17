@@ -22,7 +22,7 @@ const nextBtn = useRef();
       {/* card  */}
 
       <div
-        className={`card sm:w-[289px] min-h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md shadow-lg ShopExplorerProductCard ${
+        className={`card sm:w-[289px] min-h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md product_card_shadow ShopExplorerProductCard ${
           content && content.status === "brand"
             ? "bg-light"
             : "bg-cardBg bg-center bg-no-repeat object-cover"
@@ -77,7 +77,7 @@ const nextBtn = useRef();
             {/* slider  */}
             <div className="flex gap-1 items-center w-[15.5rem] ">
               <button ref={prevBtn}>
-                <img src={leftArrow} alt="" width={13} height={12} />
+                <img src={leftArrow} alt="" width={8} height={7} />
               </button>
               {/* slides  */}
               <div className="mySwiper  flex gap-x-2 overflow-hidden px-[12px]">
@@ -133,7 +133,7 @@ const nextBtn = useRef();
                 </Swiper>
               </div>
               <button ref={nextBtn}>
-                <img src={rightArrow} alt="" width={13} height={12} />
+                <img src={rightArrow} alt="" width={8} height={7} />
               </button>
             </div>
           </div>

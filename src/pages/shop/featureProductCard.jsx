@@ -7,7 +7,7 @@ function FeatureProductCard({content}) {
   return (
     <div>
       <h4 className="py-[10px] text-dark initial-font">{content?.status}</h4>
-      <div className="w-[18.5rem] h-[320px] px-[21px] py-[18px] bg-light   rounded-md  bg-no-repeat bg-center  bg-cardBg ">
+      <div className="w-[18.5rem] h-[320px] px-[21px] py-[18px] bg-light product_card_shadow  rounded-md  bg-no-repeat bg-center  bg-cardBg ">
         {/* content body */}
         <div className="flex justify-between  ">
           <div>

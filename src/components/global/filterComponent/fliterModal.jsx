@@ -78,11 +78,12 @@ const FilterModalContainer = styled.div`
   }
 
   .radio_label .checkmark {
-    width: 25px;
-    height: 25px;
+    width: 18px;
+    height: 18px;
     background-color: #efefef;
     border-radius: 100%;
-    border: 4px solid #c1ace157;
+    border: 1px solid #efe4ff;
+    outline: 3px solid #efe4ff;
   }
 
   .radio_label input[type="radio"]:checked ~ .checkmark {
@@ -110,7 +111,6 @@ function userSubmitHandler(e){
   return (
     <FilterModalContainer
       className={`${openModal[name] ? "modal_active" : ""} shadow-xl `}
-    
     >
       <div
         className={`modal ${openModal[name] ? "active" : "modal"} shadow-xl `}
@@ -119,36 +119,33 @@ function userSubmitHandler(e){
           {/* user Data and input radio  */}
 
           {data[name].map((data) => {
-
-return (
-  <div
-    key={data.id}
-    className="flex justify-between items-center my-[8px] relative  "
-  >
-    <label
-      htmlFor={data[name]}
-      className="radio_label"
-      onClick={() => {
-        closeHandler(data.value);
-      }}
-    >
-      <span> {data.value}</span>
-      <input
-        type="radio"
-        name="revenue "
-        className="initial-font text-secondary"
-        id={data[name]}
-      />
-      <span className="checkmark"></span>
-    </label>
-  </div>
-);
+            return (
+              <div
+                key={data.id}
+                className="flex justify-between items-center my-[8px] relative  "
+              >
+                <label
+                  htmlFor={data[name]}
+                  className="radio_label"
+                  onClick={() => {
+                    closeHandler(data.value);
+                  }}
+                >
+                  <span> {data.value}</span>
+                  <input
+                    type="radio"
+                    name="revenue "
+                    className="initial-font text-secondary"
+                    id={data[name]}
+                  />
+                  <span className="checkmark"></span>
+                </label>
+              </div>
+            );
           })}
 
           {/* -----------------------user input--------------------  */}
-          <h3 className="mb-[7px] extra-small-font text-dark mt-[10px] ">
-            Custom
-          </h3>
+          <h3 className="mb-[7px] small-font text-dark mt-[10px] ">Custom</h3>
           <form
             action="#"
             className="flex flex-col items-center gap-y-[10px] w-[100%]"
@@ -161,7 +158,7 @@ return (
                 userSelectDataHandler(e);
               }}
               placeholder="min"
-              className="block w-full  px-2  py-[6px] border-2 border-[#DEDEDE] shadow-sm rounded-md"
+              className="block w-full  px-2  py-[6px] border-[1px] border-[#EAEAEA] shadow-sm rounded-md focus:outline-[#7942D1] focus:outline-1 extra-small-font "
             />
             <input
               type="text"
@@ -171,14 +168,14 @@ return (
                 userSelectDataHandler(e);
               }}
               placeholder="max"
-              className="block w-full px-2 py-[6px]  border-2 border-[#DEDEDE] shadow-sm rounded-md"
+              className="block w-full px-2 py-[6px]  border-[1px] border-[#EAEAEA] shadow-sm rounded-md focus:outline-[#7942D1] focus:outline-1 extra-small-font "
             />
             <button
               type="submit"
               onSubmit={(e) => {
                 userSubmitHandler(e);
               }}
-              className="block w-full placeholder:text-center px-[5px] py-[6px]  border-2 border-[#DEDEDE] shadow-sm rounded-md"
+              className="block w-full placeholder:text-center px-[5px] py-[6px]  border-[1px] border-[#EAEAEA] shadow-sm rounded-md"
             >
               Submit
             </button>

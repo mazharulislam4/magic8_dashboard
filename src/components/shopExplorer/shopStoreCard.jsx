@@ -19,12 +19,12 @@ const nextBtn = useRef();
 
 
   return (
-    <div >
+    <div>
       <h4 className="py-[10px] text-dark initial-font">{content?.status}</h4>
       {/* card  */}
 
       <div
-        className={`card sm:w-[18.06rem] min-h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md shadow-md ShopExplorerProductCard ${
+        className={`card sm:w-[18.06rem] min-h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md product_card_shadow ShopExplorerProductCard ${
           content && content.status === "brand"
             ? "bg-light"
             : "bg-cardBg bg-center bg-no-repeat object-cover"
@@ -60,12 +60,12 @@ const nextBtn = useRef();
             </div>
             <div>
               {/* -------------------revenue value -------------------------- */}
-              <p className="small-font text-dark ">Revenue</p>
-              <h3 className="medium-font text-secondary font-bold my-[7px]">
+              <p className="small-font text-dark text-right ">Revenue</p>
+              <h3 className="medium-font text-secondary font-bold my-[7px] text-right ">
                 {content?.revenue}
               </h3>
               {/* ------------------revenue avg value ----------------- */}
-              <p className="small-font text-green  flex gap-1 items-center my-[4px]">
+              <p className="small-font text-green  flex gap-1 items-center text-right my-[4px]">
                 <span>
                   <FiArrowUpRight />
                 </span>
@@ -90,7 +90,7 @@ const nextBtn = useRef();
             {/* slider  */}
             <div className="flex gap-1 items-center w-[15.5rem] ">
               <button ref={prevBtn}>
-                <img src={leftArrow} alt="" width={13} height={12} />
+                <img src={leftArrow} alt="" width={8} height={7} />
               </button>
               {/* slides  */}
               <div className="mySwiper  flex gap-x-2 overflow-hidden px-[12px]">
@@ -146,7 +146,7 @@ const nextBtn = useRef();
                 </Swiper>
               </div>
               <button ref={nextBtn}>
-                <img src={rightArrow} alt="" width={13} height={12} />
+                <img src={rightArrow} alt="" width={8} height={7} />
               </button>
             </div>
           </div>

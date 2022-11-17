@@ -130,7 +130,7 @@ const FilterComponent = () => {
               {/* revenue filter  */}
               <SwiperSlide >
                 <DatePicker
-                  className={`px-[5px] flex  gap-2 items-center py-[4px] border-[#EAEAEA]  border-2 rounded-md w-[146px] relative`}
+                  className={`px-[5px] flex  gap-2 items-center py-[4px] border-[#EAEAEA]  border-[1px] rounded-md w-[146px] relative`}
                 >
                   <input
                     type="text"
@@ -283,7 +283,7 @@ const FilterComponent = () => {
           // : it's mean else of  ternary
           <div className="flex items-center gap-x-[15px] my-[18px]">
             <DatePicker
-              className={`px-[5px] flex  gap-2 items-center py-[4px] border-[#EAEAEA]  border-2 rounded-md w-[146px] relative`}
+              className={`px-[5px] flex  gap-2 items-center py-[4px] border-[#EAEAEA]  border-[1px] rounded-md w-[146px] relative`}
             >
               <input
                 type="text"
