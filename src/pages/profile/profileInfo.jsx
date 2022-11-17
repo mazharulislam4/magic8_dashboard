@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 function ProfileInfo({content}) {
   return (
     <div className="py-[30px] px-[20px] md:w-[629px]  rounded-[8px] bg-[#F8F4FF] ">
-      <div className="flex sm:justify-between flex-wrap gap-7 sm:gap-2 ">
+      <div className="flex sm:justify-between flex-wrap gap-7 sm:gap-2  ">
         <div className="medium-font text-secondary">
           <h4>Your current plan</h4>
         </div>
         <div className="sub-btn">
           <Link
             to="/account"
-            className="py-[15px] px-[20px] initial-font text-primary bg-light rounded-[8px] "
+            className="py-[15px] my-2 px-[20px] initial-font text-primary bg-light rounded-[8px] "
           >
             Manage Subscriptions
           </Link>

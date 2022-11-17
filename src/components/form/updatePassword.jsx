@@ -24,7 +24,7 @@ const submitHandler = (e)=>{
   return (
     <form action="#" className="rounded-[8px]  md:w-[629px] ">
       <div>
-        <h3 className="large-font text-secondary font-bold my-[25px]">
+        <h3 className="text-[20px] text-secondary font-bold my-[25px]">
           Update Password
         </h3>
         <div className="flex md:flex-row flex-col gap-4">
