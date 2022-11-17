@@ -85,7 +85,7 @@ function Shop() {
           )}
         </div>
         {/* switch button  */}
-        <div className="absolute top-[16%] right-[7%] xl:block hidden">
+        <div className="absolute top-[105px] right-[7%] xl:block hidden">
 <SwitchButton/>
         </div>
       </div>

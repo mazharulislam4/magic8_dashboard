@@ -71,9 +71,9 @@ function ProductExplorer() {
             </ProductCardGrid>
           )}
         </div>
-      </div>
-      <div className="absolute top-[16%] right-[10%] xl:block hidden">
-        <SwitchButton />
+        <div className="absolute top-[15px] right-[10%] xl:block hidden">
+          <SwitchButton />
+        </div>
       </div>
     </div>
   );
