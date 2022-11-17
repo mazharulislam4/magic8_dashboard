@@ -1,4 +1,4 @@
-import { Autoplay } from "swiper";
+import { Autoplay, FreeMode } from "swiper";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import FilterComponent from "../../components/global/filterComponent/FilterComponent";
@@ -24,7 +24,7 @@ function ProductExplorer() {
   const isMobile = useIsMobile();
   return (
     <div className="w-[100%] lg:h-screen md:pb-20 bg-softDark rounded-t-xl overflow-x-hidden  overflow-y-auto custom-container ">
-      <div className=" bg-light relative">
+      <div className=" bg-light relative pb-[70px]">
         <div className=" lg:px-[20px] py-[20px]">
           {/* filter section  */}
 
@@ -34,29 +34,29 @@ function ProductExplorer() {
           {/* products  */}
           {isMobile ? (
             <Swiper
-              slidesPerView={3}
+              slidesPerView={"auto"}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
               }}
-              spaceBetween={15}
-              centeredSlides={true}
-              modules={[Autoplay]}
+              spaceBetween={20}
+              freeMode={true}
+              modules={[FreeMode, Autoplay]}
               breakpoints={{
                 0: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
+                  slidesPerView:1,
+                  spaceBetween: 15,
                 },
                 440: {
                   slidesPerView: 2,
                   spaceBetween: 20,
                 },
                 768: {
-                  slidesPerView: 4,
+                  slidesPerView: 3,
                   spaceBetween: 40,
                 },
               }}
-              className="mySwiper w-[100%] "
+              className="mySwiper w-full"
             >
               {products.map((data) => (
                 <SwiperSlide key={data.id}>

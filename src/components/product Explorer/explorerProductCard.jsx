@@ -9,9 +9,8 @@ import bottol from "../../assets/icon/bottol.svg";
 import leftArrow from "../../assets/icon/leftArrow.svg";
 import productSaveHeart from "../../assets/icon/productSaveHeart.svg";
 import rightArrow from "../../assets/icon/rightArrow.svg";
-import graph from "../../assets/image/graph.svg";
 import sellerImg from "../../assets/image/seller.svg";
-
+import RevenueChart from "../graph/revenuChart";
 function ExplorerProductCard({ content, isExpired }) {
 const prevBtn = useRef();
 const nextBtn = useRef();
@@ -65,7 +64,7 @@ const nextBtn = useRef();
         {/* card graph  */}
         {content && content.status === "brand" ? (
           <div className="mt-[15px] mb-[8px]">
-            <img src={graph} alt="" />
+           <RevenueChart  width = '100%' height = '100%'/>
           </div>
         ) : (
           ""

@@ -47,7 +47,7 @@ function ShopExplorer() {
                 modules={[FreeMode, Autoplay]}
                 breakpoints={{
                   0: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 15,
                   },
                   440: {
@@ -59,7 +59,7 @@ function ShopExplorer() {
                     spaceBetween: 40,
                   },
                 }}
-                className="mySwiper"
+                className="mySwiper w-full"
               >
                 {stores.map((data) => (
                   <SwiperSlide key={data.id}>
