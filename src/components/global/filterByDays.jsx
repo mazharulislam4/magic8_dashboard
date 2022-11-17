@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import arrowIcon from "../../assets/icon/fi-rr-angle-small-down.svg";
 const CustomSelect = styled.div`
@@ -26,8 +27,16 @@ const CustomSelect = styled.div`
 `;
 
 
-function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , placeholder ,id , styles}) {
+function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , placeholder ,id , closeHandler , styles}) {
 
+
+  useEffect(() => {
+    document.querySelector("body").addEventListener("click", function (e) {
+      e.stopPropagation();
+       closeHandler();
+    });
+    return () => {};
+  }, [closeHandler]);
 
   return (
     <CustomSelect>
@@ -43,7 +52,10 @@ function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , pl
             id={id}
             placeholder={placeholder}
             className="py-[8px]  placeholder:text-center bg-transparent text-secondary placeholder:text-secondary medium-font focus:outline-none cursor-pointer w-[100%] "
-            onFocus={willOpen}
+            onClick={(e)=>{
+              e.stopPropagation();
+              willOpen()
+            }}
           
           />
           <img src={arrowIcon} alt="selece" width={30} />
@@ -60,7 +72,11 @@ function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , pl
               <li
                 key={day.label}
                 className="py-[10px] px-[15px]   cursor-pointer"
-                onClick={getDataHandler}
+                onClick={(e)=>{
+                  e.stopPropagation();
+                  getDataHandler(e);
+                   closeHandler();
+                }}
               >
                 {day.value}
               </li>

@@ -99,7 +99,7 @@ function userSelectDataHandler (e){
 e.preventDefault();
 setUserCustomSelectData({...userCustomSelectData, [e.target.name]:e.target.value})
 }
-
+const [userData, setUserData] = useState()
 
 function userSubmitHandler(e){
   e.preventDefault();
@@ -108,9 +108,11 @@ function userSubmitHandler(e){
 }
 
 
+
   return (
     <FilterModalContainer
       className={`${openModal[name] ? "modal_active" : ""} shadow-xl `}
+      onClick = {(e)=>{e.stopPropagation();  closeHandler(userData ? userData : '')}}
     >
       <div
         className={`modal ${openModal[name] ? "active" : "modal"} shadow-xl `}
@@ -127,11 +129,13 @@ function userSubmitHandler(e){
                 <label
                   htmlFor={data[name]}
                   className="radio_label"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.stopPropagation();
                     closeHandler(data.value);
+                    setUserData(data.value)
                   }}
                 >
-                  <span> {data.value}</span>
+                  <span > {data.value}</span>
                   <input
                     type="radio"
                     name="revenue "

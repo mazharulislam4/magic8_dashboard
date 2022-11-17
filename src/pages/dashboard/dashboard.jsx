@@ -55,7 +55,6 @@ function Dashboard() {
               <div className="overflow-x-hidden relative">
                 <Swiper
                   slidesPerView={3}
-                 
                   autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,
@@ -114,13 +113,13 @@ function Dashboard() {
             {isMobile ? (
               <div className="overflow-x-hidden relative">
                 <Swiper
-                  slidesPerView={4}
-                  spaceBetween={15}
-                  freeMode={true}
+                  slidesPerView={3}
                   autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,
                   }}
+                  spaceBetween={20}
+                  freeMode={true}
                   modules={[FreeMode, Autoplay]}
                   breakpoints={{
                     0: {
@@ -136,7 +135,7 @@ function Dashboard() {
                       spaceBetween: 40,
                     },
                   }}
-                  className="mySwiper w-full"
+                  className="mySwiper  w-full "
                 >
                   {productData &&
                     productData.map((data) => (

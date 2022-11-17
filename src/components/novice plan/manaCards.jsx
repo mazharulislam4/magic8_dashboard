@@ -1,3 +1,5 @@
+import omg from '../../assets/icon/omg.svg';
+
 import {
   motion, useWillChange
 } from "framer-motion";
@@ -63,8 +65,8 @@ function ManCards() {
           transition={{ duration: 0.5 }}
           style={{ willChange }}
         >
-          <h4 className="medium-fron text-secondary font-bold">
-            ${MANA.bottol.title}
+          <h4 className="text-[20px] font-[500] text-secondary ">
+            {MANA.bottol.title}
           </h4>
           <svg
             width="86"
@@ -135,11 +137,18 @@ function ManCards() {
               </linearGradient>
             </defs>
           </svg>
-
-          <h5>
-            <span className="big-font text-primary ">{MANA.bottol.mana}</span>
-            Mana
-          </h5>
+          {/* mana counter   */}
+          <div className="flex gap-2">
+            <span className="big-font text-primary">{MANA.bottol.mana}</span>
+            {/* mana  */}
+            <div className="flex gap-2 items-center self-end pt-3">
+              <span className=" text-dark text-[20px]  "> Mana</span>
+              {/* mana omg  */}
+              <div className="w-[20px] h-[20px] rounded-[50%] border-[1px] border-primary flex justify-center items-center ">
+                <img src={omg} alt="" />
+              </div>
+            </div>
+          </div>
           <button type="button" className={`${btn} text-primary`}>
             ${MANA.bottol.price}
           </button>
@@ -155,8 +164,8 @@ function ManCards() {
           transition={{ ease: [0.17, 0.67, 0.83, 0.67] }}
           style={{ willChange }}
         >
-          <h4 className="medium-fron text-secondary font-bold">
-            ${MANA.ThreeBottol.title}
+          <h4 className="text-[20px] font-[500] text-secondary">
+            {MANA.ThreeBottol.title}
           </h4>
           <svg
             width="153"
@@ -346,14 +355,22 @@ function ManCards() {
             </defs>
           </svg>
 
-          <h5>
+          {/* mana counter   */}
+          <div className="flex gap-2">
             <span className="big-font text-primary">
               {MANA.ThreeBottol.mana}
             </span>
-            Mana
-          </h5>
+            {/* mana  */}
+            <div className="flex gap-2 items-center self-end pt-3">
+              <span className=" text-dark text-[20px]  "> Mana</span>
+              {/* mana omg  */}
+              <div className="w-[20px] h-[20px] rounded-[50%] border-[1px] border-primary flex justify-center items-center ">
+                <img src={omg} alt="" />
+              </div>
+            </div>
+          </div>
           <button type="button" className={`${btn} text-primary`}>
-            ${MANA.ThreeBottol.price} (Save {MANA.ThreeBottol.discount} %)
+            {MANA.ThreeBottol.price} (Save {MANA.ThreeBottol.discount} %)
           </button>
         </motion.div>
 
@@ -366,8 +383,8 @@ function ManCards() {
           transition={{ ease: [0.17, 0.67, 0.83, 0.67] }}
           style={{ willChange }}
         >
-          <h4 className="medium-fron text-secondary font-bold">
-            ${MANA.cauldron.title}
+          <h4 className="text-[20px] font-[500] text-secondary ">
+            {MANA.cauldron.title}
           </h4>
           <svg
             width="89"
@@ -389,16 +406,24 @@ function ManCards() {
                 y2="45.018"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#8646EE" />
-                <stop offset="1" stop-color="#B98DFF" />
+                <stop stopColor="#8646EE" />
+                <stop offset="1" stopColor="#B98DFF" />
               </linearGradient>
             </defs>
           </svg>
 
-          <h5>
+          {/* mana counter   */}
+          <div className="flex gap-2">
             <span className="big-font text-primary">{MANA.cauldron.mana}</span>
-            Mana
-          </h5>
+            {/* mana  */}
+            <div className="flex gap-2 items-center self-end pt-3">
+              <span className=" text-dark text-[20px]  "> Mana</span>
+              {/* mana omg  */}
+              <div className="w-[20px] h-[20px] rounded-[50%] border-[1px] border-primary flex justify-center items-center ">
+                <img src={omg} alt="" />
+              </div>
+            </div>
+          </div>
           <button type="button" className={`${btn} text-primary`}>
             ${MANA.cauldron.price} (Save {MANA.cauldron.discount} %)
           </button>

@@ -24,7 +24,7 @@ const nextBtn = useRef();
       {/* card  */}
 
       <div
-        className={`card sm:w-[18.06rem] min-h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md product_card_shadow ShopExplorerProductCard ${
+        className={`card w-[289px] min-h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md product_card_shadow ShopExplorerProductCard ${
           content && content.status === "brand"
             ? "bg-light"
             : "bg-cardBg bg-center bg-no-repeat object-cover"

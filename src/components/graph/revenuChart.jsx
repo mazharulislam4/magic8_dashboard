@@ -5,6 +5,9 @@ class RevenueChart extends React.Component {
   constructor(props) {
     super(props);
 
+    this.height = this.props.height;
+    this.width = this.props.width;
+
     this.state = {
       series: [
         {
@@ -21,7 +24,7 @@ class RevenueChart extends React.Component {
             show: false,
           },
           type: "area",
-          height: 350,
+          height: this.height,
           zoom: {
             enabled: false,
           },
@@ -63,7 +66,8 @@ class RevenueChart extends React.Component {
           options={this.state.options}
           series={this.state.series}
           type="area"
-          height={350}
+          height={this.height}
+          width = {this.width}
         />
       </div>
     );

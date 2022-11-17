@@ -55,7 +55,9 @@ function ProductDetails() {
                   isDropdown={isSelectOpen}
                   getDataHandler={(e) => {
                     setSelectData(e.target.innerText);
-                    setSelectOpen(false);
+                  }}
+                  closeHandler={() => {
+                    setSelectOpen();
                   }}
                   preData={size}
                   data={selectData}
@@ -85,7 +87,7 @@ function ProductDetails() {
           <div className=" ">
             {isMobile ? (
               <Swiper
-                slidesPerView={3}
+                slidesPerView={'auto'}
                 spaceBetween={20}
                 freeMode={true}
                 autoplay={{
@@ -99,12 +101,12 @@ function ProductDetails() {
                     spaceBetween: 20,
                   },
                   440: {
-                    slidesPerView: 3,
-                    spaceBetween: 15,
+                    slidesPerView: 2,
+                    spaceBetween: 50,
                   },
                   768: {
-                    slidesPerView: 4,
-                    spaceBetween: 15,
+                    slidesPerView: 3,
+                    spaceBetween: 30,
                   },
                 }}
                 className="mySwiper w-full my-[30px]"

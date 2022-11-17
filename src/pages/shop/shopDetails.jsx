@@ -3,6 +3,13 @@ import styled from "styled-components";
 import { Autoplay, FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
+// social media 
+import {
+  AiFillFacebook, AiFillLinkedin, AiFillMail, AiFillTwitterSquare
+} from "react-icons/ai";
+import { RiFileSearchFill } from "react-icons/ri";
+
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import StoreCard from "../../components/dashboard/storeCard";
 import BackButton from "../../components/global/BackButton";
@@ -39,11 +46,44 @@ function ShopDetails() {
         {/*--------------------------------------- main content -------------------------- */}
         {/*----------- back button --------------- */}
         <section className="md:px-[25px]">
-          <div>
+          <div className="my-[15px]">
             <BackButton />
           </div>
 
           <StatistikCard />
+
+          {isMobile ? (
+            <>
+              <div className="flex justify-between items-center">
+                <h2 className="my-[20px]  large-font text-secondary">
+                  Traffic source
+                </h2>
+                {/* social icons  */}
+                <div className="flex gap-2 items-center mr-2 text-primary ">
+                  <span className="text-[1.2rem]">
+                    <AiFillMail />
+                  </span>
+                  <span className="text-[1.2rem]">
+                    <RiFileSearchFill />
+                  </span>
+                  <span className="text-[1.2rem]">
+                    <AiFillLinkedin />
+                  </span>
+                  <span className="text-[1.2rem]">
+                    <AiFillFacebook />
+                  </span>
+                  <span className="text-[1.3rem]">
+                    <AiFillTwitterSquare />
+                  </span>
+                </div>
+              </div>
+              <div>
+                <TrafficChart />
+              </div>
+            </>
+          ) : (
+            ""
+          )}
           {/*----------------------- product graph------------------  ---------*/}
           <div className="flex gap-x-6 gap-y-5 lg:flex-nowrap flex-wrap">
             <RevenueOverTime />
@@ -111,10 +151,38 @@ function ShopDetails() {
       {/*-------------------------------- sidebar------------------------------  */}
       <aside className="2xl:w-[400px] px-4 xl:h-screen overflow-y-auto overflow-x-hidden ">
         <div className="overflow-y-auto ">
-          <h2 className="my-[10px] large-font text-secondary">Traffic source</h2>
-          <div>
-            <TrafficChart />
-          </div>
+          {!isMobile ? (
+            <>
+              <div className="flex justify-between items-center">
+                <h2 className="my-[20px]  large-font text-secondary">
+                  Traffic source
+                </h2>
+                {/* social icons  */}
+                <div className="flex gap-2 items-center mr-2 text-primary ">
+                  <span className="text-[1.2rem]">
+                    <AiFillMail />
+                  </span>
+                  <span className="text-[1.2rem]">
+                    <RiFileSearchFill />
+                  </span>
+                  <span className="text-[1.2rem]">
+                    <AiFillLinkedin />
+                  </span>
+                  <span className="text-[1.2rem]">
+                    <AiFillFacebook />
+                  </span>
+                  <span className="text-[1.3rem]">
+                    <AiFillTwitterSquare />
+                  </span>
+                </div>
+              </div>
+              <div>
+                <TrafficChart />
+              </div>
+            </>
+          ) : (
+            ""
+          )}
 
           <h2 className="large-font text-secondary pt-4 my-[10px] text-left  ">
             Store Order Feed

@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import { FiArrowUpRight, FiHeart } from "react-icons/fi";
-import graph from '../../assets/image/revenueGraph.svg';
 import FilterByDays from "../global/filterByDays";
+import RevenueChart from "../graph/revenuChart";
+
 const days = [
-  { value: "This Mouth", label: "1" },
-  { value: "Past Mouth", label: "2" },
-  { value: "Last Three Mouth", label: "3" },
-  { value: "Last Six Mouth", label: "4" },
+  { value: "This Month", label: "1" },
+  { value: "Past Month", label: "2" },
+  { value: "Last Three Month", label: "3" },
+  { value: "Last Six Month", label: "4" },
   { value: "Past Year", label: "5" },
 ];
 
 function RevenueOverTime() {
   const [isSelectOpen, setSelectOpen] = useState(false);
   const [selectData, setSelectData] = useState(null);
-  console.log(selectData);
+
   return (
-    <div className="w-auto min-h-[400px] px-[20px] bg-[#F8F4FF] ">
+    <div className="w-auto min-h-[400px]  bg-[#F8F4FF] ">
       {/* header  */}
-      <div className="flex justify-between">
+      <div className="flex justify-between px-[15px]">
         <div>
           <h2 className="py-[20px]">Revenue over time</h2>
           <div>
@@ -45,25 +46,27 @@ function RevenueOverTime() {
         <div className="item-self-baseline pt-[10px] w-[200px] ">
           {/* select  */}
           <FilterByDays
-            placeholder="This Mouth"
+            placeholder="This Month"
             willOpen={() => {
               setSelectOpen(true);
             }}
             isDropdown={isSelectOpen}
             getDataHandler={(e) => {
               setSelectData(e.target.innerText);
-              setSelectOpen(false);
+            }}
+            closeHandler={() => {
+              setSelectOpen();
             }}
             preData={days}
             data={selectData}
-            styles={{ border: "none" , width:"200px" }}
+            styles={{ border: "none", width: "200px" }}
           />
         </div>
       </div>
 
       {/* graph  */}
-      <div>
-        <img src={graph} alt="" />
+      <div className="w-full">
+        <RevenueChart height="350" width="100%" />
       </div>
     </div>
   );

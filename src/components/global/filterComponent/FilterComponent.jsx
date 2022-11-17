@@ -81,8 +81,12 @@ const FilterComponent = () => {
       <div className="w-full flex flex-col justify-center items-center px-1">
         {/*---------------------------------- Search Form------------------------------- */}
 
-        <form className="md:w-[700px] sm:w-[629px] px-[5px] sm:px-[0] w-full flex justify-between items-center bg-softDark shadow-sm rounded-lg">
-          <div className=" small-font sm:w-full pl-[16px] w-[80%] text-center flex  items-center gap-x-[13px] py-[19px] ">
+        <form className="md:w-[700px] sm:w-[629px] px-[5px] sm:px-[0] w-full flex justify-between items-center bg-softDark shadow-sm rounded-xl  "
+        
+        >
+          
+          <div className=" small-font sm:w-full pl-[16px] w-[80%] text-center flex  items-center gap-x-[13px]  ">
+
             <label htmlFor="search">
               <FiSearch />
             </label>
@@ -91,7 +95,7 @@ const FilterComponent = () => {
               id="search"
               value={searchData}
               placeholder="Search any store by URL, name or Keyword"
-              className="focus:outline-none placeholder:whitespace-nowrap w-full bg-transparent "
+              className="focus:outline-none placeholder:whitespace-nowrap w-full bg-transparent  py-[19px] "
               onChange={(e) => {
                 setSearchData(e.target.value);
               }}
@@ -109,9 +113,8 @@ const FilterComponent = () => {
         {isMobile ? (
           <>
             <Swiper
-              className="my-[18px] w-[100%] mySwiper filter"
-              slidesPerView={'auto'}
-            
+              className="my-[18px] w-[100%]  filter"
+              slidesPerView={"auto"}
               breakpoints={{
                 0: {
                   slidesPerView: 2,
@@ -128,7 +131,7 @@ const FilterComponent = () => {
               }}
             >
               {/* revenue filter  */}
-              <SwiperSlide >
+              <SwiperSlide>
                 <DatePicker
                   className={`px-[5px] flex  gap-2 items-center py-[4px] border-[#EAEAEA]  border-[1px] rounded-md w-[146px] relative`}
                 >
@@ -159,7 +162,7 @@ const FilterComponent = () => {
                       country: false,
                       revenue: true,
                       average: false,
-                    } );
+                    });
                   }}
                   name={"revenue"}
                   id={"revenue"}
@@ -185,7 +188,7 @@ const FilterComponent = () => {
                 />
               </SwiperSlide>
               {/* ------------Country filter  slide 4 ------------ */}
-              <SwiperSlide >
+              <SwiperSlide>
                 <SelectComponent
                   selectHandler={(e) => {
                     setOpenedSelect({

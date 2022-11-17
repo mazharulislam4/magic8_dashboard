@@ -1,14 +1,14 @@
-import { FreeMode } from "swiper";
+import styled from "styled-components";
+import { Autoplay, FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { Swiper, SwiperSlide } from "swiper/react";
 import FilterComponent from "../../components/global/filterComponent//FilterComponent";
+// product card data 
 import { stores } from '../../components/global/productCardData';
 import SwitchButton from "../../components/global/switchButton";
 import ShopStoreCard from '../../components/shopExplorer/shopStoreCard';
 import useIsMobile from "../../hooks/useIsMobile";
-
-import styled from "styled-components";
 // style 
 const ProductCardGrid = styled.div`
   display: grid;
@@ -27,7 +27,7 @@ function ShopExplorer() {
     const isMobile = useIsMobile();
     return (
       <div className="w-[100%] lg:h-screen md:pb-20 bg-softDark rounded-t-xl overflow-x-hidden  overflow-y-auto custom-container ">
-        <div className="overflow-y-auto relative overflow-x-hidden bg-light">
+        <div className="overflow-y-auto relative overflow-x-hidden  rounded-t-xl  bg-light">
           <div className=" lg:px-[20px]">
             {/* filter section  */}
 
@@ -37,28 +37,32 @@ function ShopExplorer() {
             {/* products  */}
             {isMobile ? (
               <Swiper
-                slidesPerView={2}
-                spaceBetween={5}
+                slidesPerView={'auto'}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                spaceBetween={20}
                 freeMode={true}
-                modules={[FreeMode]}
+                modules={[FreeMode, Autoplay]}
                 breakpoints={{
                   0: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                  },
-                  440: {
                     slidesPerView: 2,
                     spaceBetween: 15,
                   },
+                  440: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
                   768: {
                     slidesPerView: 3,
-                    spaceBetween: 15,
+                    spaceBetween: 40,
                   },
                 }}
-                className="mySwiper w-[100%] my-[30px]"
+                className="mySwiper"
               >
                 {stores.map((data) => (
-                  <SwiperSlide key={data.id} className="shop_slider">
+                  <SwiperSlide key={data.id}>
                     <ShopStoreCard content={data} />
                   </SwiperSlide>
                 ))}

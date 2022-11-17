@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
     const inputBox = `bg-[#f8f8f8f8] rounded-2xl  `;
-    const input = `py-[20px] px-[10px] w-[100%] rounded-[10px] medium-font text-dark  focus:outline-none focus:shadow-md transition-[shadow] duration-300 bg-[#f8f8f8f8] block  `;
+    const input = `py-[20px] px-[10px] w-[100%] rounded-[10px] medium-font text-dark  focus:outline-primary focus:outline-[1px] transition-[shadow] duration-300 bg-[#f8f8f8f8] block  `;
 
     const label = `medium-font text-dark pb-[10px] block bg-light`;
 
