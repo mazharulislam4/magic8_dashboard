@@ -183,7 +183,7 @@ const nextBtn = useRef();
             </button>
 
             {(content && content.status === "hidden") || isExpired ? (
-              <h4 className="extra-small-font text-[#FF4545] my-[20px] text-center ">
+              <h4 className="extra-small-font text-[#FF4545] my-[15px] text-center ">
                 Lasts 7days
               </h4>
             ) : (

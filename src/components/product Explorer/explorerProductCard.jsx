@@ -21,7 +21,7 @@ const nextBtn = useRef();
       {/* card  */}
 
       <div
-        className={`card sm:w-[289px] h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md product_card_shadow ShopExplorerProductCard ${
+        className={`card w-[289px] h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md product_card_shadow ShopExplorerProductCard ${
           content && content.status === "brand"
             ? "bg-light"
             : "bg-cardBg bg-center bg-no-repeat object-cover"
@@ -52,7 +52,7 @@ const nextBtn = useRef();
                 {/*-------------- searcht avg value ---------- */}
                 <span className="font-[400]">+{content?.avgRevenue}%</span>
               </p>
-              <p className="text-secondary flex gap-1 items-center mt-[13px]">
+              <p className="text-secondary flex gap-1 items-center mt-[10px]">
                 <img src={productSaveHeart} alt="save prodcut" />
 
                 <span> {content?.tracking} Other Tracking</span>
@@ -170,7 +170,7 @@ const nextBtn = useRef();
             </Link>
 
             {(content && content.status === "hidden") || isExpired ? (
-              <h4 className="extra-small-font text-[#FF4545] my-[20px] text-center ">
+              <h4 className="extra-small-font text-[#FF4545] my-[8px] text-center ">
                 Lasts 7days
               </h4>
             ) : (
