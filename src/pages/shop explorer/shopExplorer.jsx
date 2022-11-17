@@ -27,7 +27,7 @@ function ShopExplorer() {
     const isMobile = useIsMobile();
     return (
       <div className="w-[100%] lg:h-screen md:pb-20 bg-softDark rounded-t-xl overflow-x-hidden  overflow-y-auto custom-container ">
-        <div className="overflow-y-auto relative overflow-x-hidden  rounded-t-xl  bg-light">
+        <div className="overflow-y-auto relative overflow-x-hidden  rounded-t-xl pb-[90px]  bg-light">
           <div className=" lg:px-[20px]">
             {/* filter section  */}
 
