@@ -83,11 +83,11 @@ function ProductDetails() {
         </div>
 
         {/* aside  */}
-        <div className="xl:w-[600px] xl:h-screen  overflow-y-auto overflow-x-hidden xl:pb-[120px]  py-[20px] ">
+        <div className="xl:w-[600px] lg:w-[550px] xl:h-screen  overflow-y-auto overflow-x-hidden xl:pb-[120px]  py-[20px] px-2 ">
           <div className=" ">
             {isMobile ? (
               <Swiper
-                slidesPerView={'auto'}
+                slidesPerView={4}
                 spaceBetween={20}
                 freeMode={true}
                 autoplay={{
@@ -97,7 +97,7 @@ function ProductDetails() {
                 modules={[FreeMode, Autoplay]}
                 breakpoints={{
                   0: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 20,
                   },
                   440: {
@@ -109,7 +109,7 @@ function ProductDetails() {
                     spaceBetween: 30,
                   },
                 }}
-                className="mySwiper w-full my-[30px]"
+                className="mySwiper w-full"
               >
                 {products.map((data) => (
                   <SwiperSlide key={data.id}>

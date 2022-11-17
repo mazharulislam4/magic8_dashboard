@@ -14,7 +14,7 @@ const ProductCardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.18rem, 1fr));
   grid-row-gap: 60px;
-  grid-column:30px;
+  grid-column-gap:30px;
   place-items: center;
   @media (max-width: 1024px) {
     place-items: center;
@@ -37,26 +37,26 @@ function ShopExplorer() {
             {/* products  */}
             {isMobile ? (
               <Swiper
-                slidesPerView={'auto'}
+                slidesPerView={4}
+                spaceBetween={20}
+                freeMode={true}
                 autoplay={{
                   delay: 2500,
                   disableOnInteraction: false,
                 }}
-                spaceBetween={20}
-                freeMode={true}
                 modules={[FreeMode, Autoplay]}
                 breakpoints={{
                   0: {
                     slidesPerView: 1,
-                    spaceBetween: 15,
+                    spaceBetween: 20,
                   },
                   440: {
                     slidesPerView: 2,
-                    spaceBetween: 20,
+                    spaceBetween: 50,
                   },
                   768: {
                     slidesPerView: 3,
-                    spaceBetween: 40,
+                    spaceBetween: 30,
                   },
                 }}
                 className="mySwiper w-full"

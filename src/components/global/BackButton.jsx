@@ -7,10 +7,10 @@ const BackButton = () => {
   return (
     <>
       <button
-        className="text-lg font-mono flex items-center text-secondary"
+        className="small-font font-[500] flex items-center text-secondary"
         onClick={() => navigate(-1)}
       >
-        <span className="fa-solid fa-angle-left mr-2 text-primary text-xl" ><FiChevronLeft/></span> Back
+        <span className="mr-2 text-primary " ><FiChevronLeft/></span> Back
       </button>
     </>
   );

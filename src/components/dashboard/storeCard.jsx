@@ -53,12 +53,14 @@ function StoreCard({content}) {
           </span>
         </div>
         {/*----------------------------- button --------------------- */}
-        <button
-          type="button"
-          className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px]"
-        >
-          <Link path={"/"}>Reveal This Stores</Link>
-        </button>
+        <Link to="/product_details">
+          <button
+            type="button"
+            className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px]"
+          >
+            Reveal This Stores
+          </button>
+        </Link>
       </div>
     </div>
   );

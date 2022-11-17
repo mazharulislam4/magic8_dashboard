@@ -11,7 +11,7 @@ import bottol from "../../assets/icon/bottol.svg";
  * @returns jsx / component
  */
 
-function ProductCard({ content, link }) {
+function ProductCard({ content }) {
   return (
     <div>
       <h2 className="medium-font text-dark my-3 ml-2">{content?.status}</h2>
@@ -52,12 +52,14 @@ function ProductCard({ content, link }) {
           </span>
         </div>
         {/*----------------------------- button --------------------- */}
-        <button
-          type="button"
-          className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px]"
-        >
-          <Link path={link}>Reveal This Product</Link>
-        </button>
+        <Link to="/product_details">
+          <button
+            type="button"
+            className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px]"
+          >
+            Reveal This Product
+          </button>
+        </Link>
       </div>
     </div>
   );

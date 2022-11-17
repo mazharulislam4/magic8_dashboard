@@ -16,34 +16,15 @@ function RevenueOverTime() {
   const [selectData, setSelectData] = useState(null);
 
   return (
-    <div className="w-auto min-h-[400px]  bg-[#F8F4FF] ">
+    <div className="w-auto min-h-[400px] rounded-md  bg-[#F8F4FF] ">
       {/* header  */}
-      <div className="flex justify-between px-[15px]">
+      <div className="flex justify-between md:px-[20px] px-[10px] ">
         <div>
-          <h2 className="py-[20px]">Revenue over time</h2>
-          <div>
-            {/*------------ search value --------------- */}
-            <p className="text-dark small-font ">Search Volume</p>
-            <h3 className="medium-font text-secondary font-bold my-[7px]">
-              300000
-            </h3>
-            <p className="small-font text-green  flex gap-1 items-center my-[4px]">
-              <span>
-                <FiArrowUpRight />
-              </span>
-              {/*-------------- searcht avg value ---------- */}
-              <span className="font-[400]">+40.5%</span>
-            </p>
-            <p className="text-secondary flex gap-3 items-center mt-[13px]">
-              <span className="text-[#FF4545]">
-                <FiHeart />
-              </span>
-              <span>4 Other Saved This Product</span>
-            </p>
-          </div>
+          <h2 className="py-[15px] text-[20px] font-[400] text-secondary ">
+            Revenue over time
+          </h2>
         </div>
-
-        <div className="item-self-baseline pt-[10px] w-[200px] ">
+        <div className="item-self-baseline pt-[10px] md:w-[200px]  w-[70%] shadow-sm rounded-md  ">
           {/* select  */}
           <FilterByDays
             placeholder="This Month"
@@ -59,11 +40,30 @@ function RevenueOverTime() {
             }}
             preData={days}
             data={selectData}
-            styles={{ border: "none", width: "200px" }}
+            styles={{ border: "none", width: "auto", padding: "5px 6px" }}
           />
         </div>
       </div>
-
+      <div className="md:px-[20px] px-[10px]">
+        {/*------------ search value --------------- */}
+        <p className="text-dark small-font ">Search Volume</p>
+        <h3 className="medium-font text-secondary font-bold my-[7px]">
+          300000
+        </h3>
+        <p className="small-font text-green  flex gap-1 items-center my-[4px]">
+          <span>
+            <FiArrowUpRight />
+          </span>
+          {/*-------------- searcht avg value ---------- */}
+          <span className="font-[400]">+40.5%</span>
+        </p>
+        <p className="text-secondary flex gap-3 items-center mt-[13px]">
+          <span className="text-[#FF4545]">
+            <FiHeart />
+          </span>
+          <span>4 Other Saved This Product</span>
+        </p>
+      </div>
       {/* graph  */}
       <div className="w-full">
         <RevenueChart height="350" width="100%" />

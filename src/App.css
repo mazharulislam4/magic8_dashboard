@@ -23,3 +23,7 @@
   width: 289px !important;
   margin-right: 20px !important;
 }
+
+.produc_card_slider .swiper-slide {
+  width: 65px !important;
+}

@@ -30,6 +30,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 3px;
+  height: 3px;
   background-color: #efe4ff;
 }
 
@@ -41,6 +42,11 @@ body {
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px #efe4ff;
   border-radius: 20px;
+}
+
+.best_selling_variant::-webkit-scrollbar {
+  height: 3px;
+  background-color: #efe4ff;
 }
 
 .sidebarNav .active {
@@ -65,12 +71,12 @@ body {
 .custom-container {
   max-width: 1530px;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 @media (max-width: 1024px) {
   .custom-container {
-    padding: 0 4px;
+    padding: 0 6px;
   }
 }
 

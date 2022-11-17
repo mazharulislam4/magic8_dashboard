@@ -92,27 +92,37 @@ const FilterModalContainer = styled.div`
 `;
 
 function FilterModal({ data, closeHandler, openModal, name }) {
-  
-const [userCustomSelectData , setUserCustomSelectData] = useState({min:'' , max:''})
+  const [userCustomSelectData, setUserCustomSelectData] = useState({
+    min: "",
+    max: "",
+  });
 
-function userSelectDataHandler (e){
-e.preventDefault();
-setUserCustomSelectData({...userCustomSelectData, [e.target.name]:e.target.value})
-}
-const [userData, setUserData] = useState()
+  function userSelectDataHandler(e) {
+    e.preventDefault();
+    setUserCustomSelectData({
+      ...userCustomSelectData,
+      [e.target.name]: e.target.value,
+    });
+  }
 
-function userSubmitHandler(e){
-  e.preventDefault();
-
-// window.localStorage.setItem("userSelectedData", JSON.stringify(userCustomSelectData));
-}
+  const [userData, setUserData] = useState();
+// close modal body click 
 
 
+
+  function userSubmitHandler(e) {
+    e.preventDefault();
+    // window.localStorage.setItem("userSelectedData", JSON.stringify(userCustomSelectData));
+  }
 
   return (
     <FilterModalContainer
       className={`${openModal[name] ? "modal_active" : ""} shadow-xl `}
-      onClick = {(e)=>{e.stopPropagation();  closeHandler(userData ? userData : '')}}
+      onClick={(e) => {
+        e.stopPropagation();
+        closeHandler(userData ? userData : "");
+      }}
+     
     >
       <div
         className={`modal ${openModal[name] ? "active" : "modal"} shadow-xl `}
@@ -132,10 +142,10 @@ function userSubmitHandler(e){
                   onClick={(e) => {
                     e.stopPropagation();
                     closeHandler(data.value);
-                    setUserData(data.value)
+                    setUserData(data.value);
                   }}
                 >
-                  <span > {data.value}</span>
+                  <span> {data.value}</span>
                   <input
                     type="radio"
                     name="revenue "
@@ -158,6 +168,9 @@ function userSubmitHandler(e){
               type="text"
               name="min"
               value={userCustomSelectData.min}
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
               onChange={(e) => {
                 userSelectDataHandler(e);
               }}
@@ -168,6 +181,9 @@ function userSubmitHandler(e){
               type="text"
               name="max"
               value={userCustomSelectData.max}
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
               onChange={(e) => {
                 userSelectDataHandler(e);
               }}
@@ -176,6 +192,9 @@ function userSubmitHandler(e){
             />
             <button
               type="submit"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
               onSubmit={(e) => {
                 userSubmitHandler(e);
               }}

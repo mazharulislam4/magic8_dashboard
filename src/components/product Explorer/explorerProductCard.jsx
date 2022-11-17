@@ -21,7 +21,7 @@ const nextBtn = useRef();
       {/* card  */}
 
       <div
-        className={`card sm:w-[289px] min-h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md product_card_shadow ShopExplorerProductCard ${
+        className={`card sm:w-[289px] h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md product_card_shadow ShopExplorerProductCard ${
           content && content.status === "brand"
             ? "bg-light"
             : "bg-cardBg bg-center bg-no-repeat object-cover"
@@ -63,8 +63,8 @@ const nextBtn = useRef();
 
         {/* card graph  */}
         {content && content.status === "brand" ? (
-          <div className="mt-[15px] mb-[8px]">
-           <RevenueChart  width = '100%' height = '100%'/>
+          <div className="mb-[8px] h-[110px] mt-[-20px] overflow-hidden">
+            <RevenueChart width="100%" height="auto" />
           </div>
         ) : (
           ""
@@ -79,7 +79,7 @@ const nextBtn = useRef();
                 <img src={leftArrow} alt="" width={8} height={7} />
               </button>
               {/* slides  */}
-              <div className="mySwiper  flex gap-x-2 overflow-hidden px-[12px]">
+              <div className="  flex gap-x-2 overflow-hidden px-[12px]">
                 <Swiper
                   slidesPerView={3}
                   spaceBetween={5}
@@ -96,6 +96,21 @@ const nextBtn = useRef();
                     swiper.params.navigation.nextEl = nextBtn.current;
                   }}
                   modules={[Navigation, Autoplay]}
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 3,
+                      spaceBetween: 5,
+                    },
+                    440: {
+                      slidesPerView: 3,
+                      spaceBetween: 5,
+                    },
+                    768: {
+                      slidesPerView: 3,
+                      spaceBetween: 5,
+                    },
+                  }}
+                  className="produc_card_slider"
                 >
                   <SwiperSlide>
                     <figure>
@@ -145,14 +160,14 @@ const nextBtn = useRef();
               </span>
             </div>
             {/*----------------------------- button --------------------- */}
-            <button
-              type="button"
-              className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px]"
-            >
-              <Link path={"/product_details"}>
+            <Link to={"/product_details"}>
+              <button
+                type="button"
+                className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px]"
+              >
                 {isExpired ? "Expired (Reveal Again)" : "Reveal This Stores"}
-              </Link>
-            </button>
+              </button>
+            </Link>
 
             {(content && content.status === "hidden") || isExpired ? (
               <h4 className="extra-small-font text-[#FF4545] my-[20px] text-center ">

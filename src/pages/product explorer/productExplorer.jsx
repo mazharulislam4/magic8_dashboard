@@ -13,7 +13,7 @@ const ProductCardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.18rem, 1fr));
   grid-row-gap: 60px;
-  grid-column: 30px;
+  grid-column-gap: 30px;
   place-items: center;
   @media (max-width: 1024px) {
     place-items: center;
@@ -34,7 +34,7 @@ function ProductExplorer() {
           {/* products  */}
           {isMobile ? (
             <Swiper
-              slidesPerView={"auto"}
+              slidesPerView={3}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
@@ -44,7 +44,7 @@ function ProductExplorer() {
               modules={[FreeMode, Autoplay]}
               breakpoints={{
                 0: {
-                  slidesPerView:1,
+                  slidesPerView: 1,
                   spaceBetween: 15,
                 },
                 440: {
@@ -56,6 +56,7 @@ function ProductExplorer() {
                   spaceBetween: 40,
                 },
               }}
+        
               className="mySwiper w-full"
             >
               {products.map((data) => (

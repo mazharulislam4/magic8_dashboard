@@ -10,6 +10,8 @@ const CustomSelect = styled.div`
     position: absolute;
     display: none;
     top: calc(100% -50%);
+    left: 0;
+
   }
 
   .modal.open {
@@ -63,15 +65,15 @@ function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , pl
       </div>
       {/* date list  */}
       <ul
-        className={`w-[220px] modal initial-font px-[15px]  py-[16px] rounded-md z-50 shadow-xl bg-light ${
+        className={`md:w-[220px] w-[195px] modal initial-font md:px-[15px]  py-[16px] rounded-md z-50 shadow-xl bg-light ${
           isDropdown ? "open" : ""
         } `}
       >
         {preData
           ? preData.map((day) => (
               <li
-                key={day.label}
-                className="py-[10px] px-[15px]   cursor-pointer"
+                key={day.label} 
+                className="py-[10px] px-[15px] cursor-pointer hover:bg-primary hover:text-light rounded-md "
                 onClick={(e)=>{
                   e.stopPropagation();
                   getDataHandler(e);

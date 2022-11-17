@@ -14,11 +14,11 @@ const ForLarge = ()=>{
     const [isSelectOpen, setSelectOpen] = useState(false);
     const [selectData, setSelectData] = useState(null);
 
-const card = ` border-[1px] pl-[20px] rounded-md border-[#E4E4E4] h-[100%] flex  flex-col justify-center md:w-1/5 w-[300px] my-[10px] lg:py-[0]  py-[25px] lg:border-0 lg:border-r-[1px] lg:border-l-[1px] lg:border-[#EAEAEA]`;
+const card = ` border-[1px] pl-[20px] rounded-md border-[#E4E4E4] h-[100%] flex  flex-col justify-center md:w-1/5 w-[300px] py-[25px]  lg:border-0 lg:border-r-[1px] lg:border-l-[1px] lg:border-[#EAEAEA]  `;
 
   return (
-    <div className="flex 2xl:w-[977px]  my-[20px] px-[5px]   lg:h-[108px] items-center   rounded-lg  w-full flex-wrap justify-center lg:border-[1px] border-[#E4E4E4] ">
-      <div className={`${card} pl-[20px] `}>
+    <div className="flex 2xl:w-[977px]  my-[20px] px-[5px]   lg:h-[108px] items-center   rounded-lg  w-full 2xl:flex-nowrap flex-wrap justify-center lg:border-[1px] border-[#E4E4E4] ">
+      <div className={`${card} pl-[20px] lg:border-l-0 `}>
         <FilterByDays
           placeholder="7 days"
           willOpen={() => {
@@ -34,7 +34,7 @@ const card = ` border-[1px] pl-[20px] rounded-md border-[#E4E4E4] h-[100%] flex 
           id="statistik-1"
           preData={days}
           data={selectData}
-          styles={{ border: "none", padding: "0" }}
+          styles={{ border: "none", padding: " 5px 0 " , height: "100%"}}
         />
       </div>
 
@@ -81,7 +81,7 @@ const card = ` border-[1px] pl-[20px] rounded-md border-[#E4E4E4] h-[100%] flex 
       </div>
 
       {/* shopping card  */}
-      <div className={`${card} pl-[20px] border-r-0`}>
+      <div className={`${card} pl-[20px] lg:border-r-0`}>
         <p className="mb-[6px] font-small text-dark">Avg order value</p>
         <div className="flex items-center gap-x-[10px]">
           <h2 className="medium-font text-secondary">3049</h2>

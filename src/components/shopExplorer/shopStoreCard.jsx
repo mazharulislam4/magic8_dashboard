@@ -9,9 +9,8 @@ import bottol from "../../assets/icon/bottol.svg";
 import signalIcon from "../../assets/icon/fi-rr-signal-alt.svg";
 import leftArrow from '../../assets/icon/leftArrow.svg';
 import rightArrow from '../../assets/icon/rightArrow.svg';
-import graph from '../../assets/image/graph.svg';
 import sellerImg from '../../assets/image/seller.svg';
-
+import RevenueChart from "../graph/revenuChart";
 
 function ProdcutCard({content , isExpired}) {
 const prevBtn = useRef()
@@ -24,7 +23,7 @@ const nextBtn = useRef();
       {/* card  */}
 
       <div
-        className={`card w-[289px] min-h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md product_card_shadow ShopExplorerProductCard ${
+        className={`card w-[289px] h-[380px] pt-[16px] pb-[8px] px-[18px] rounded-md product_card_shadow ShopExplorerProductCard ${
           content && content.status === "brand"
             ? "bg-light"
             : "bg-cardBg bg-center bg-no-repeat object-cover"
@@ -77,8 +76,8 @@ const nextBtn = useRef();
 
         {/* card graph  */}
         {content && content.status === "brand" ? (
-          <div className="mt-[15px] mb-[8px]">
-            <img src={graph} alt="" />
+          <div className="mb-[18px] h-[120px] overflow-hidden">
+            <RevenueChart height="auto" width="100%" />
           </div>
         ) : (
           ""
@@ -93,7 +92,7 @@ const nextBtn = useRef();
                 <img src={leftArrow} alt="" width={8} height={7} />
               </button>
               {/* slides  */}
-              <div className="mySwiper  flex gap-x-2 overflow-hidden px-[12px]">
+              <div className=" flex gap-x-2 overflow-hidden px-[12px]">
                 <Swiper
                   slidesPerView={3}
                   spaceBetween={5}
@@ -110,6 +109,21 @@ const nextBtn = useRef();
                     swiper.params.navigation.nextEl = nextBtn.current;
                   }}
                   modules={[Navigation, Autoplay]}
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 3,
+                      spaceBetween: 5,
+                    },
+                    440: {
+                      slidesPerView: 3,
+                      spaceBetween: 5,
+                    },
+                    768: {
+                      slidesPerView: 3,
+                      spaceBetween: 5,
+                    },
+                  }}
+                  className="produc_card_slider"
                 >
                   <SwiperSlide>
                     <figure>

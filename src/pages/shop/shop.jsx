@@ -13,9 +13,10 @@ import useIsMobile from "../../hooks/useIsMobile";
 const ProductCardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.18rem, 1fr));
-  grid-row-gap: 60px;
-  grid-column: 30px;
-  place-items: center;
+
+  grid-column-gap: 30px;
+  grid-row-gap: 50px;
+  place-items: center stretch;
   @media (max-width: 1024px) {
     place-items: center;
   }
@@ -24,7 +25,7 @@ const ProductCardGrid = styled.div`
 function Shop() {
   const isMobile = useIsMobile();
   return (
-    <div className="w-[100%] lg:h-screen md:pb-20 pb-[20px] bg-softDark l overflow-x-hidden  overflow-y-auto custom-container relative">
+    <div className="w-[100%] lg:h-screen md:pb-[120px] pb-[100px] bg-softDark l overflow-x-hidden  overflow-y-auto custom-container relative">
       <div className=" bg-light rounded-t-x  lg:px-[20px] py-[10px]">
         <div className="my-[30px]">
           {/* filter section  */}
@@ -86,7 +87,7 @@ function Shop() {
         </div>
         {/* switch button  */}
         <div className="absolute top-[105px] right-[7%] xl:block hidden">
-<SwitchButton/>
+          <SwitchButton />
         </div>
       </div>
     </div>
