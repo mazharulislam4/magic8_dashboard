@@ -8,12 +8,12 @@ import StoreCard from "../../components/dashboard/storeCard";
 import BackButton from "../../components/global/BackButton";
 import OrderedCustomers from "../../components/global/orderedCustomers";
 import RevenueOverTime from '../../components/graph/revenueOverTime';
+import TrafficChart from "../../components/graph/trafficChart";
 import StatistikCard from "../../components/shop/StatistikCard";
 import TopSellingProduct from "../../components/shop/topSellingProduct";
 import useIsMobile from "../../hooks/useIsMobile";
 import customersData from '../dashboard/customersData';
 import { storeData } from "../dashboard/productData";
-
 
 const ProductCardGrid = styled.div`
   display: grid;
@@ -111,7 +111,12 @@ function ShopDetails() {
       {/*-------------------------------- sidebar------------------------------  */}
       <aside className="2xl:w-[400px] px-4 xl:h-screen overflow-y-auto overflow-x-hidden ">
         <div className="overflow-y-auto ">
-          <h2 className="medium-font text-secondary pt-4 text-left  ">
+          <h2 className="my-[10px] large-font text-secondary">Traffic source</h2>
+          <div>
+            <TrafficChart />
+          </div>
+
+          <h2 className="large-font text-secondary pt-4 my-[10px] text-left  ">
             Store Order Feed
           </h2>
           {customersData

@@ -66,7 +66,7 @@ function RevenueOverTime() {
 
       {/* graph  */}
       <div>
-       <RevenueChart cWidth={450} />
+       <RevenueChart cWidth={500} />
       </div>
     </div>
   );

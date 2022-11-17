@@ -33,6 +33,8 @@ const FilterComponent = () => {
     country: false,
   });
 
+
+
   const [searchData , setSearchData] = useState('')
   const [isMobile , setMobile] = useState(false)
   // for checkbox 
@@ -69,6 +71,7 @@ const FilterComponent = () => {
   }, [filterData, isOpened, windowSize, isOpenedSelect]);
 
 
+  //------------------------ all filter data here --------------------------------
   // console.log(filterData);
 
   return (
@@ -156,7 +159,7 @@ const FilterComponent = () => {
                       country: false,
                       revenue: true,
                       average: false,
-                    });
+                    } );
                   }}
                   name={"revenue"}
                   id={"revenue"}

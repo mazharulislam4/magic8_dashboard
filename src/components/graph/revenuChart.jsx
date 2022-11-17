@@ -1,55 +1,73 @@
-import * as React from "react";
-import { Line, LineChart } from "recharts";
+import React from "react";
+import ReactApexChart from "react-apexcharts";
 
-const data = [
-  {
-    name: "Page A",
-    uv: 2500,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 2000,
-    amt: 2210,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 5000,
-    amt: 2290,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 4500,
-    amt: 2000,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 6000,
-    amt: 2181,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 4500,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 8000,
-    amt: 2100,
-  },
-];
+class RevenueChart extends React.Component {
+  constructor(props) {
+    super(props);
 
-export default function RevenueChart({ cWidth }) {
-  return (
-    <LineChart width={cWidth} height={200} data={data}>
-      <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-    </LineChart>
-  );
+    this.state = {
+      series: [
+        {
+          name: "Magic8",
+          data: [900.55, 5000.54, 4000.0, 3400.0, 2440.3, 6500.0, 9400.0],
+        },
+      ],
+      options: {
+        grid: {
+          show: false,
+        },
+        chart: {
+          toolbar: {
+            show: false,
+          },
+          type: "area",
+          height: 350,
+          zoom: {
+            enabled: false,
+          },
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        stroke: {
+          curve: "straight",
+        },
+        labels: [
+          "2018-09-19T01:30:00.000Z",
+          "2019-09-19T02:30:00.000Z",
+          "2020-09-19T03:30:00.000Z",
+          "2021-09-19T04:30:00.000Z",
+          "2022-09-19T05:30:00.000Z",
+          "2023-09-19T06:30:00.000Z",
+          "2024-09-19T06:30:00.000Z",
+        ],
+        xaxis: {
+          type: "datetime",
+          show: false,
+        },
+        yaxis: {
+          opposite: true,
+          show: false,
+        },
+        legend: {
+          horizontalAlign: "left",
+        },
+      },
+    };
+  }
+
+  render() {
+    return (
+      <div id="chart">
+        <ReactApexChart
+          options={this.state.options}
+          series={this.state.series}
+          type="area"
+          height={350}
+        />
+      </div>
+    );
+  }
 }
+
+export default RevenueChart;

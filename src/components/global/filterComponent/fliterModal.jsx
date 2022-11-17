@@ -103,7 +103,7 @@ setUserCustomSelectData({...userCustomSelectData, [e.target.name]:e.target.value
 function userSubmitHandler(e){
   e.preventDefault();
 
-window.localStorage.setItem("userSelectedData", JSON.stringify(userCustomSelectData));
+// window.localStorage.setItem("userSelectedData", JSON.stringify(userCustomSelectData));
 }
 
 

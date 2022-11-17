@@ -6,7 +6,6 @@ import { Autoplay, Navigation } from "swiper";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import bottol from "../../assets/icon/bottol.svg";
-import heart from "../../assets/icon/heart.svg";
 import leftArrow from "../../assets/icon/leftArrow.svg";
 import productSaveHeart from "../../assets/icon/productSaveHeart.svg";
 import rightArrow from "../../assets/icon/rightArrow.svg";
@@ -37,7 +36,7 @@ const nextBtn = useRef();
               Created By {content?.date}
             </h2>
             <button type="button">
-              <img src={heart} alt="save product" />
+              <img src={productSaveHeart} alt="save product" />
             </button>
           </div>
           <div className="flex justify-between  ">
@@ -55,8 +54,7 @@ const nextBtn = useRef();
                 <span className="font-[400]">+{content?.avgRevenue}%</span>
               </p>
               <p className="text-secondary flex gap-1 items-center mt-[13px]">
-               
-                  <img src={productSaveHeart} alt="save prodcut" />
+                <img src={productSaveHeart} alt="save prodcut" />
 
                 <span> {content?.tracking} Other Tracking</span>
               </p>

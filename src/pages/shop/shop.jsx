@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "../../components/global/button";
 import FilterComponent from "../../components/global/filterComponent/FilterComponent";
 import { stores } from "../../components/global/productCardData";
+import SwitchButton from "../../components/global/switchButton";
 import ShopStoreCard from "../../components/shopExplorer/shopStoreCard";
 import useIsMobile from "../../hooks/useIsMobile";
 // style
@@ -23,7 +24,7 @@ const ProductCardGrid = styled.div`
 function Shop() {
   const isMobile = useIsMobile();
   return (
-    <div className="w-[100%] lg:h-screen md:pb-20 pb-[20px] bg-softDark l overflow-x-hidden  overflow-y-auto custom-container ">
+    <div className="w-[100%] lg:h-screen md:pb-20 pb-[20px] bg-softDark l overflow-x-hidden  overflow-y-auto custom-container relative">
       <div className=" bg-light rounded-t-x  lg:px-[20px] py-[10px]">
         <div className="my-[30px]">
           {/* filter section  */}
@@ -82,6 +83,10 @@ function Shop() {
               ))}
             </ProductCardGrid>
           )}
+        </div>
+        {/* switch button  */}
+        <div className="absolute top-[16%] right-[7%] xl:block hidden">
+<SwitchButton/>
         </div>
       </div>
     </div>

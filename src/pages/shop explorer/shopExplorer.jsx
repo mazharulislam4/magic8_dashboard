@@ -4,6 +4,7 @@ import "swiper/css/free-mode";
 import { Swiper, SwiperSlide } from "swiper/react";
 import FilterComponent from "../../components/global/filterComponent//FilterComponent";
 import { stores } from '../../components/global/productCardData';
+import SwitchButton from "../../components/global/switchButton";
 import ShopStoreCard from '../../components/shopExplorer/shopStoreCard';
 import useIsMobile from "../../hooks/useIsMobile";
 
@@ -26,7 +27,7 @@ function ShopExplorer() {
     const isMobile = useIsMobile();
     return (
       <div className="w-[100%] lg:h-screen md:pb-20 bg-softDark rounded-t-xl overflow-x-hidden  overflow-y-auto custom-container ">
-        <div className="overflow-y-auto  overflow-x-hidden bg-light">
+        <div className="overflow-y-auto relative overflow-x-hidden bg-light">
           <div className=" lg:px-[20px]">
             {/* filter section  */}
 
@@ -42,7 +43,7 @@ function ShopExplorer() {
                 modules={[FreeMode]}
                 breakpoints={{
                   0: {
-                    slidesPerView:1,
+                    slidesPerView: 1,
                     spaceBetween: 10,
                   },
                   440: {
@@ -57,7 +58,7 @@ function ShopExplorer() {
                 className="mySwiper w-[100%] my-[30px]"
               >
                 {stores.map((data) => (
-                  <SwiperSlide key={data.id} className = "shop_slider" >
+                  <SwiperSlide key={data.id} className="shop_slider">
                     <ShopStoreCard content={data} />
                   </SwiperSlide>
                 ))}
@@ -69,6 +70,9 @@ function ShopExplorer() {
                 ))}
               </ProductCardGrid>
             )}
+          </div>
+          <div className="absolute top-[1%] right-[5%] xl:block hidden">
+            <SwitchButton />
           </div>
         </div>
       </div>
