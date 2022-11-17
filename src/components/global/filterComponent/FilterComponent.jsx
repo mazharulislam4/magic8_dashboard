@@ -115,7 +115,7 @@ const FilterComponent = () => {
               breakpoints={{
                 0: {
                   slidesPerView: 2,
-                  spaceBetween: 15,
+                  spaceBetween: 8,
                 },
                 440: {
                   slidesPerView: 3,
