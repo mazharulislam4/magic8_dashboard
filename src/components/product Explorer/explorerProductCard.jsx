@@ -171,7 +171,7 @@ const nextBtn = useRef();
 
             {(content && content.status === "hidden") || isExpired ? (
               <h4 className="extra-small-font text-[#FF4545] my-[8px] text-center ">
-                Lasts 7days
+                Lasts 7 days
               </h4>
             ) : (
               ""
