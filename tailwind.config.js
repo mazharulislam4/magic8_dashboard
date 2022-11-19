@@ -23,9 +23,8 @@ module.exports = {
         navbg: "url('./assets/image/navbg.svg')",
         sidebarBg: "url('./assets/image/sidebarbg.svg')",
         cardBg: "url('./assets/image/hiddenProductBg.png')",
-       
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };

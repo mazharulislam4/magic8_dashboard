@@ -16,7 +16,7 @@ function RevenueOverTime() {
   const [selectData, setSelectData] = useState(null);
 
   return (
-    <div className="w-auto min-h-[400px] rounded-md  bg-[#F8F4FF] ">
+    <div className="xl:w-[500px] w-full min-h-[400px] overflow-hidden bg-[#F8F4FF] ">
       {/* header  */}
       <div className="flex justify-between md:px-[20px] px-[10px] ">
         <div>
@@ -66,7 +66,7 @@ function RevenueOverTime() {
       </div>
       {/* graph  */}
       <div className="w-full">
-        <RevenueChart height="350" width="100%" />
+        <RevenueChart cWidth={500} height={350} />
       </div>
     </div>
   );

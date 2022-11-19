@@ -178,12 +178,12 @@ const nextBtn = useRef();
               className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px]"
             >
               <Link to={"/shop_details"}>
-                {isExpired ? "Expired (Reveal Again)" : "Reveal This Stores"}
+                {isExpired ? "Expired (Reveal Again)" : "Reveal This Store"}
               </Link>
             </button>
 
             {(content && content.status === "hidden") || isExpired ? (
-              <h4 className="extra-small-font text-[#FF4545] my-[15px] text-center ">
+              <h4 className="text-[12px] text-[#FF4545] my-[15px] text-center ">
                 Lasts 7 days
               </h4>
             ) : (

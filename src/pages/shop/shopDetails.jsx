@@ -1,16 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Autoplay, FreeMode } from "swiper";
-import "swiper/css";
-import "swiper/css/free-mode";
-// social media 
+
 import {
   AiFillFacebook, AiFillLinkedin, AiFillMail, AiFillTwitterSquare
 } from "react-icons/ai";
 import { RiFileSearchFill } from "react-icons/ri";
 
-
-import { Swiper, SwiperSlide } from "swiper/react";
 import StoreCard from "../../components/dashboard/storeCard";
 import BackButton from "../../components/global/BackButton";
 import OrderedCustomers from "../../components/global/orderedCustomers";
@@ -96,43 +91,18 @@ function ShopDetails() {
                 Stores others have tracked
               </h2>
               {isMobile ? (
-                <div className="overflow-x-hidden relative">
-                  <Swiper
-                    slidesPerView={3}
-                    autoplay={{
-                      delay: 2500,
-                      disableOnInteraction: false,
-                    }}
-                    spaceBetween={20}
-                    freeMode={true}
-                    modules={[FreeMode, Autoplay]}
-                    breakpoints={{
-                      0: {
-                        slidesPerView: 1,
-                        spaceBetween: 15,
-                      },
-                      440: {
-                        slidesPerView: 2,
-                        spaceBetween: 20,
-                      },
-                      768: {
-                        slidesPerView: 3,
-                        spaceBetween: 40,
-                      },
-                    }}
-                    className="mySwiper w-full"
-                  >
+                <div className="overflow-hidden relative w-[100vw]  py-[10px] ">
+                  <div className="overflow-x-auto scrollbar-hide flex pr-[50px] gap-8 w-[100vw]  ">
                     {storeData &&
                       storeData.map((data) => (
-                        <SwiperSlide key={data.id}>
-                          <StoreCard
-                            content={{
-                              ...data,
-                            }}
-                          />
-                        </SwiperSlide>
+                        <StoreCard
+                          key={data.id}
+                          content={{
+                            ...data,
+                          }}
+                        />
                       ))}
-                  </Swiper>
+                  </div>
                 </div>
               ) : (
                 <ProductCardGrid>

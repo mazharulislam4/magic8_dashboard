@@ -1,14 +1,10 @@
 import styled from "styled-components";
-import { Autoplay, FreeMode } from "swiper";
-import "swiper/css";
-import "swiper/css/free-mode";
-import { Swiper, SwiperSlide } from "swiper/react";
 import FilterComponent from "../../components/global/filterComponent//FilterComponent";
 // product card data 
 import { stores } from '../../components/global/productCardData';
 import SwitchButton from "../../components/global/switchButton";
 import ShopStoreCard from '../../components/shopExplorer/shopStoreCard';
-import useIsMobile from "../../hooks/useIsMobile";
+// import useIsMobile from "../../hooks/useIsMobile";
 // style 
 const ProductCardGrid = styled.div`
   display: grid;
@@ -22,58 +18,24 @@ const ProductCardGrid = styled.div`
 `;
 
 
-
 function ShopExplorer() {
-    const isMobile = useIsMobile();
+    // const isMobile = useIsMobile();
     return (
       <div className="w-[100%] lg:h-screen md:pb-20 bg-softDark rounded-t-xl overflow-x-hidden  overflow-y-auto custom-container ">
-        <div className="overflow-y-auto relative overflow-x-hidden  rounded-t-xl pb-[90px]  bg-light">
+        <div className="overflow-y-auto relative overflow-x-hidden  rounded-t-xl pb-[96px]  bg-light">
           <div className=" lg:px-[20px]">
             {/* filter section  */}
 
             <section className="my-[30px]">
               <FilterComponent />
             </section>
-            {/* products  */}
-            {isMobile ? (
-              <Swiper
-                slidesPerView={4}
-                spaceBetween={20}
-                freeMode={true}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
-                modules={[FreeMode, Autoplay]}
-                breakpoints={{
-                  0: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                  },
-                  440: {
-                    slidesPerView: 2,
-                    spaceBetween: 50,
-                  },
-                  768: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                  },
-                }}
-                className="mySwiper w-full"
-              >
-                {stores.map((data) => (
-                  <SwiperSlide key={data.id}>
-                    <ShopStoreCard content={data} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            ) : (
+
               <ProductCardGrid className="my-[40px]">
                 {stores.map((data) => (
                   <ShopStoreCard key={data.id} content={data} />
                 ))}
               </ProductCardGrid>
-            )}
+        
           </div>
           <div className="absolute top-[1%] right-[5%] xl:block hidden">
             <SwitchButton />

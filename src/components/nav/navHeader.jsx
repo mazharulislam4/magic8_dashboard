@@ -12,12 +12,12 @@ const NavHead = styled.div`
   }
 
   .bottol{
-    animation: bottol 1s infinite both linear ;
+    animation: bottol 2s infinite both linear ;
   }
 
   @keyframes bottol {
     to{
-      transform: scale(1.1) skewX(3deg) skewY(2deg);
+      transform: scale(1.1) ;
     }
   }
 `

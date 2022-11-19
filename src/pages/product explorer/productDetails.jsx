@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import { Autoplay, FreeMode } from "swiper";
-import "swiper/css";
-import "swiper/css/free-mode";
-import { Swiper, SwiperSlide } from "swiper/react";
+
 import prodcutImg from "../../assets/image/product.png";
 import BackButton from '../../components/global/BackButton';
 import FilterByDays from "../../components/global/filterByDays";
@@ -33,9 +30,9 @@ function ProductDetails() {
 
   return (
     <div className="custom-container">
-      <div className="xl:h-screen xl:flex xl:grow xl:overflow-hidden bg-light ">
+      <div className="xl:h-screen xl:flex xl:grow xl:overflow-hidden bg-light pb-[50px]">
         {/* main content  */}
-        <div className="md:px-[20px] xl:h-screen overflow-y-auto px-[10px] py-[20px] xl:pb-[120px]">
+        <div className="md:px-[20px] xl:h-screen overflow-y-auto px-[10px] py-[20px] xl:pb-[150px]">
           <BackButton />
           <h2 className="large-font text-secondary my-[20px]">Men’s Hoodie</h2>
           <div className="flex  flex-wrap xl:justify-start  gap-y-[15px] ">
@@ -68,7 +65,7 @@ function ProductDetails() {
             </div>
 
             <div className="xl:order-3 xl:w-[50%] w-full shrink ">
-              <VendorDetails />
+              <VendorDetails isMobile={isMobile} />
             </div>
 
             {/* revenue graph  */}
@@ -83,40 +80,22 @@ function ProductDetails() {
         </div>
 
         {/* aside  */}
-        <div className="xl:w-[600px] lg:w-[550px] xl:h-screen  overflow-y-auto overflow-x-hidden xl:pb-[120px]  py-[20px] px-2 ">
+        <div className="xl:w-[600px] lg:w-[550px] xl:h-screen  overflow-y-auto overflow-x-hidden xl:pb-[150px]  py-[20px] px-2 ">
           <div className=" ">
             {isMobile ? (
-              <Swiper
-                slidesPerView={4}
-                spaceBetween={20}
-                freeMode={true}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
-                modules={[FreeMode, Autoplay]}
-                breakpoints={{
-                  0: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                  },
-                  440: {
-                    slidesPerView: 2,
-                    spaceBetween: 50,
-                  },
-                  768: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                  },
-                }}
-                className="mySwiper w-full"
-              >
-                {products.map((data) => (
-                  <SwiperSlide key={data.id}>
-                    <ExplorerProductCard content={data} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+              <div className="overflow-hidden relative w-[100vw]  py-[10px] ">
+                <div className="overflow-x-auto scrollbar-hide flex pr-[50px] gap-8 w-[100vw]  ">
+                  {products &&
+                    products.map((data) => (
+                      <ExplorerProductCard
+                        key={data.id}
+                        content={{
+                          ...data,
+                        }}
+                      />
+                    ))}
+                </div>
+              </div>
             ) : (
               <div className="my-[40px] flex xl:flex-col xl:items-center justify-center flex-wrap gap-x-8">
                 {products.map((data) => (

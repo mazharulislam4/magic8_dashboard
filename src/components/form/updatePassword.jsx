@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-    const inputBox = `bg-[#f8f8f8f8] rounded-2xl  `;
+    const inputBox = `bg-[#f8f8f8f8] rounded-2xl w-full `;
     const input = `py-[20px] px-[10px] w-[100%] rounded-[10px] medium-font text-dark  focus:outline-primary focus:outline-[1px] transition-[shadow] duration-300 bg-[#f8f8f8f8] block  `;
 
-    const label = `medium-font text-dark pb-[10px] block bg-light`;
+    const label = `extra-small-font text-dark pb-[10px] block bg-light`;
 
 
 function UpdatePassword() {
@@ -22,12 +22,12 @@ const submitHandler = (e)=>{
 
 
   return (
-    <form action="#" className="rounded-[8px]  md:w-[629px] ">
+    <form action="#" className="rounded-[8px]  md:w-[629px] w-full">
       <div>
-        <h3 className="text-[20px] text-secondary font-bold my-[25px]">
+        <h3 className="medium-font  text-secondary my-[25px]">
           Update Password
         </h3>
-        <div className="flex md:flex-row flex-col gap-4">
+        <div className="flex md:flex-row flex-col w-full gap-4">
           <div className={`${inputBox} md:w-[50%]`}>
             <label htmlFor="newPassoword" className={label}>
               New Password
@@ -76,7 +76,7 @@ const submitHandler = (e)=>{
             <input
               type="submit"
               onSubmit={submitHandler}
-              className={`${input} bg-primary text-light m-0 hover:bg-light hover:text-secondary transition-[background] duration-500  cursor-pointer block w-[100%] shadow-0 focus:shadow-0 `}
+              className={`${input} extra-small-font bg-primary text-light m-0 hover:bg-light hover:text-secondary transition-[background] duration-500  cursor-pointer block w-[100%] shadow-0 focus:shadow-0 `}
             />
           </div>
         </div>

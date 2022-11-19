@@ -122,7 +122,6 @@ function FilterModal({ data, closeHandler, openModal, name }) {
         e.stopPropagation();
         closeHandler(userData ? userData : "");
       }}
-     
     >
       <div
         className={`modal ${openModal[name] ? "active" : "modal"} shadow-xl `}
@@ -159,50 +158,58 @@ function FilterModal({ data, closeHandler, openModal, name }) {
           })}
 
           {/* -----------------------user input--------------------  */}
-          <h3 className="mb-[7px] small-font text-dark mt-[10px] ">Custom</h3>
-          <form
-            action="#"
-            className="flex flex-col items-center gap-y-[10px] w-[100%]"
-          >
-            <input
-              type="text"
-              name="min"
-              value={userCustomSelectData.min}
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-              onChange={(e) => {
-                userSelectDataHandler(e);
-              }}
-              placeholder="min"
-              className="block w-full  px-2  py-[6px] border-[1px] border-[#EAEAEA] shadow-sm rounded-md focus:outline-[#7942D1] focus:outline-1 extra-small-font "
-            />
-            <input
-              type="text"
-              name="max"
-              value={userCustomSelectData.max}
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-              onChange={(e) => {
-                userSelectDataHandler(e);
-              }}
-              placeholder="max"
-              className="block w-full px-2 py-[6px]  border-[1px] border-[#EAEAEA] shadow-sm rounded-md focus:outline-[#7942D1] focus:outline-1 extra-small-font "
-            />
-            <button
-              type="submit"
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-              onSubmit={(e) => {
-                userSubmitHandler(e);
-              }}
-              className="block w-full placeholder:text-center px-[5px] py-[6px]  border-[1px] border-[#EAEAEA] shadow-sm rounded-md"
-            >
-              Submit
-            </button>
-          </form>
+          {!openModal['country'] ? (
+            <>
+              <h3 className="mb-[7px] small-font text-dark mt-[10px] ">
+                Custom
+              </h3>
+              <form
+                action="#"
+                className="flex flex-col items-center gap-y-[10px] w-[100%]"
+              >
+                <input
+                  type="text"
+                  name="min"
+                  value={userCustomSelectData.min}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }}
+                  onChange={(e) => {
+                    userSelectDataHandler(e);
+                  }}
+                  placeholder="min"
+                  className="block w-full  px-2  py-[6px] border-[1px] border-[#EAEAEA] shadow-sm rounded-md focus:outline-[#7942D1] focus:outline-1 extra-small-font "
+                />
+                <input
+                  type="text"
+                  name="max"
+                  value={userCustomSelectData.max}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }}
+                  onChange={(e) => {
+                    userSelectDataHandler(e);
+                  }}
+                  placeholder="max"
+                  className="block w-full px-2 py-[6px]  border-[1px] border-[#EAEAEA] shadow-sm rounded-md focus:outline-[#7942D1] focus:outline-1 extra-small-font "
+                />
+                <button
+                  type="submit"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }}
+                  onSubmit={(e) => {
+                    userSubmitHandler(e);
+                  }}
+                  className="block w-full placeholder:text-center px-[5px] py-[6px]  border-[1px] border-[#EAEAEA] shadow-sm rounded-md"
+                >
+                  Submit
+                </button>
+              </form>
+            </>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </FilterModalContainer>

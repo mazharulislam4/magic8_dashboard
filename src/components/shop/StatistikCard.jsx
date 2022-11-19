@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FiArrowDownRight, FiArrowUpRight } from "react-icons/fi";
+import useIsMobile from '../../hooks/useIsMobile';
 import FilterByDays from '../global/filterByDays';
 
 const days = [
@@ -100,94 +101,98 @@ const card = ` border-[1px] pl-[20px] rounded-md border-[#E4E4E4] h-[100%] flex 
 
 
 
-// const ForMobile = ()=>{
-//     const [isSelectOpen, setSelectOpen] = useState(false);
-//     const [selectData, setSelectData] = useState(null);
+const ForMobile = ()=>{
+    const [isSelectOpen, setSelectOpen] = useState(false);
+    const [selectData, setSelectData] = useState(null);
 
-// const card = ` flex  flex-col justify-center  w-full`;
+const card = ` flex  flex-col justify-center  w-full`;
 
-//   return (
-//     <div className="border-2 border-[#E4E4E4] py-[10px] rounded-md px-[10px]">
-//       {/* part 1 */}
-//       <div className="flex items-center ">
-//         <div className={`${card} pl-[0] w-[50%]`}>
-//           <FilterByDays
-//             placeholder="7 days"
-//             willOpen={() => {
-//               setSelectOpen(true);
-//             }}
-//             isDropdown={isSelectOpen}
-//             getDataHandler={(e) => {
-//               setSelectData(e.target.innerText);
-//               setSelectOpen(false);
-//             }}
-//             id="statistik-2"
-//             preData={days}
-//             data={selectData}
-//             styles={{ border: "none", padding: "0" }}
-//           />
-//         </div>
+  return (
+    <div className="border-2 border-[#E4E4E4] py-[10px] rounded-md px-[10px]">
+      {/* part 1 */}
 
-//         {/* order card  */}
-//         <div className={`${card} w-[50%]`}>
-//           <p className="mb-[6px] font-small text-dark">Orders</p>
-//           <div className="flex items-center gap-x-[5px] ">
-//             <h2 className="medium-font text-secondary">304</h2>
-//             <p className="flex items-center text-green  extra-small-font">
-//               <span>
-//                 <FiArrowUpRight />
-//               </span>
-//               +5.60%
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//       {/* part 2   */}
+      <div className={`${card} pl-[0] w-[50%] mb-[15px]`}>
+        <FilterByDays
+          placeholder="7 days"
+          willOpen={() => {
+            setSelectOpen(true);
+          }}
+          isDropdown={isSelectOpen}
+          getDataHandler={(e) => {
+            setSelectData(e.target.innerText);
+          }}
+          closeHandler={() => {
+            setSelectOpen();
+          }}
+          id="statistik-2"
+          preData={days}
+          data={selectData}
+          styles={{ border: "none", padding: "0" }}
+        />
+      </div>
 
-//       <div className="flex items-center my-3">
-//         {/* revenue card  */}
-//         <div className={card}>
-//           <p className="mb-[6px] font-small text-dark">Revenue</p>
-//           <div className="flex items-center  gap-x-[5px]">
-//             <h2 className="medium-font text-secondary">3049</h2>
-//             <p className="flex items-center text-green extra-small-font">
-//               <span>
-//                 <FiArrowUpRight />
-//               </span>
-//               +5.60%
-//             </p>
-//           </div>
-//         </div>
+      <div className="flex items-center ">
+        {/* revenue card  */}
+        <div className={card}>
+          <p className="mb-[6px] extra-small-font text-dark">Revenue</p>
+          <div className="flex items-center  gap-x-[5px]">
+            <h2 className="medium-font text-secondary">3049</h2>
+            <p className="flex items-center text-green extra-small-font">
+              <span>
+                <FiArrowUpRight />
+              </span>
+              +5.60%
+            </p>
+          </div>
+        </div>
+        {/* order card  */}
+        <div className={`${card} w-[50%]`}>
+          <p className="mb-[6px] extra-small-font text-dark">Orders</p>
+          <div className="flex items-center gap-x-[5px] ">
+            <h2 className="medium-font text-secondary">304</h2>
+            <p className="flex items-center text-green  extra-small-font">
+              <span>
+                <FiArrowUpRight />
+              </span>
+              +5.60%
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* part 2   */}
 
-//         {/* shopping card  */}
-//         <div className={card}>
-//           <p className="mb-[6px] font-small text-dark">Shopping charged</p>
-//           <div className="flex items-center gap-x-[5px]">
-//             <h2 className="medium-font text-secondary">3049</h2>
-//             <p className="flex text-[#FF4545]  extra-small-font">
-//               <span>
-//                 <FiArrowDownRight />
-//               </span>
-//               +5.60%
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//       <div className={`${card}  `}>
-//         <p className="mb-[6px] font-small text-dark">Avg order value</p>
-//         <div className="flex items-center gap-x-[5px]">
-//           <h2 className="medium-font text-secondary">3049</h2>
-//           <p className="flex text-[#FF4545] extra-small-font ">
-//             <span>
-//               <FiArrowDownRight />
-//             </span>
-//             +5.60%
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
+      <div className="flex items-center my-3">
+        <div className={`${card}  `}>
+          <p className="mb-[6px] extra-small-font text-dark">Avg order value</p>
+          <div className="flex items-center gap-x-[5px]">
+            <h2 className="medium-font text-secondary">3049</h2>
+            <p className="flex text-[#FF4545] extra-small-font ">
+              <span>
+                <FiArrowDownRight />
+              </span>
+              +5.60%
+            </p>
+          </div>
+        </div>
+        {/* shopping card  */}
+        <div className={card}>
+          <p className="mb-[6px] extra-small-font text-dark">
+            Shopping charged
+          </p>
+          <div className="flex items-center gap-x-[5px]">
+            <h2 className="medium-font text-secondary">3049</h2>
+            <p className="flex text-[#FF4545]  extra-small-font">
+              <span>
+                <FiArrowDownRight />
+              </span>
+              +5.60%
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 
 
@@ -195,14 +200,8 @@ const card = ` border-[1px] pl-[20px] rounded-md border-[#E4E4E4] h-[100%] flex 
 
 
 function StatistikCard() {
-
-  return (
-
- <>
- <ForLarge/>
- </>
-
-  );
+const isMobile = useIsMobile();
+  return <>{isMobile ? <ForMobile /> : <ForLarge />}</>;
 }
 
 export default StatistikCard

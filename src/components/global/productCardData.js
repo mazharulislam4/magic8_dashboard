@@ -2,7 +2,7 @@ const stores = [
   {
     id: 1,
     brandName: "Brand Name",
-    status: "hidden",
+    status: "Hidden",
     search: 505000,
     revenue: 540410,
     avgSearch: 50.36,
@@ -14,7 +14,7 @@ const stores = [
   {
     id: 2,
     brandName: "Brand Name",
-    status: "hidden",
+    status: "Hidden",
     search: 505000,
     revenue: 540410,
     avgSearch: 50.36,
@@ -26,7 +26,7 @@ const stores = [
   {
     id: 3,
     brandName: "Brand Name",
-    status: "unlocked",
+    status: "Unlocked",
     search: 505000,
     revenue: 540410,
     avgSearch: 50.36,
@@ -38,7 +38,7 @@ const stores = [
   {
     id: 4,
     brandName: "Brand Name",
-    status: "brand",
+    status: "Brand",
     search: 505000,
     revenue: 540410,
     avgSearch: 50.36,
@@ -50,7 +50,7 @@ const stores = [
   {
     id: 5,
     brandName: "Brand Name",
-    status: "hidden",
+    status: "Hidden",
     search: 505000,
     revenue: 540410,
     avgSearch: 50.36,
@@ -62,7 +62,7 @@ const stores = [
   {
     id: 6,
     brandName: "Brand Name",
-    status: "brand",
+    status: "Brand",
     search: 505000,
     revenue: 540410,
     avgSearch: 50.36,
@@ -74,7 +74,7 @@ const stores = [
   {
     id: 7,
     brandName: "Brand Name",
-    status: "unlocked",
+    status: "Unlocked",
     search: 505000,
     revenue: 540410,
     avgSearch: 50.36,
@@ -87,7 +87,7 @@ const stores = [
   {
     id: 8,
     brandName: "Brand Name",
-    status: "unlocked",
+    status: "Unlocked",
     search: 505000,
     revenue: 540410,
     avgSearch: 50.36,
@@ -104,7 +104,7 @@ const products = [
   {
     id: 1,
     brandName:'Brand Name',
-    status: "hidden",
+    status: "Hidden",
     revenue: 540410,
     avgRevenue: 88.8,
     tracking: 8,
@@ -115,7 +115,7 @@ const products = [
   {
     id: 2,
     brandName:'Brand Name',
-    status: "hidden",
+    status: "Hidden",
     revenue: 540410,
     avgRevenue: 88.8,
     tracking: 8,
@@ -126,7 +126,7 @@ const products = [
   {
     id: 3,
     brandName:'Brand Name',
-    status: "unlocked",
+    status: "Unlocked",
     revenue: 540410,
     avgRevenue: 88.8,
     tracking: 8,
@@ -137,7 +137,7 @@ const products = [
   {
     id: 4,
     brandName:'Brand Name',
-    status: "brand",
+    status: "Brand",
     revenue: 540410,
     avgRevenue: 88.8,
     tracking: 8,
@@ -148,7 +148,7 @@ const products = [
   {
     id: 5,
     brandName:'Brand Name',
-    status: "hidden",
+    status: "Hidden",
     revenue: 540410,
     avgRevenue: 88.8,
     tracking: 8,
@@ -159,7 +159,7 @@ const products = [
   {
     id: 6,
     brandName:'Brand Name',
-    status: "hidden",
+    status: "Hidden",
     revenue: 540410,
     avgRevenue: 88.8,
     tracking: 8,
@@ -170,7 +170,7 @@ const products = [
   {
     id: 7,
     brandName:'Brand Name',
-    status: "brand",
+    status: "Brand",
     revenue: 540410,
     avgRevenue: 88.8,
     tracking: 8,
@@ -181,7 +181,7 @@ const products = [
   {
     id: 8,
     brandName:'Brand Name',
-    status: "unlocked",
+    status: "Unlocked",
     revenue: 540410,
     avgRevenue: 88.8,
     tracking: 8,

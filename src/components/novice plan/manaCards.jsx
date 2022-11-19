@@ -36,13 +36,7 @@ function ManCards() {
 
   return (
     <section className="manacard">
-      <motion.div
-        className="text-center"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.4 }}
-        style={{ willChange }}
-      >
+      <div className="text-center" >
         <h3 className="extra-large-font text-secondary font-[700] mt-[32px]">
           Mana Shop
         </h3>
@@ -52,7 +46,7 @@ function ManCards() {
         <p className="small-font text-dark">
           If you are a daily user, please consider upgrading your plan
         </p>
-      </motion.div>
+      </div>
       {/*---------------------- mana card container ---------------------*/}
       <div className="flex flex-col md:flex-row  gap-9 justify-center xl:gap-[26px] items-center flex-wrap my-[28px]">
         {/* ------------bottol mana card -------------------- */}

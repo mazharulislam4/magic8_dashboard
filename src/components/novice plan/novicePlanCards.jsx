@@ -8,12 +8,9 @@ export default function NovicePlanCards() {
    
   return (
     <section className="manaPlan">
-      <motion.div
+      <div
         className="text-center mb-[38px]"
-        initial={{ y: 80 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.4 }}
-        style={{ willChange }}
+
       >
         <h3 className="extra-large-font text-secondary font-[700] mt-[23px]">
           Plans
@@ -24,7 +21,7 @@ export default function NovicePlanCards() {
         <p className="small-font text-dark mb-[13px]">
           If you are a daily user, please consider upgrading your plan
         </p>
-      </motion.div>
+      </div>
 
       <div className="flex flex-col md:flex-row  gap-9 justify-center xl:gap-[26px] items-center flex-wrap  ">
         {/* card 1 ----------------------------> Novice plan------------------------ */}

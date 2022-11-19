@@ -20,7 +20,7 @@ const FilterCheckBox = ({ placeholderText, status, setStatus }) => {
             ""
           )}
         </div>
-        <p className="text-base text-metal">{placeholderText}</p>
+        <p className="extra-small-font text-secondary">{placeholderText}</p>
       </button>
     </>
   );

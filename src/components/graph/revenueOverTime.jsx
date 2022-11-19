@@ -17,9 +17,9 @@ function RevenueOverTime() {
     const [selectData, setSelectData] = useState(null);
 
   return (
-    <div className="lg:w-[500px] w-full min-h-[400px] overflow-hidden lg:px-[20px] bg-[#F8F4FF] ">
+    <div className="xl:w-[500px] w-full min-h-[400px] overflow-hidden  bg-[#F8F4FF] ">
       {/* header  */}
-      <div className="flex  py-[10px] px-[10px] md:px-0 justify-between items-center">
+      <div className="flex  pt-[10px] px-[10px]  justify-between items-center">
         <h2 className="text-[20px] font-[400]  ">Revenue over time</h2>
 
         <div className=" flex  pt-[10px] md:w-[200px] w-[60%] shadow-sm rounded-md ">
@@ -44,7 +44,7 @@ function RevenueOverTime() {
         </div>
       </div>
 
-      <div className="px-[10px] md:px-0">
+      <div className="px-[10px] ">
         {/*------------ search value --------------- */}
         <p className="text-dark small-font ">Search Volume</p>
         <h3 className="medium-font text-secondary font-bold my-[7px]">
@@ -66,8 +66,8 @@ function RevenueOverTime() {
       </div>
 
       {/* graph  */}
-      <div>
-        <RevenueChart cWidth={500} />
+      <div className='mt-[20px] w-full'>
+        <RevenueChart cWidth={500} height = {350} />
       </div>
     </div>
   );

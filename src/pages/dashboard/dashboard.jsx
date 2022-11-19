@@ -1,11 +1,9 @@
 import { motion, useWillChange } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
-import { Autoplay, FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 // import "swiper/css/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
 import ProductCard from "../../components/dashboard/productCard";
 import StoreCard from "../../components/dashboard/storeCard";
 import FilterComponent from "../../components/global/filterComponent/FilterComponent";
@@ -34,9 +32,9 @@ function Dashboard() {
     <div className="custom-container ">
       {/* <FreeManaModal status={earnManaModal} /> */}
 
-      <div className="xl:h-screen xl:flex  xl:overflow-hidden  bg-light rounded-t-xl">
+      <div className="xl:h-screen xl:flex  xl:overflow-hidden   pb-[90px] bg-light rounded-t-xl">
         <motion.div
-          className="md:px-[20px] xl:h-screen overflow-y-auto overflow-x-hidden px-[10px] py-[20px] xl:pb-[120px] bg-light xl:grow"
+          className="md:px-[20px] xl:h-screen overflow-y-auto overflow-x-hidden py-[20px] md:pb-[130px]  bg-light xl:grow"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
@@ -52,43 +50,18 @@ function Dashboard() {
               Trending Stores
             </h2>
             {isMobile ? (
-              <div className="overflow-x-hidden relative">
-                <Swiper
-                  slidesPerView={3}
-                  autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                  }}
-                  spaceBetween={20}
-                  freeMode={true}
-                  modules={[FreeMode, Autoplay]}
-                  breakpoints={{
-                    0: {
-                      slidesPerView: 1,
-                      spaceBetween: 15,
-                    },
-                    440: {
-                      slidesPerView: 2,
-                      spaceBetween: 20,
-                    },
-                    768: {
-                      slidesPerView: 3,
-                      spaceBetween: 40,
-                    },
-                  }}
-                  className="mySwiper w-full"
-                >
+              <div className="overflow-hidden relative w-[100vw]  py-[10px] ">
+                <div className="overflow-x-auto scrollbar-hide flex pr-[50px] gap-8 w-[100vw]  ">
                   {storeData &&
                     storeData.map((data) => (
-                      <SwiperSlide key={data.id}>
-                        <StoreCard
-                          content={{
-                            ...data,
-                          }}
-                        />
-                      </SwiperSlide>
+                      <StoreCard
+                        key={data.id}
+                        content={{
+                          ...data,
+                        }}
+                      />
                     ))}
-                </Swiper>
+                </div>
               </div>
             ) : (
               <ProductCardGrid>
@@ -111,43 +84,18 @@ function Dashboard() {
               Trending Products
             </h2>
             {isMobile ? (
-              <div className="overflow-x-hidden relative">
-                <Swiper
-                  slidesPerView={3}
-                  autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                  }}
-                  spaceBetween={20}
-                  freeMode={true}
-                  modules={[FreeMode, Autoplay]}
-                  breakpoints={{
-                    0: {
-                      slidesPerView: 1,
-                      spaceBetween: 15,
-                    },
-                    440: {
-                      slidesPerView: 2,
-                      spaceBetween: 20,
-                    },
-                    768: {
-                      slidesPerView: 3,
-                      spaceBetween: 40,
-                    },
-                  }}
-                  className="mySwiper  w-full "
-                >
+              <div className="overflow-hidden relative w-[100vw]  py-[10px] ">
+                <div className="overflow-x-auto scrollbar-hide flex pr-[50px] gap-8 w-[100vw]  ">
                   {productData &&
                     productData.map((data) => (
-                      <SwiperSlide key={data.id}>
-                        <ProductCard
-                          content={{
-                            ...data,
-                          }}
-                        />
-                      </SwiperSlide>
+                      <ProductCard
+                        key={data.id}
+                        content={{
+                          ...data,
+                        }}
+                      />
                     ))}
-                </Swiper>
+                </div>
               </div>
             ) : (
               <ProductCardGrid>
@@ -165,7 +113,7 @@ function Dashboard() {
           </div>
         </motion.div>
         {/*--------------------- --------------right sidebar layout -------------------------------- */}
-        <div className="xl:w-[455px] xl:h-screen overflow-y-auto overflow-x-hidden  border-l-2 border-[#E4E4E4]  bg-light ">
+        <div className="xl:w-[455px] xl:h-screen overflow-y-auto overflow-x-hidden  border-l-2 border-[#E4E4E4]  bg-light  md:pb-[160px]">
           {/* container  */}
           <div className=" px-[12px]  ">
             <h2 className="large-font text-secondary pt-4 text-left ">

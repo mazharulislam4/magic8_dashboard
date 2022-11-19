@@ -13,10 +13,14 @@ function BestSellingVariant() {
             <thead>
               <tr className="extra-small-font text-dark ">
                 <th></th>
-                <th className="pb-[20px] text-left">Variant</th>
-                <th className="pb-[20px] text-left">Price</th>
-                <th className="text-left  pb-[20px]">Revenue</th>
-                <th className="text-left pb-[20px]">Graph</th>
+                <th className="pb-[20px] extra-small-font text-left">
+                  Variant
+                </th>
+                <th className="pb-[20px] extra-small-font text-left">Price</th>
+                <th className="text-left extra-small-font  pb-[20px]">
+                  Revenue
+                </th>
+                <th className="text-left extra-small-font pb-[20px]">Graph</th>
               </tr>
             </thead>
 
