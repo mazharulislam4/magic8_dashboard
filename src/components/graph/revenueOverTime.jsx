@@ -19,10 +19,10 @@ function RevenueOverTime() {
   return (
     <div className="xl:w-[500px] w-full min-h-[400px] overflow-hidden  bg-[#F8F4FF] ">
       {/* header  */}
-      <div className="flex  pt-[10px] px-[10px]  justify-between items-center">
+      <div className="flex  pt-[10px] px-[10px] gap-x-2  justify-between items-center">
         <h2 className="text-[20px] font-[400]  ">Revenue over time</h2>
 
-        <div className=" flex  pt-[10px] md:w-[200px] w-[60%] shadow-sm rounded-md ">
+        <div className=" flex justify-end  pt-[10px] md:w-[180px] w-[40%] shadow-sm rounded-md shrink ">
           {/* select  */}
           <FilterByDays
             placeholder="This Month"

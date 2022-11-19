@@ -33,7 +33,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 3px;
-  height: 3px;
+  height: 4px;
   background-color: #efe4ff;
 }
 
@@ -48,7 +48,7 @@ body {
 }
 
 .best_selling_variant::-webkit-scrollbar {
-  height: 3px;
+  height: 4px;
   background-color: #efe4ff;
 }
 /*------------------ sidebar and navbar ------------- */

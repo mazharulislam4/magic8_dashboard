@@ -62,7 +62,7 @@ function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , pl
   return (
     <CustomSelect>
       <div
-        className=" px-[10px] py-[11px] flex  relative gap-2 items-center  border-[#EAEAEA] rounded-l-md bg-light  border-2   w-[120px] justify-center"
+        className=" px-[10px] py-[11px] flex  relative gap-2 items-center  border-[#EAEAEA] rounded-md bg-light  border-2   w-[120px] justify-center"
         style={styles}
       >
         <label
@@ -86,14 +86,14 @@ function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , pl
       </div>
       {/* date list  */}
       <div
-        className={` w-[150px] flex modal initial-font md:px-[15px]  py-[16px] rounded-md z-50 shadow-xl bg-light ${
+        className={` w-[198px] flex modal initial-font md:px-[15px]  py-[16px] rounded-md z-50 shadow-xl bg-light ${
           isDropdown ? "open" : ""
         } `}
       >
         {preData
           ? preData.map((day) => (
               <label
-                className="flex modal_item_label w-full  "
+                className="flex modal_item_label w-full my-2  "
                 htmlFor={day.label}
                 key={day.label}
               >
@@ -105,7 +105,7 @@ function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , pl
                 />
                 <span
                   className={`cursor-pointer  block 
-                py-[10px] px-[15px] text-[13px] w-full hover:bg-primary hover:text-light rounded-md`}
+                py-[5px] px-[15px] text-[13px] w-full hover:bg-primary hover:text-light rounded-md`}
                   onClick={(e) => {
                     e.stopPropagation();
                     getDataHandler(e);

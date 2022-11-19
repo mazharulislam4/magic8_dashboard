@@ -43,7 +43,7 @@ function ProductDetails() {
               </figure>
               {/* ========---------filter by days --------------======== */}
 
-              <div className="w-[250px] inline-block">
+              <div className="w-[180px] inline-block">
                 <FilterByDays
                   placeholder="Small / matcha"
                   willOpen={() => {
@@ -58,7 +58,7 @@ function ProductDetails() {
                   }}
                   preData={size}
                   data={selectData}
-                  styles={{ width: "250px" }}
+                  styles={{ width: "180px", padding:'5px 15px' }}
                 />
               </div>
               {/* vendor and product from vendor.jsx details  */}

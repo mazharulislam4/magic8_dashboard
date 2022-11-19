@@ -20,7 +20,7 @@ import styled from 'styled-components';
 const GraphBg = styled.div`
   position: absolute;
   top: -30px;
-  left: -10px;
+  left: -14px;
   width: 100%;
   height: 100%;
   &::after {
@@ -29,11 +29,12 @@ const GraphBg = styled.div`
     height: 100%;
     position: absolute;
     background-color: #fff;
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-    opacity: 0.9;
+    filter: blur(15px);
+    -webkit-filter: blur(25px);
+    opacity: 0.8;
     top: 0;
     left: 0;
+    border-radius: 10px;
   }
 `;
 
@@ -63,7 +64,7 @@ const nextBtn = useRef();
         } `}
       >
         <GraphBg>
-          <ProductCardGraph width={305} height={420} />
+          <ProductCardGraph width={315} height={430} />
         </GraphBg>
         <Card
           className={` pt-[16px] pb-[8px] px-[18px] ShopExplorerProductCard `}

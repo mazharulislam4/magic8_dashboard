@@ -12,12 +12,16 @@ function ProductCardGraph({width , height}) {
             name: "revenue",
             data: [
               {
+                x: 2009,
+                y: [205, 170, 180],
+              },
+              {
                 x: 2010,
-                y: [200, 210, 200],
+                y: [200, 210, 195],
               },
               {
                 x: 2011,
-                y: [190, 195, 210],
+                y: [190, 195, 205],
               },
               {
                 x: 2012,
@@ -25,11 +29,11 @@ function ProductCardGraph({width , height}) {
               },
               {
                 x: 2013,
-                y: [198, 198, 210],
+                y: [198, 198, 215],
               },
               {
                 x: 2014,
-                y: [200, 198, 250],
+                y: [200, 198, 230],
               },
               {
                 x: 2015,
@@ -37,23 +41,23 @@ function ProductCardGraph({width , height}) {
               },
               {
                 x: 2016,
-                y: 250,
+                y: 226,
               },
               {
                 x: 2017,
-                y: 260,
+                y: 239,
               },
               {
                 x: 2018,
-                y: 245,
+                y: 258,
               },
               {
                 x: 2019,
-                y: 280,
+                y: 255,
               },
               {
                 x: 2020,
-                y: 290,
+                y: 280,
               },
               {
                 x: 2021,
@@ -62,7 +66,7 @@ function ProductCardGraph({width , height}) {
 
               {
                 x: 2022,
-                y: 300,
+                y: 305,
               },
             ],
           },
@@ -73,6 +77,9 @@ function ProductCardGraph({width , height}) {
             toolbar: {
               show: false,
             },
+             animations:{
+        enabled: false,
+    },
             tools: {
               download: false,
               selection: false,

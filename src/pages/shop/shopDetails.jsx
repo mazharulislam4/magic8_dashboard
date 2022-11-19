@@ -46,8 +46,9 @@ function ShopDetails() {
               <BackButton />
             </div>
 
-            <StatistikCard />
-
+            <div className="overflow-x-auto my-[15px]">
+              <StatistikCard />
+            </div>
             {isMobile ? (
               <>
                 <div className="flex justify-between items-center">
