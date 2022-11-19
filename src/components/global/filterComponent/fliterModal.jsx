@@ -48,7 +48,12 @@ const FilterModalContainer = styled.div`
     background-color: #fff;
     border-radius: 10px;
     display: none;
+    -webkit-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    -o-transform: translateY(100px);
+    -ms-transform: translateY(100px);
     transform: translateY(100px);
+    -webkit-animation: fadeInModal 0.3s forwards linear;
     animation: fadeInModal 0.3s forwards linear;
   }
 
@@ -58,6 +63,10 @@ const FilterModalContainer = styled.div`
 
   @keyframes fadeInModal {
     to {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      -ms-transform: translateY(0);
       transform: translateY(0);
     }
   }
@@ -81,6 +90,9 @@ const FilterModalContainer = styled.div`
     width: 18px;
     height: 18px;
     background-color: #efefef;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
     border-radius: 100%;
     border: 1px solid #efe4ff;
     outline: 3px solid #efe4ff;

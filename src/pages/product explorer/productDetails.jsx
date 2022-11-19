@@ -32,7 +32,7 @@ function ProductDetails() {
     <div className="custom-container">
       <div className="xl:h-screen xl:flex xl:grow xl:overflow-hidden bg-light pb-[50px]">
         {/* main content  */}
-        <div className="md:px-[20px] xl:h-screen overflow-y-auto px-[10px] py-[20px] xl:pb-[150px]">
+        <div className="md:px-[20px] xl:h-screen hover:overflow-y-auto px-[10px] py-[20px] xl:pb-[150px]">
           <BackButton />
           <h2 className="large-font text-secondary my-[20px]">Men’s Hoodie</h2>
           <div className="flex  flex-wrap xl:justify-start  gap-y-[15px] ">
@@ -80,7 +80,10 @@ function ProductDetails() {
         </div>
 
         {/* aside  */}
-        <div className="xl:w-[600px] lg:w-[550px] xl:h-screen  overflow-y-auto overflow-x-hidden xl:pb-[150px]  py-[20px] px-2 ">
+        <div className="xl:w-[600px] lg:w-[550px] xl:h-screen  overflow-y-auto overflow-x-hidden xl:pb-[150px]  py-[10px]  px-2 md:my-[0] my-[20px] ">
+          <div>
+            <h2 className='extra-small-font text-secondary my-[10px]'>Others Product people are tracking</h2>
+          </div>
           <div className=" ">
             {isMobile ? (
               <div className="overflow-hidden relative w-[100vw]  py-[10px] ">
@@ -97,7 +100,7 @@ function ProductDetails() {
                 </div>
               </div>
             ) : (
-              <div className="my-[40px] flex xl:flex-col xl:items-center justify-center flex-wrap gap-x-8">
+              <div className=" flex xl:flex-col xl:items-center justify-center flex-wrap gap-x-8">
                 {products.map((data) => (
                   <ExplorerProductCard key={data.id} content={data} />
                 ))}

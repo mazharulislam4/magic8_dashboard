@@ -8,7 +8,7 @@ export default function ContactInfo({
   email = "example@gmail.com",
 }) {
   return (
-    <form className="md:w-[629px]">
+    <form className="md:w-[629px] w-full">
       <div>
         <h3 className="medium-font text-secondary  my-[25px]">
           Contact Information

@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { BiListUl } from 'react-icons/bi';
 import { BsFillGridFill } from 'react-icons/bs';
-const SwitchButton = () => {
+const SwitchButton = ({handler}) => {
   const [status, setStatus] = useState(false);
+
+  const switchHandler = ()=>{
+    if(status){
+       setStatus(false)
+    }else{
+      setStatus(true)
+    }
+  }
 
   return (
     <div className="p-5 flex flex-col items-center gap-1">
@@ -11,7 +19,10 @@ const SwitchButton = () => {
         <span className="text-[1.5rem]"><BsFillGridFill/></span>
       </div>
       <button
-        onClick={() => setStatus(!status)}
+        onClick={()=>{
+          handler();
+         switchHandler();
+        }}
         className="w-12 p-[3px] rounded-full bg-green relative"
       >
         <div

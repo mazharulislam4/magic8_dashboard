@@ -17,11 +17,11 @@ function Profile() {
         <div className="my-[10px] mx-2 ">
           <BackButton />
         </div>
-        <div className="flex flex-col items-center">
-          <div>
+        <div className="flex flex-col items-center ">
+          <div className="w-full md:w-auto">
             <ContactInfo />
           </div>
-          <div className="my-[20px]">
+          <div className="my-[20px] w-full md:w-auto">
             <UpdatePassword />
           </div>
           <div>

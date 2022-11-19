@@ -1,9 +1,8 @@
 import { motion, useWillChange } from "framer-motion";
 import React from "react";
+import { AiFillFire } from 'react-icons/ai';
 import styled from "styled-components";
-import "swiper/css";
-import "swiper/css/free-mode";
-// import "swiper/css/navigation";
+
 import ProductCard from "../../components/dashboard/productCard";
 import StoreCard from "../../components/dashboard/storeCard";
 import FilterComponent from "../../components/global/filterComponent/FilterComponent";
@@ -46,8 +45,11 @@ function Dashboard() {
 
           {/*-------------------------------- Trending store --------------------------------*/}
           <div className="my-[50px] ">
-            <h2 className="text-secondary large-font  w-[100%]  ">
+            <h2 className="text-secondary large-font flex gap-1  w-[100%]  ">
               Trending Stores
+              <span className="text-[#FF4545]">
+                <AiFillFire />
+              </span>
             </h2>
             {isMobile ? (
               <div className="overflow-hidden relative w-[100vw]  py-[10px] ">
@@ -80,8 +82,11 @@ function Dashboard() {
 
           {/* -----------------------------Trending product------------------------------ */}
           <div className="my-[50px] ">
-            <h2 className="text-secondary large-font my-[20px]  w-[100%]  ">
+            <h2 className="text-secondary large-font my-[20px] flex gap-1  w-[100%]  ">
               Trending Products
+              <span className="text-[#FF4545]">
+                <AiFillFire />
+              </span>
             </h2>
             {isMobile ? (
               <div className="overflow-hidden relative w-[100vw]  py-[10px] ">

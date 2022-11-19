@@ -18,7 +18,7 @@ const Btn = styled.button`
   }
 
   @media (max-width: 640px) {
-    padding: ${(props) => (props.padding ? props.padding : "10px 20px")};
+    padding: ${(props) => (props.padding ? props.padding : "10px 18px")};
     font-size: 14px;
   }
 `;

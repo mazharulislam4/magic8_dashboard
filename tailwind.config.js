@@ -21,7 +21,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         navbg: "url('./assets/image/navbg.svg')",
-        sidebarBg: "url('./assets/image/sidebarbg.svg')",
+        sidebarBg: "url('./assets/image/Sidebar Bg.svg')",
         cardBg: "url('./assets/image/hiddenProductBg.png')",
       },
     },

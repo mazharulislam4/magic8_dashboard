@@ -46,7 +46,7 @@ function Layout() {
    const [ earnManaModal, setEarnManaModal ] = useState(false);
   useEffect(() => {
     
-    if (width < 1350 && width > 1280) {
+    if (width < 1450 && width > 1280) {
       setAutoCollapse(true);
     } else {
       setAutoCollapse(false);

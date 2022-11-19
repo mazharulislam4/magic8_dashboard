@@ -1,8 +1,8 @@
 
 import ProgressBar from "react-animated-progress-bar";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import bottol from '../../assets/icon/bottol.svg';
-
 
 
 const NavHead = styled.div`
@@ -74,42 +74,44 @@ const ProgressContainer = styled.div`
  */
 
 const NavHeader = ({data}) => {
-  const { title, highLight, counter1, counter2, token, dividar, progPer, highLightColor } = data;
+  const { title, highLight, counter1, counter2, token, dividar, progPer, highLightColor , link} = data;
   
 
 
   return (
     <NavHead className="flex justify-between items-center  xl:gap-[70px] ">
-      <Title className="lg:text-center leading-[30px] py-[10px]  2xl:extra-lagre-font xl:large-font lg:medium-font md:small-font ">
-        {/* title  */}
-        <h1 className="sm:text-left md:text-center">
-          {title && title.includes(highLight)
-            ? title.replace(highLight, "")
-            : ""}
-          {/* highlight text into the title  */}
-          <strong
-            style={{ color: highLightColor }}
-            className="2xl:extra-lagre-font xl:large-font lg:medium-font "
-          >
-            {title && title.includes(highLight) ? highLight : ""}
-          </strong>
-        </h1>
-        <div className="flex gap-2 items-center md:justify-center">
-          <img  
-            src={bottol}
-            alt="mana collect bottol"
-            className=" bottol md:w-[21.65px] md:h-[25.8px] w-[16px] h-[18px] "
-          />
-          <p className="text-bold text-secondary">
-            <span>{counter1}</span>
-            {dividar}
-            <span>{counter2}</span>
-            &nbsp;
-            {/* display name of token (mana) */}
-            {token}
-          </p>
-        </div>
-      </Title>
+      <Link to={link}>
+        <Title className="lg:text-center leading-[30px] py-[10px]  2xl:extra-lagre-font xl:large-font lg:medium-font md:small-font ">
+          {/* title  */}
+          <h1 className="sm:text-left md:text-center">
+            {title && title.includes(highLight)
+              ? title.replace(highLight, "")
+              : ""}
+            {/* highlight text into the title  */}
+            <strong
+              style={{ color: highLightColor }}
+              className="2xl:extra-lagre-font xl:large-font lg:medium-font "
+            >
+              {title && title.includes(highLight) ? highLight : ""}
+            </strong>
+          </h1>
+          <div className="flex gap-2 items-center md:justify-center">
+            <img
+              src={bottol}
+              alt="mana collect bottol"
+              className=" bottol md:w-[21.65px] md:h-[25.8px] w-[16px] h-[18px] "
+            />
+            <p className="text-bold text-secondary">
+              <span>{counter1}</span>
+              {dividar}
+              <span>{counter2}</span>
+              &nbsp;
+              {/* display name of token (mana) */}
+              {token}
+            </p>
+          </div>
+        </Title>
+      </Link>
       <ProgressContainer>
         <ProgressBar
           width="100%"

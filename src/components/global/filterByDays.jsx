@@ -5,6 +5,8 @@ const CustomSelect = styled.div`
   position: relative;
 
   .modal {
+    -webkit-transform: translateY(80px);
+    -moz-transform: translateY(80px);
     transform: translateY(80px);
     opacity: 1;
     position: absolute;
@@ -16,11 +18,15 @@ const CustomSelect = styled.div`
   .modal.open {
     opacity: 0;
     display: block;
+    -webkit-animation: slideUp 0.3s forwards linear;
     animation: slideUp 0.3s forwards linear;
   }
 
   @keyframes slideUp {
     to {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      transform: translateY(0);
       transform: translateY(0);
       opacity: 1;
     }
@@ -34,7 +40,7 @@ const CustomSelect = styled.div`
   }
 
   .modal_item_label input[type="radio"]:checked ~ span {
-    background-color: #8646EE;
+    background-color: #8646ee;
     color: #ffffff;
   }
 `;
@@ -56,7 +62,7 @@ function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , pl
   return (
     <CustomSelect>
       <div
-        className=" px-[10px] py-[11px] flex  relative gap-2 items-center  border-[#EAEAEA] rounded-l-md bg-light  border-2   md:min-w-[120px] justify-center w-[120px] "
+        className=" px-[10px] py-[11px] flex  relative gap-2 items-center  border-[#EAEAEA] rounded-l-md bg-light  border-2   w-[120px] justify-center"
         style={styles}
       >
         <label
@@ -69,18 +75,18 @@ function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , pl
             readOnly
             id={id}
             placeholder={placeholder}
-            className="py-[8px]  placeholder:text-center bg-transparent text-secondary placeholder:text-secondary medium-font placeholder:extra-small-font focus:outline-none cursor-pointer w-[100%] block "
+            className="py-[8px]  placeholder:text-center bg-transparent text-secondary placeholder:text-secondary text-[13px] placeholder:extra-small-font focus:outline-none cursor-pointer w-[100%] block "
             onClick={(e) => {
               e.stopPropagation();
               willOpen();
             }}
           />
-          <img src={arrowIcon} alt="selece" width={30} />
+          <img src={arrowIcon} alt="selece" width={20} />
         </label>
       </div>
       {/* date list  */}
       <div
-        className={`md:w-[220px] w-[195px] flex modal initial-font md:px-[15px]  py-[16px] rounded-md z-50 shadow-xl bg-light ${
+        className={` w-[150px] flex modal initial-font md:px-[15px]  py-[16px] rounded-md z-50 shadow-xl bg-light ${
           isDropdown ? "open" : ""
         } `}
       >
@@ -99,7 +105,7 @@ function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , pl
                 />
                 <span
                   className={`cursor-pointer  block 
-                py-[10px] px-[15px]  w-full hover:bg-primary hover:text-light rounded-md`}
+                py-[10px] px-[15px] text-[13px] w-full hover:bg-primary hover:text-light rounded-md`}
                   onClick={(e) => {
                     e.stopPropagation();
                     getDataHandler(e);

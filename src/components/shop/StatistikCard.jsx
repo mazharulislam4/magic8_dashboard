@@ -111,7 +111,7 @@ const card = ` flex  flex-col justify-center  w-full`;
     <div className="border-2 border-[#E4E4E4] py-[10px] rounded-md px-[10px]">
       {/* part 1 */}
 
-      <div className={`${card} pl-[0] w-[50%] mb-[15px]`}>
+      <div className={`${card} pl-[0] w-[40%] mb-[15px]`}>
         <FilterByDays
           placeholder="7 days"
           willOpen={() => {

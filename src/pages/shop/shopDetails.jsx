@@ -38,7 +38,7 @@ function ShopDetails() {
   return (
     <div className="custom-container">
       <div className=" xl:flex   bg-light rounded-t-xl  ">
-        <div className="md:px-[8px] xl:h-screen overflow-y-auto grow  py-[20px] xl:pb-[120px] ">
+        <div className="md:px-[8px] xl:h-screen overflow-y-auto overflow-x-hidden grow  py-[20px] xl:pb-[120px] ">
           {/*--------------------------------------- main content -------------------------- */}
           {/*----------- back button --------------- */}
           <section className="md:px-[25px]">
@@ -91,7 +91,7 @@ function ShopDetails() {
                 Stores others have tracked
               </h2>
               {isMobile ? (
-                <div className="overflow-hidden relative w-[100vw]  py-[10px] ">
+                <div className="overflow-hidden scrollbar-hide relative w-[100vw]  py-[10px] ">
                   <div className="overflow-x-auto scrollbar-hide flex pr-[50px] gap-8 w-[100vw]  ">
                     {storeData &&
                       storeData.map((data) => (

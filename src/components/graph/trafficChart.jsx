@@ -59,9 +59,9 @@ class TrafficChart extends Component {
             ["Search"],
             ["Direct"],
             ["Social"],
-            ["Paid", "refferal"],
-            ["mail"],
-            ["refferal"],
+            ["Paid", "Refferal"],
+            ["Mail"],
+            ["Refferal"],
           ],
 
           labels: {

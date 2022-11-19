@@ -1,13 +1,12 @@
-import React from "react";
-import Chart from "react-apexcharts";
-// import graphbg from '../../assets/image/graphbg.svg';
-function RevenueChart({ width, height }) {
+import React from 'react';
+import Chart from 'react-apexcharts';
+function ProductCardGraph({width , height}) {
   return (
-    <div className="revenue-chart">
+    <div>
       <Chart
         type="area"
-        width={width}
-        height={height}
+        width={width ? width : 100}
+        height={height ? height : 100}
         series={[
           {
             name: "revenue",
@@ -22,15 +21,15 @@ function RevenueChart({ width, height }) {
               },
               {
                 x: 2012,
-                y: 210,
+                y: [198, 190, 220],
               },
               {
                 x: 2013,
-                y: 230,
+                y: [198, 198, 210],
               },
               {
                 x: 2014,
-                y: 240,
+                y: [200, 198, 250],
               },
               {
                 x: 2015,
@@ -70,7 +69,7 @@ function RevenueChart({ width, height }) {
         ]}
         options={{
           chart: {
-            foreColor: '#c9aaff',
+            foreColor: "#c9aaff",
             toolbar: {
               show: false,
             },
@@ -84,9 +83,9 @@ function RevenueChart({ width, height }) {
               reset: false,
             },
 
-            zoom:{
-              enabled:false,
-            }
+            zoom: {
+              enabled: false,
+            },
           },
           colors: ["#8646EE"],
           fill: {
@@ -105,12 +104,13 @@ function RevenueChart({ width, height }) {
             },
           },
           grid: {
-            show: true,
+            show: false,
             strokeDashArray: 4,
             position: "back",
           },
           xaxis: {
             type: "datetime",
+            show: false,
             axisBorder: {
               show: false,
             },
@@ -118,7 +118,7 @@ function RevenueChart({ width, height }) {
               show: false,
             },
             labels: {
-              show: true,
+              show: false,
               rotateAlways: false,
               hideOverlappingLabels: true,
               showDuplicates: false,
@@ -130,7 +130,6 @@ function RevenueChart({ width, height }) {
                 fontSize: "12px",
                 fontFamily: "poppins",
                 fontWeight: 400,
-                cssClass: "apexcharts-xaxis-label",
               },
             },
           },
@@ -179,4 +178,4 @@ function RevenueChart({ width, height }) {
   );
 }
 
-export default RevenueChart;
+export default ProductCardGraph
