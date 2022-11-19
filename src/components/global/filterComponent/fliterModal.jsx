@@ -43,7 +43,7 @@ const FilterModalContainer = styled.div`
 
   .modal {
     width: 100vw;
-    min-height: 300px;
+    min-height: 200px;
     padding: 12px 10px;
     background-color: #fff;
     border-radius: 10px;
