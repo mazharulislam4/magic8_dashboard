@@ -93,7 +93,7 @@ function ShopDetails() {
               </h2>
               {isMobile ? (
                 <div className="overflow-hidden scrollbar-hide relative w-[100vw]  py-[10px] ">
-                  <div className="overflow-x-auto scrollbar-hide flex pr-[50px] gap-3 w-[100vw]  ">
+                  <div className="overflow-x-auto scrollbar-hide flex pr-[50px] gap-5 w-[100vw]  ">
                     {storeData &&
                       storeData.map((data) => (
                         <StoreCard
