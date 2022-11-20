@@ -10,8 +10,8 @@ import styled from "styled-components";
 
 const GraphBg = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 88px;
+  left: -4px;
   width: 100%;
   height: 100%;
   opacity: 1;
@@ -53,7 +53,7 @@ function StoreCard({content}) {
         {/* content body */}
 
         <GraphBg>
-          <ProductCardGraph width={320} height={330} />
+          <ProductCardGraph width={350} height={350} />
         </GraphBg>
 
         <Card className="w-[18.5rem] h-[320px] px-[21px] py-[16px]">
@@ -71,7 +71,7 @@ function StoreCard({content}) {
                 {/*-------------- searcht avg value ---------- */}
                 <span className="font-[400]">+{content?.searchAvg}%</span>
               </p>
-              <p className="text-secondary flex gap-3 items-center mt-[13px]">
+              <p className=" small-font text-secondary flex gap-3 items-center mt-[13px]">
                 <span>
                   <img
                     src={signalIcon}

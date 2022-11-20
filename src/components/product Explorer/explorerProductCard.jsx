@@ -79,7 +79,7 @@ const nextBtn = useRef();
           <div className="card-head">
             {/* ----------------heart button product save --------------------------------------- */}
             <div className="flex justify-between items-center">
-              <h2 className="text-dark initial-font mb-[14px] pt-[4px]">
+              <h2 className="text-dark extra-small-font mb-[14px] pt-[4px]">
                 Created By {content?.date}
               </h2>
               <button type="button">
@@ -100,7 +100,7 @@ const nextBtn = useRef();
                   {/*-------------- searcht avg value ---------- */}
                   <span className="font-[400]">+{content?.avgRevenue}%</span>
                 </p>
-                <p className="text-secondary flex gap-1 items-center mt-[10px]">
+                <p className="small-font text-secondary flex gap-1 items-center mt-[10px]">
                   <img src={heart} alt="save prodcut" />
 
                   <span> {content?.tracking} Other Tracking</span>

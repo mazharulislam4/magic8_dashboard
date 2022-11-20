@@ -10,8 +10,8 @@ import styled from 'styled-components';
 
 const GraphBg = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
+  top:88px;
+  left: -6px;
   width: 100%;
   height: 100%;
   opacity: 1;
@@ -70,7 +70,7 @@ function ProductCard({ content }) {
         </GraphBg>
 
         <Card className="px-[21px] py-[16px] bg-transparent ">
-          <h2 className="text-dark initial-font mb-[14px] pt-[4px]">
+          <h2 className="text-dark small-font font-[400] mb-[14px] pt-[4px]">
             Created By {content?.date}
           </h2>
           <div>

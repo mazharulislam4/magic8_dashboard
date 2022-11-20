@@ -17,8 +17,8 @@ import styled from 'styled-components';
 
 const GraphBg = styled.div`
   position: absolute;
-  top: 55px;
-  left: -6px;
+  top: 88px;
+  left: -7px;
   width: 100%;
   height: 100%;
   opacity: 1;
@@ -95,7 +95,7 @@ console.log(content);
                   {/*-------------- searcht avg value ---------- */}
                   <span className="font-[400]">+{content?.avgSearch}%</span>
                 </p>
-                <p className="text-secondary flex gap-3 items-center mt-[13px]">
+                <p className=" small-font text-secondary flex gap-3 items-center mt-[13px]">
                   <span>
                     <img
                       src={signalIcon}
