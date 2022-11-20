@@ -12,8 +12,8 @@ const ProductCardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.18rem, 1fr));
 
-  grid-column-gap: 30px;
-  grid-row-gap: 50px;
+  grid-column-gap: 35px;
+  grid-row-gap: 30px;
   place-items: center stretch;
   @media (max-width: 1024px) {
     place-items: center;
@@ -58,7 +58,7 @@ function Shop() {
           {/* products  */}
 
           {!isList ? (
-            <ProductCardGrid className="my-[40px]">
+            <ProductCardGrid className="my-[20px]">
               {stores.map((data) => (
                 <ShopStoreCard key={data.id} content={data} />
               ))}
