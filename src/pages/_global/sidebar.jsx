@@ -48,7 +48,7 @@ export const MenuItem = ({ toggleHandler, autoCollapse }) => {
                     {data.title}
                   </NavLink>
                 ) : (
-                  <Tooltip title={data.title}>
+                  <Tooltip title={data.title}  placement = 'right' >
                     <NavLink
                       key={data.id}
                       to={data.link}

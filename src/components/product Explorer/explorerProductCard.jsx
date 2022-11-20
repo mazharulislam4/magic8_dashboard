@@ -66,7 +66,11 @@ const nextBtn = useRef();
         } `}
       >
         <GraphBg>
-          <ProductCardGraph width={290} height={380} />
+          {content && content.status === "Brand" ? (
+            ""
+          ) : (
+            <ProductCardGraph width={290} height={380} />
+          )}
         </GraphBg>
         <Card
           className={` pt-[16px] pb-[8px] px-[18px] ShopExplorerProductCard `}
@@ -107,7 +111,7 @@ const nextBtn = useRef();
 
           {/* card graph  */}
           {content && content.status === "Brand" ? (
-            <div className="mb-[8px] h-[110px] mt-[-20px]  overflow-hidden">
+            <div className="mb-[8px] h-[110px] mt-[-20px]  w-full flex justify-center  overflow-hidden">
               <RevenueChart width="289" height="110" />
             </div>
           ) : (

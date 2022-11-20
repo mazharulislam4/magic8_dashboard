@@ -69,7 +69,11 @@ console.log(content);
         } `}
       >
         <GraphBg>
-          <ProductCardGraph width={295} height={390} />
+          {content && content.status === "Brand" ? (
+            ""
+          ) : (
+            <ProductCardGraph width={290} height={380} />
+          )}
         </GraphBg>
 
         <Card
@@ -122,7 +126,7 @@ console.log(content);
 
           {/* card graph  */}
           {content && content.status === "Brand" ? (
-            <div className="mb-[18px] h-[120px] overflow-hidden bg-transparent">
+            <div className="mb-[18px] h-[120px] w-full flex justify-center overflow-hidden bg-transparent">
               <RevenueChart width="289" height="110" />
             </div>
           ) : (

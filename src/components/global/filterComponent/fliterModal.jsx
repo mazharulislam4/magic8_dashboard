@@ -18,20 +18,6 @@ const FilterModalContainer = styled.div`
   animation: fadeIn 0.5s linear forwards;
   -webkit-animation: fadeIn 0.5s linear forwards;
 
-  @media (min-width: 768px) {
-    width: auto;
-    height: auto;
-    position: absolute;
-    top: calc(100% + 10%);
-    overflow: hidden;
-    background-color: transparent;
-
-    .modal {
-      max-width: 230px;
-      min-height: 200px;
-    }
-  }
-
   &.modal_active {
     display: flex;
   }
@@ -110,7 +96,7 @@ const FilterModalContainer = styled.div`
 
   .radio_label .checkmark {
     width: 21px;
-    height:21px;
+    height: 21px;
     background-color: #efefef;
     border-radius: 100%;
     border: 4px solid #efe4ff;
@@ -122,6 +108,20 @@ const FilterModalContainer = styled.div`
 
   .radio_label input[type="radio"]:checked ~ .checkmark {
     background-color: #7942d1;
+  }
+
+  @media (min-width: 768px) {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: calc(100% + 10%);
+    overflow: hidden;
+    background-color: transparent;
+
+    .modal {
+      max-width: 230px;
+      min-height: 200px;
+    }
   }
 `;
 
