@@ -67,7 +67,7 @@ function RevenueOverTime() {
 
       {/* graph  */}
       <div className='mt-[20px] w-full'>
-        <RevenueChart cWidth={500} height = {350} />
+        <RevenueChart cWidth={500} height = {350} isAnimation = {true} />
       </div>
     </div>
   );

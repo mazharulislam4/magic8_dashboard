@@ -1,7 +1,7 @@
 import React from "react";
 import Chart from "react-apexcharts";
 // import graphbg from '../../assets/image/graphbg.svg';
-function RevenueChart({ width, height }) {
+function RevenueChart({ width, height  , isAnimation}) {
   return (
     <div className="revenue-chart">
       <Chart
@@ -83,7 +83,9 @@ function RevenueChart({ width, height }) {
               pan: false,
               reset: false,
             },
-
+animations:{
+enabled: isAnimation ? isAnimation : true,
+},
             zoom:{
               enabled:false,
             }

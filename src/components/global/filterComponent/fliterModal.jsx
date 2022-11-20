@@ -65,31 +65,31 @@ const FilterModalContainer = styled.div`
 
   @-webkit-keyframes fadeInModal {
     to {
-      transform: translateY(0);
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-      -o-transform: translateY(0);
-      -ms-transform: translateY(0);
+      transform: translateY(-30px);
+      -webkit-transform: translateY(-30px);
+      -moz-transform: translateY(-30px);
+      -o-transform: translateY(-30px);
+      -ms-transform: translateY(-30px);
     }
   }
 
   @-moz-keyframes fadeInModal {
     to {
-      transform: translateY(0);
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-      -o-transform: translateY(0);
-      -ms-transform: translateY(0);
+      transform: translateY(-30px);
+      -webkit-transform: translateY(-30px);
+      -moz-transform: translateY(-30px);
+      -o-transform: translateY(-30px);
+      -ms-transform: translateY(-30px);
     }
   }
 
   @keyframes fadeInModal {
     to {
-      transform: translateY(0);
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-      -o-transform: translateY(0);
-      -ms-transform: translateY(0);
+      transform: translateY(-30px);
+      -webkit-transform: translateY(-30px);
+      -moz-transform: translateY(-30px);
+      -o-transform: translateY(-30px);
+      -ms-transform: translateY(-30px);
     }
   }
 
@@ -109,15 +109,15 @@ const FilterModalContainer = styled.div`
   }
 
   .radio_label .checkmark {
-    width: 18px;
-    height: 18px;
+    width: 21px;
+    height:21px;
     background-color: #efefef;
+    border-radius: 100%;
+    border: 4px solid #efe4ff;
+    offset: 3px;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     -ms-border-radius: 100%;
-    border-radius: 100%;
-    border: 1px solid #efe4ff;
-    outline: 3px solid #efe4ff;
   }
 
   .radio_label input[type="radio"]:checked ~ .checkmark {

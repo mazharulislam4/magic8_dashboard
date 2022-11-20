@@ -3,21 +3,35 @@ import { AiFillHeart } from 'react-icons/ai';
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import bottol from "../../assets/icon/bottol.svg";
-// import RevenueChart from "../graph/revenuChart";
-import ProductCardGraph from "../graph/productCardGraph";
+
+ import ProductCardGraph from "../graph/productCardGraph";
 // styled component 
 import styled from 'styled-components';
 
 const GraphBg = styled.div`
   position: absolute;
-  top: 10px;
-  left: -12px;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.8;
-  filter: blur(3px);
-  -webkit-filter: blur(3px);
+  opacity: 1;
+  filter: blur(5px);
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    background-size: cover;
+    opacity: 0.6;
+    filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
 `;
+
+
 
 const Card = styled.div`
   position: absolute;
@@ -26,6 +40,7 @@ const Card = styled.div`
   width: 100%;
   height: 100%;
   background: transparent;
+  z-index: 2;
 `;
 
 
@@ -50,7 +65,7 @@ function ProductCard({ content }) {
       <div className="w-[289px] h-[320px] rounded-md  relative product_card_shadow  overflow-hidden  ">
         {/* content body */}
         <GraphBg>
-          <ProductCardGraph width={310} height={320} />
+          <ProductCardGraph  />
         </GraphBg>
 
         <Card className="px-[21px] py-[16px] bg-transparent ">

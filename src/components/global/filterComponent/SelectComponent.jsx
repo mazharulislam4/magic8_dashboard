@@ -21,7 +21,7 @@ function SelectComponent({
         <div
           className={`${pickerContainer} ${name === "revenue" && "min-w-[130px] md:w-[135px]"} ${
             name === "average" && "min-w-[240px] md:w-[235px] "
-          } ${name === "country" && "min-w-[140px] md:w-[130px] "}  `}
+          } ${name === "country" && "min-w-[140px] md:w-[130px] "} ${name === 'date' && 'min-w-[140px] md:w-[135px]'}  `}
         >
           <input
             type="text"

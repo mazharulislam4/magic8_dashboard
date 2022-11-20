@@ -11,12 +11,24 @@ import styled from "styled-components";
 const GraphBg = styled.div`
   position: absolute;
   top: 0;
-  left: -12px;
+  left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.8;
-  filter: blur(3px);
-  -webkit-filter: blur(3px);
+  opacity: 1;
+  filter: blur(5px);
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    background-size: cover;
+    opacity: 0.6;
+    filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
 `;
 
 const Card = styled.div`
@@ -26,10 +38,8 @@ const Card = styled.div`
   width: 100%;
   height: 100%;
   background: transparent;
+  z-index: 2;
 `;
-
-
-
 
 
 

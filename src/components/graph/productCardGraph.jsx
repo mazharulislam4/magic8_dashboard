@@ -1,188 +1,39 @@
-import React from 'react';
-import Chart from 'react-apexcharts';
-function ProductCardGraph({width , height}) {
+
+import { FiArrowUpRight } from "react-icons/fi";
+import signalIcon from "../../assets/icon/fi-rr-signal-alt.svg";
+import RevenueChart from "./revenuChart";
+function PrductCardGraph({gWidht , gHeight}) {
+
+
   return (
-    <div>
-      <Chart
-        type="area"
-        width={width ? width : 100}
-        height={height ? height : 100}
-        series={[
-          {
-            name: "revenue",
-            data: [
-              {
-                x: 2009,
-                y: [205, 170, 180],
-              },
-              {
-                x: 2010,
-                y: [200, 210, 195],
-              },
-              {
-                x: 2011,
-                y: [190, 195, 205],
-              },
-              {
-                x: 2012,
-                y: [198, 190, 220],
-              },
-              {
-                x: 2013,
-                y: [198, 198, 215],
-              },
-              {
-                x: 2014,
-                y: [200, 198, 230],
-              },
-              {
-                x: 2015,
-                y: 235,
-              },
-              {
-                x: 2016,
-                y: 226,
-              },
-              {
-                x: 2017,
-                y: 239,
-              },
-              {
-                x: 2018,
-                y: 258,
-              },
-              {
-                x: 2019,
-                y: 255,
-              },
-              {
-                x: 2020,
-                y: 280,
-              },
-              {
-                x: 2021,
-                y: 275,
-              },
+    <div className="w-[300px] h-[320px] overflow-hidden  bg-[#F8F4FF] ">
+      <div className="px-[10px]  flex">
+        {/*------------ search value --------------- */}
+        <div>
+          <p className="text-dark small-font ">Search Volume</p>
+          <h3 className="medium-font text-secondary font-bold ">300000</h3>
+          <p className="small-font text-green  flex gap-1 items-center my-[4px]">
+            <span>
+              <FiArrowUpRight />
+            </span>
+            {/*-------------- searcht avg value ---------- */}
+            <span className="font-[400]">+40.5%</span>
+          </p>
+        </div>
+        <p className="text-secondary flex gap-3 items-center mt-[2px]">
+          <span>
+            <img src={signalIcon} alt="mana icon" width={16} height={12} />
+          </span>
+          <span>4 Other Tracking</span>
+        </p>
+      </div>
 
-              {
-                x: 2022,
-                y: 305,
-              },
-            ],
-          },
-        ]}
-        options={{
-          chart: {
-            foreColor: "#c9aaff",
-            toolbar: {
-              show: false,
-            },
-             animations:{
-        enabled: false,
-    },
-            tools: {
-              download: false,
-              selection: false,
-              zoom: false,
-              zoomin: false,
-              zoomout: false,
-              pan: false,
-              reset: false,
-            },
-
-            zoom: {
-              enabled: false,
-            },
-          },
-          colors: ["#8646EE"],
-          fill: {
-            colors: undefined,
-            opacity: 0,
-            gradient: {
-              shade: "dark",
-              type: "horizontal",
-              shadeIntensity: 0.5,
-              gradientToColors: undefined,
-              inverseColors: false,
-              opacityFrom: 0,
-              opacityTo: 0,
-              stops: [0, 50, 100],
-              colorStops: [],
-            },
-          },
-          grid: {
-            show: false,
-            strokeDashArray: 4,
-            position: "back",
-          },
-          xaxis: {
-            type: "datetime",
-            show: false,
-            axisBorder: {
-              show: false,
-            },
-            axisTicks: {
-              show: false,
-            },
-            labels: {
-              show: false,
-              rotateAlways: false,
-              hideOverlappingLabels: true,
-              showDuplicates: false,
-              trim: false,
-              minHeight: undefined,
-              maxHeight: 120,
-              style: {
-                colors: ["#c9aaff"],
-                fontSize: "12px",
-                fontFamily: "poppins",
-                fontWeight: 400,
-              },
-            },
-          },
-
-          tooltip: {
-            x: {
-              format: "yyyy",
-            },
-            fixed: {
-              enabled: false,
-              position: "topRight",
-            },
-          },
-
-          labels: ["2019", "2020", "2021", "2022"],
-          yaxis: {
-            show: false,
-            labels: {
-              show: false,
-              type: "datetime",
-            },
-            axisBorder: {
-              show: true,
-            },
-            axisTicks: {
-              show: false,
-            },
-          },
-          stroke: {
-            show: true,
-            curve: "smooth",
-            lineCap: "butt",
-            colors: undefined,
-            width: 3,
-            dashArray: 0,
-          },
-          legend: {
-            show: false,
-          },
-          dataLabels: {
-            enabled: false,
-          },
-        }}
-      />
+      {/* graph  */}
+      <div className=" w-full transform translate-y-[-80px]">
+        <RevenueChart cWidth={gWidht ? gWidht : '289'} height={gHeight ? gHeight : '350'} isAnimation = {false} />
+      </div>
     </div>
   );
 }
 
-export default ProductCardGraph
+export default PrductCardGraph;

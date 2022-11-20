@@ -17,13 +17,25 @@ import styled from 'styled-components';
 
 const GraphBg = styled.div`
   position: absolute;
-  top: 30px;
-  left: -13px;
+  top: 65px;
+  left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.8;
-  filter: blur(3px);
-  -webkit-filter: blur(3px);
+  opacity: 1;
+  filter: blur(5px);
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    background-size: cover;
+    opacity: 0.6;
+    filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
 `;
 
 const Card = styled.div`
@@ -33,6 +45,7 @@ const Card = styled.div`
   width: 100%;
   height: 100%;
   background: transparent;
+  z-index: 3;
 `;
 
 
@@ -42,6 +55,7 @@ function ProdcutCard({content , isExpired}) {
 const prevBtn = useRef()
 const nextBtn = useRef();
 
+console.log(content);
 
   return (
     <div>
@@ -54,7 +68,7 @@ const nextBtn = useRef();
         } `}
       >
         <GraphBg>
-          <ProductCardGraph width={315} height={355} />
+          <ProductCardGraph width = {290} height = {350}  />
         </GraphBg>
 
         <Card
@@ -106,15 +120,15 @@ const nextBtn = useRef();
           </div>
 
           {/* card graph  */}
-          {content && content.status === "brand" ? (
-            <div className="mb-[18px] h-[120px] overflow-hidden">
+          {content && content.status === "Brand" ? (
+            <div className="mb-[18px] h-[120px] overflow-hidden bg-transparent">
               <RevenueChart height="auto" width="100%" />
             </div>
           ) : (
             ""
           )}
           {/* card carusel  */}
-          {content && content.status === "brand" ? (
+          {content && content.status === "Brand" ? (
             <div>
               <h4 className="text-[12px] text-secondary pb-[6px]">
                 Top Seller
@@ -125,7 +139,7 @@ const nextBtn = useRef();
                   <img src={leftArrow} alt="" width={8} height={7} />
                 </button>
                 {/* slides  */}
-                <div className=" flex gap-x-2 overflow-hidden px-[12px]">
+                <div className=" flex gap-x-2 bg-transparent overflow-hidden px-[12px]">
                   <Swiper
                     slidesPerView={3}
                     spaceBetween={5}
@@ -215,7 +229,7 @@ const nextBtn = useRef();
                 </Link>
               </button>
 
-              {(content && content.status === "hidden") || isExpired ? (
+              {(content && content.status === "Hidden") || isExpired ? (
                 <h4 className="text-[12px] text-[#FF4545] my-[15px] text-center ">
                   Lasts 7 days
                 </h4>

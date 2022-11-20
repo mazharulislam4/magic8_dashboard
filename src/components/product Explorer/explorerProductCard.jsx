@@ -16,15 +16,28 @@ import RevenueChart from "../graph/revenuChart";
 // styled component 
 import styled from 'styled-components';
 
+
 const GraphBg = styled.div`
   position: absolute;
-  top: 10px;
-  left: -13px;
+  top: 60px;
+  left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.8;
-  filter: blur(4px);
-  -webkit-filter: blur(3px);
+  opacity: 1;
+  filter: blur(6px);
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    background-size: cover;
+    opacity: 0.6;
+    filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
 `;
 
 const Card = styled.div`
@@ -34,7 +47,9 @@ const Card = styled.div`
   width: 100%;
   height: 100%;
   background: transparent;
+  z-index: 3;
 `;
+
 
 function ExplorerProductCard({ content, isExpired }) {
 const prevBtn = useRef();
@@ -51,7 +66,7 @@ const nextBtn = useRef();
         } `}
       >
         <GraphBg>
-          <ProductCardGraph width={315} height={350} />
+          <ProductCardGraph width={290} height={380} />
         </GraphBg>
         <Card
           className={` pt-[16px] pb-[8px] px-[18px] ShopExplorerProductCard `}
@@ -91,7 +106,7 @@ const nextBtn = useRef();
           </div>
 
           {/* card graph  */}
-          {content && content.status === "brand" ? (
+          {content && content.status === "Brand" ? (
             <div className="mb-[8px] h-[110px] mt-[-20px] overflow-hidden">
               <RevenueChart width="100%" height="auto" />
             </div>
@@ -99,7 +114,7 @@ const nextBtn = useRef();
             ""
           )}
           {/* card carusel  */}
-          {content && content.status === "brand" ? (
+          {content && content.status === "Brand" ? (
             <div>
               <h4 className="text-[12px] text-secondary pb-[6px]">
                 Top Seller
@@ -200,7 +215,7 @@ const nextBtn = useRef();
                 </button>
               </Link>
 
-              {(content && content.status === "hidden") || isExpired ? (
+              {(content && content.status === "Hidden") || isExpired ? (
                 <h4 className="text-[12px] text-[#FF4545] my-[8px] text-center ">
                   Lasts 7 days
                 </h4>
