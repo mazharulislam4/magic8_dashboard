@@ -3,30 +3,20 @@ import { AiFillHeart } from 'react-icons/ai';
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import bottol from "../../assets/icon/bottol.svg";
+// import RevenueChart from "../graph/revenuChart";
 import ProductCardGraph from "../graph/productCardGraph";
-
 // styled component 
 import styled from 'styled-components';
 
 const GraphBg = styled.div`
   position: absolute;
-  top: -65px;
-  left: -14px;
+  top: 10px;
+  left: -12px;
   width: 100%;
   height: 100%;
-  &::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: #fff;
-    filter: blur(25px);
-    -webkit-filter: blur(25px);
-    opacity: 0.9;
-    top: 0;
-    left: 0;
-    border-radius: 10px;
-  }
+  opacity: 0.8;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
 `;
 
 const Card = styled.div`
@@ -35,6 +25,7 @@ const Card = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  background: transparent;
 `;
 
 
@@ -56,13 +47,13 @@ function ProductCard({ content }) {
     <div>
       <h2 className="medium-font text-dark my-3 ml-2">{content?.status}</h2>
       {/* card  */}
-      <div className="w-[289px] h-[320px] rounded-md  relative product_card_shadow  overflow-hidden">
+      <div className="w-[289px] h-[320px] rounded-md  relative product_card_shadow  overflow-hidden  ">
         {/* content body */}
         <GraphBg>
-          <ProductCardGraph width={320} height={430} />
+          <ProductCardGraph width={310} height={320} />
         </GraphBg>
 
-        <Card className="px-[21px] py-[16px]">
+        <Card className="px-[21px] py-[16px] bg-transparent ">
           <h2 className="text-dark initial-font mb-[14px] pt-[4px]">
             Created By {content?.date}
           </h2>
@@ -100,7 +91,7 @@ function ProductCard({ content }) {
           <Link to="/product_details">
             <button
               type="button"
-              className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px]"
+              className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] shadow-sm py-[14px]"
             >
               Reveal This Product
             </button>

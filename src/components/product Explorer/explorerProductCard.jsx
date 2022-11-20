@@ -11,31 +11,20 @@ import leftArrow from "../../assets/icon/leftArrow.svg";
 import rightArrow from "../../assets/icon/rightArrow.svg";
 import productSaveHeart from "../../assets/icon/saveHeart.png";
 import sellerImg from "../../assets/image/seller.svg";
-import ProductCardGraph from '../graph/productCardGraph';
+import ProductCardGraph from "../graph/productCardGraph";
 import RevenueChart from "../graph/revenuChart";
-
 // styled component 
 import styled from 'styled-components';
 
 const GraphBg = styled.div`
   position: absolute;
-  top: -30px;
-  left: -14px;
+  top: 10px;
+  left: -13px;
   width: 100%;
   height: 100%;
-  &::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: #fff;
-    filter: blur(15px);
-    -webkit-filter: blur(25px);
-    opacity: 0.8;
-    top: 0;
-    left: 0;
-    border-radius: 10px;
-  }
+  opacity: 0.8;
+  filter: blur(4px);
+  -webkit-filter: blur(3px);
 `;
 
 const Card = styled.div`
@@ -44,8 +33,8 @@ const Card = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  background: transparent;
 `;
-
 
 function ExplorerProductCard({ content, isExpired }) {
 const prevBtn = useRef();
@@ -58,13 +47,11 @@ const nextBtn = useRef();
 
       <div
         className={`card w-[289px] h-[380px] rounded-md product_card_shadow ShopExplorerProductCard relative overflow-hidden ${
-          content && content.status === "brand"
-            ? "bg-light"
-            : "bg-cardBg bg-center bg-no-repeat object-cover"
+          content && content.status === "brand" ? "bg-light" : ""
         } `}
       >
         <GraphBg>
-          <ProductCardGraph width={315} height={430} />
+          <ProductCardGraph width={315} height={350} />
         </GraphBg>
         <Card
           className={` pt-[16px] pb-[8px] px-[18px] ShopExplorerProductCard `}

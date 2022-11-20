@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import useIsMobile from "../../../hooks/useIsMobile";
 // filter 
-import CustomInput from "./customInput";
 import FilterCheckBox from "./filterCheckBox";
 import filterUsingData from "./filteringData";
 import FilterModal from "./fliterModal";
 import SelectComponent from "./SelectComponent";
 // Datepicker 
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const FilterComponent = () => {
@@ -23,10 +21,10 @@ const FilterComponent = () => {
   const [isOpenedSelect, setOpenedSelect] = useState({
     revenue: false,
     average: false,
+    date: false,
     country: false,
   });
-  const [dateRange, setDateRange] = useState([null, null]);
-  const [startDate, endDate] = dateRange;
+
   const [searchData, setSearchData] = useState("");
   // for checkbox
   const [sortByTrendingShop, setSortByTrendingShop] = useState(true);
@@ -74,14 +72,21 @@ const FilterComponent = () => {
         {isMobile ? (
           <div className="overflow-hidden w-[100vw] my-[20px] mobile_filter">
             <div className="overflow-x-auto flex flex-nowrap gap-[10px] scrollbar-hide pl-[10px]">
-              <DatePicker
-                selectsRange={true}
-                startDate={startDate}
-                endDate={endDate}
-                onChange={(update) => {
-                  setDateRange(update);
+
+              <SelectComponent
+                selectHandler={(e) => {
+                  setOpenedSelect({
+                    ...isOpenedSelect,
+                    country: false,
+                    revenue: false,
+                    average: false,
+                    date: true,
+                  });
                 }}
-                customInput={<CustomInput />}
+                name={"date"}
+                id={"date"}
+                filterData={filterData}
+                placeholder="date"
               />
 
               <SelectComponent
@@ -91,6 +96,7 @@ const FilterComponent = () => {
                     country: false,
                     revenue: true,
                     average: false,
+                    date: false,
                   });
                 }}
                 name={"revenue"}
@@ -107,6 +113,7 @@ const FilterComponent = () => {
                     country: false,
                     revenue: false,
                     average: true,
+                    date: false,
                   });
                 }}
                 filterData={filterData}
@@ -123,6 +130,7 @@ const FilterComponent = () => {
                     country: true,
                     revenue: false,
                     average: false,
+                    date:false,
                   });
                 }}
                 name={"country"}
@@ -167,21 +175,53 @@ const FilterComponent = () => {
                 }}
                 openModal={isOpenedSelect}
               />
+              <FilterModal
+                data={filterUsingData}
+                name={"date"}
+                closeHandler={(value) => {
+                  setFilterData({
+                    ...filterData,
+                    date: value,
+                  });
+                  setOpenedSelect({ ...isOpenedSelect, date: false });
+                }}
+                openModal={isOpenedSelect}
+              />
             </div>
           </div>
         ) : (
           // : it's mean else of  ternary
           <div className="flex items-center gap-x-[15px] my-[18px]">
-            <DatePicker
-              selectsRange={true}
-              startDate={startDate}
-              endDate={endDate}
-              onChange={(update) => {
-                setDateRange(update);
-              }}
-              customInput={<CustomInput />}
-            />
+            <div className="relative">
+              <SelectComponent
+                selectHandler={(e) => {
+                  setOpenedSelect({
+                    ...isOpenedSelect,
+                    country: false,
+                    revenue: false,
+                    average: false,
+                    date: true,
+                  });
+                }}
+                name={"date"}
+                id={"date"}
+                filterData={filterData}
+                placeholder="Date"
+              />
+              <FilterModal
+                data={filterUsingData}
+                name={"date"}
+                closeHandler={(value) => {
+                  setFilterData({
+                    ...filterData,
+                    date: value,
+                  });
+                  setOpenedSelect({ ...isOpenedSelect, date: false });
+                }}
+                openModal={isOpenedSelect}
+              />
 
+            </div>
             <div className="relative">
               <SelectComponent
                 selectHandler={(e) => {
@@ -190,6 +230,7 @@ const FilterComponent = () => {
                     country: false,
                     revenue: true,
                     average: false,
+                    date: false,
                   });
                 }}
                 name={"revenue"}
@@ -221,6 +262,7 @@ const FilterComponent = () => {
                     country: false,
                     revenue: false,
                     average: true,
+                    date: false,
                   });
                 }}
                 name={"average"}
@@ -253,6 +295,7 @@ const FilterComponent = () => {
                     country: true,
                     revenue: false,
                     average: false,
+                    date: false,
                   });
                 }}
                 name={"country"}

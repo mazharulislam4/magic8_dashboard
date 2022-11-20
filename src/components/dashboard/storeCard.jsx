@@ -4,29 +4,19 @@ import { Link } from "react-router-dom";
 import bottol from '../../assets/icon/bottol.svg';
 import signalIcon from '../../assets/icon/fi-rr-signal-alt.svg';
 import ProductCardGraph from "../graph/productCardGraph";
-
+// import RevenueChart from "../graph/revenuChart";
 // styled component
 import styled from "styled-components";
 
 const GraphBg = styled.div`
   position: absolute;
-  top: -40px;
-  left: -14px;
+  top: 0;
+  left: -12px;
   width: 100%;
   height: 100%;
-  &::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: #fff;
-    filter: blur(25px);
-    -webkit-filter: blur(25px);
-    opacity: 0.9;
-    top: 0;
-    left: 0;
-    border-radius: 10px;
-  }
+  opacity: 0.8;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
 `;
 
 const Card = styled.div`
@@ -35,7 +25,9 @@ const Card = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  background: transparent;
 `;
+
 
 
 
@@ -50,7 +42,7 @@ function StoreCard({content}) {
         {/* content body */}
 
         <GraphBg>
-          <ProductCardGraph width={330} height={430} />
+          <ProductCardGraph width={320} height={330} />
         </GraphBg>
 
         <Card className="w-[18.5rem] h-[320px] px-[21px] py-[16px]">

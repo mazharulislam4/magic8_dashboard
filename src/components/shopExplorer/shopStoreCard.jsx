@@ -12,29 +12,18 @@ import rightArrow from '../../assets/icon/rightArrow.svg';
 import sellerImg from '../../assets/image/seller.svg';
 import ProductCardGraph from "../graph/productCardGraph";
 import RevenueChart from "../graph/revenuChart";
-
 // styled component 
 import styled from 'styled-components';
 
 const GraphBg = styled.div`
   position: absolute;
-  top: -30px;
-  left: -14px;
+  top: 30px;
+  left: -13px;
   width: 100%;
   height: 100%;
-  &::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: #fff;
-    filter: blur(25px);
-    -webkit-filter: blur(25px);
-    opacity: 0.9;
-    top: 0;
-    left: 0;
-    border-radius: 10px;
-  }
+  opacity: 0.8;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
 `;
 
 const Card = styled.div`
@@ -43,6 +32,7 @@ const Card = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  background: transparent;
 `;
 
 
@@ -60,13 +50,11 @@ const nextBtn = useRef();
 
       <div
         className={`card w-[289px] h-[380px] rounded-md product_card_shadow ShopExplorerProductCard relative overflow-hidden ${
-          content && content.status === "brand"
-            ? "bg-light"
-            : "bg-cardBg bg-center bg-no-repeat object-cover"
+          content && content.status === "brand" ? "bg-light" : ""
         } `}
       >
         <GraphBg>
-          <ProductCardGraph width={315} height={430} />
+          <ProductCardGraph width={315} height={355} />
         </GraphBg>
 
         <Card
@@ -220,7 +208,7 @@ const nextBtn = useRef();
               {/*----------------------------- button --------------------- */}
               <button
                 type="button"
-                className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px]"
+                className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px] shadow-sm"
               >
                 <Link to={"/shop_details"}>
                   {isExpired ? "Expired (Reveal Again)" : "Reveal This Store"}

@@ -16,6 +16,7 @@ const FilterModalContainer = styled.div`
   display: none;
   opacity: 0;
   animation: fadeIn 0.5s linear forwards;
+  -webkit-animation: fadeIn 0.5s linear forwards;
 
   @media (min-width: 768px) {
     width: auto;
@@ -48,26 +49,47 @@ const FilterModalContainer = styled.div`
     background-color: #fff;
     border-radius: 10px;
     display: none;
+    transform: translateY(100px);
     -webkit-transform: translateY(100px);
     -moz-transform: translateY(100px);
     -o-transform: translateY(100px);
     -ms-transform: translateY(100px);
-    transform: translateY(100px);
-    -webkit-animation: fadeInModal 0.3s forwards linear;
     animation: fadeInModal 0.3s forwards linear;
+    -webkit-animation: fadeInModal 0.3s forwards linear;
+    -moz-animation: fadeInModal 0.3s forwards linear;
   }
 
   .modal.active {
     display: block;
   }
 
-  @keyframes fadeInModal {
+  @-webkit-keyframes fadeInModal {
     to {
+      transform: translateY(0);
       -webkit-transform: translateY(0);
       -moz-transform: translateY(0);
       -o-transform: translateY(0);
       -ms-transform: translateY(0);
+    }
+  }
+
+  @-moz-keyframes fadeInModal {
+    to {
       transform: translateY(0);
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      -ms-transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInModal {
+    to {
+      transform: translateY(0);
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      -ms-transform: translateY(0);
     }
   }
 
@@ -170,7 +192,7 @@ function FilterModal({ data, closeHandler, openModal, name }) {
           })}
 
           {/* -----------------------user input--------------------  */}
-          {!openModal['country'] ? (
+          {!openModal['country'] && !openModal['date'] ? (
             <>
               <h3 className="mb-[7px] small-font text-dark mt-[10px] ">
                 Custom

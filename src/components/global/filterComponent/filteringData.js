@@ -26,7 +26,14 @@ const filterUsingData = {
     { value: "$500-1m", id: "9" },
     { value: "$1m+ ", id: "10" },
   ],
-
+  date: [
+    { value: "Last 3 days", id: "5" },
+    { value: "Last 7 days", id: "6" },
+    { value: "Last 14 days", id: "7" },
+    { value: "Past 30 days", id: "8" },
+    { value: "Past 90 days", id: "9" },
+    { value: "All Time ", id: "10" },
+  ],
   country: countryList,
 };
 
