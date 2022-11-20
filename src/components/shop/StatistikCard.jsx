@@ -18,7 +18,7 @@ const ForLarge = ()=>{
 const card = ` border-[1px] pl-[20px] rounded-md border-[#E4E4E4] h-[100%] flex  flex-col justify-center md:w-1/5 w-[300px] py-[25px]  lg:border-0 lg:border-r-[1px] lg:border-l-[1px] lg:border-[#EAEAEA]  `;
 
   return (
-    <div className="flex w-[977px]  my-[10px] px-[5px]   lg:h-[108px] items-center   rounded-lg    justify-center lg:border-[1px] border-[#E4E4E4] ">
+    <div className="flex   my-[10px] px-[5px]   lg:h-[108px] items-center   rounded-lg flex-wrap   justify-center lg:border-[1px] border-[#E4E4E4] ">
       <div className={`${card} pl-[20px] lg:border-l-0  `}>
         <FilterByDays
           placeholder="7 days"
