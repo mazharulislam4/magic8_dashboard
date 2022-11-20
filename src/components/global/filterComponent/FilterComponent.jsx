@@ -24,7 +24,7 @@ const FilterComponent = () => {
     date: false,
     country: false,
   });
-
+  const [isActive, setActive] = useState(false);
   const [searchData, setSearchData] = useState("");
   // for checkbox
   const [sortByTrendingShop, setSortByTrendingShop] = useState(true);
@@ -32,6 +32,15 @@ const FilterComponent = () => {
 
 
   const isMobile = useIsMobile();
+
+
+if (isActive) {
+  const body = document.querySelector("body");
+  body.style.overflow = "hidden";
+} else {
+  const body = document.querySelector("body");
+  body.style.overflowY = "auto";
+}
 
 
 
@@ -82,6 +91,7 @@ const FilterComponent = () => {
                     average: false,
                     date: true,
                   });
+                  setActive(true)
                 }}
                 name={"date"}
                 id={"date"}
@@ -98,6 +108,8 @@ const FilterComponent = () => {
                     average: false,
                     date: false,
                   });
+                   setActive(true);
+                 
                 }}
                 name={"revenue"}
                 id={"revenue"}
@@ -115,6 +127,8 @@ const FilterComponent = () => {
                     average: true,
                     date: false,
                   });
+                   setActive(true);
+                   
                 }}
                 filterData={filterData}
                 name={"average"}
@@ -132,6 +146,8 @@ const FilterComponent = () => {
                     average: false,
                     date:false,
                   });
+                   setActive(true);
+                   
                 }}
                 name={"country"}
                 placeholder="Country"
@@ -148,6 +164,7 @@ const FilterComponent = () => {
                     revenue: value,
                   });
                   setOpenedSelect({ ...isOpenedSelect, revenue: false });
+                   setActive(false);
                 }}
                 openModal={isOpenedSelect}
               />
@@ -160,6 +177,7 @@ const FilterComponent = () => {
                     average: value,
                   });
                   setOpenedSelect({ ...isOpenedSelect, average: false });
+                   setActive(false);
                 }}
                 openModal={isOpenedSelect}
               />
@@ -172,6 +190,7 @@ const FilterComponent = () => {
                     country: value,
                   });
                   setOpenedSelect({ ...isOpenedSelect, country: false });
+                  setActive(false);
                 }}
                 openModal={isOpenedSelect}
               />
@@ -184,6 +203,7 @@ const FilterComponent = () => {
                     date: value,
                   });
                   setOpenedSelect({ ...isOpenedSelect, date: false });
+                  setActive(false);
                 }}
                 openModal={isOpenedSelect}
               />
@@ -202,6 +222,8 @@ const FilterComponent = () => {
                     average: false,
                     date: true,
                   });
+                  setActive(true);
+                  
                 }}
                 name={"date"}
                 id={"date"}
@@ -217,6 +239,8 @@ const FilterComponent = () => {
                     date: value,
                   });
                   setOpenedSelect({ ...isOpenedSelect, date: false });
+                  setActive(false);
+
                 }}
                 openModal={isOpenedSelect}
               />
@@ -232,6 +256,8 @@ const FilterComponent = () => {
                     average: false,
                     date: false,
                   });
+                  setActive(true);
+                 
                 }}
                 name={"revenue"}
                 id={"revenue"}
@@ -248,6 +274,7 @@ const FilterComponent = () => {
                     revenue: value,
                   });
                   setOpenedSelect({ ...isOpenedSelect, revenue: false });
+                  setActive(false);
                 }}
                 openModal={isOpenedSelect}
               />
@@ -264,6 +291,8 @@ const FilterComponent = () => {
                     average: true,
                     date: false,
                   });
+                  setActive(true);
+                   
                 }}
                 name={"average"}
                 id={"average"}
@@ -280,6 +309,7 @@ const FilterComponent = () => {
                     average: value,
                   });
                   setOpenedSelect({ ...isOpenedSelect, average: false });
+                  setActive(false);
                 }}
                 openModal={isOpenedSelect}
               />
@@ -297,6 +327,8 @@ const FilterComponent = () => {
                     average: false,
                     date: false,
                   });
+                  setActive(true);
+                   
                 }}
                 name={"country"}
                 id={"country"}
@@ -313,6 +345,7 @@ const FilterComponent = () => {
                     country: value,
                   });
                   setOpenedSelect({ ...isOpenedSelect, country: false });
+                  setActive(false);
                 }}
                 openModal={isOpenedSelect}
               />

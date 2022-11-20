@@ -4,7 +4,7 @@ import styled from "styled-components";
 const FilterModalContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #dcdcdc4d;
+  background-color: #4646467e;
   position: fixed;
   z-index: 1000;
   top: 0;
@@ -30,11 +30,12 @@ const FilterModalContainer = styled.div`
 
   .modal {
     width: 100vw;
-    min-height: 55vh;
+    min-height: 60vh;
     padding: 12px 10px;
     background-color: #fff;
     border-radius: 10px;
     display: none;
+
     transform: translateY(100px);
     -webkit-transform: translateY(100px);
     -moz-transform: translateY(100px);
@@ -121,6 +122,7 @@ const FilterModalContainer = styled.div`
     .modal {
       max-width: 230px;
       min-height: 200px;
+      position: relative;
     }
   }
 `;
@@ -130,6 +132,7 @@ function FilterModal({ data, closeHandler, openModal, name }) {
     min: "",
     max: "",
   });
+
 
   function userSelectDataHandler(e) {
     e.preventDefault();
@@ -143,7 +146,6 @@ function FilterModal({ data, closeHandler, openModal, name }) {
 // close modal body click 
 
 
-
   function userSubmitHandler(e) {
     e.preventDefault();
     // window.localStorage.setItem("userSelectedData", JSON.stringify(userCustomSelectData));
@@ -154,6 +156,7 @@ function FilterModal({ data, closeHandler, openModal, name }) {
       className={`${openModal[name] ? "modal_active" : ""} shadow-xl `}
       onClick={(e) => {
         e.stopPropagation();
+     
         closeHandler(userData ? userData : "");
       }}
     >

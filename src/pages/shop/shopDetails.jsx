@@ -21,7 +21,7 @@ const ProductCardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.18rem, 1fr));
   grid-row-gap: 30px;
-  grid-column: 20px;
+  grid-column-gap: 20px;
   place-items: center;
   @media (max-width: 1024px) {
     place-items: center;
