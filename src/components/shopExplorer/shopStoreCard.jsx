@@ -64,7 +64,7 @@ console.log(content);
       {/* card  */}
 
       <div
-        className={`card w-[289px] h-[380px] rounded-md product_card_shadow ShopExplorerProductCard relative overflow-hidden ${
+        className={`card md:w-[289px] w-[325px] h-[380px] rounded-md product_card_shadow ShopExplorerProductCard relative overflow-hidden ${
           content && content.status === "brand" ? "bg-light" : ""
         } `}
       >
@@ -72,7 +72,7 @@ console.log(content);
           {content && content.status === "Brand" ? (
             ""
           ) : (
-            <ProductCardGraph width={290} height={380} />
+            <ProductCardGraph width={325} height={380} />
           )}
         </GraphBg>
 

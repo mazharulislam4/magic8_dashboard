@@ -5,7 +5,7 @@ function PrductCardGraph({gWidht , gHeight}) {
 
   return (
     <div
-      className={`w-[300px] h-[320px] overflow-hidden  bg-[#F8F4FF]  ${
+      className={`overflow-hidden  bg-[#F8F4FF]  ${
         gWidht ? `w-[${gWidht}]` : "289"
       } ${gHeight ? `w-[${gHeight}]` : "289"}`}
     >
@@ -33,7 +33,7 @@ function PrductCardGraph({gWidht , gHeight}) {
       {/* graph  */}
       <div className=" w-full transform translate-y-[-80px]">
         <RevenueChart
-          cWidth={gWidht ? gWidht : "289"}
+          cWidth={gWidht ? gWidht : "350"}
           height={gHeight ? gHeight : "350"}
           isAnimation={false}
         />

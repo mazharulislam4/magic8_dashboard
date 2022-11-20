@@ -61,7 +61,7 @@ const nextBtn = useRef();
       {/* card  */}
 
       <div
-        className={`card w-[289px] h-[380px] rounded-md product_card_shadow ShopExplorerProductCard relative overflow-hidden ${
+        className={`card md:w-[289px]  w-[325px] h-[380px] rounded-md product_card_shadow ShopExplorerProductCard relative overflow-hidden ${
           content && content.status === "brand" ? "bg-light" : ""
         } `}
       >
@@ -69,7 +69,7 @@ const nextBtn = useRef();
           {content && content.status === "Brand" ? (
             ""
           ) : (
-            <ProductCardGraph width={290} height={380} />
+            <ProductCardGraph width={350} height={380} />
           )}
         </GraphBg>
         <Card
@@ -79,7 +79,7 @@ const nextBtn = useRef();
           <div className="card-head">
             {/* ----------------heart button product save --------------------------------------- */}
             <div className="flex justify-between items-center">
-              <h2 className="text-dark extra-small-font mb-[14px] pt-[4px]">
+              <h2 className="text-dark text-[14px] font-[300] mb-[14px] pt-[4px]">
                 Created By {content?.date}
               </h2>
               <button type="button">
