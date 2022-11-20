@@ -1,14 +1,16 @@
 
-import { FiArrowUpRight } from "react-icons/fi";
-import signalIcon from "../../assets/icon/fi-rr-signal-alt.svg";
 import RevenueChart from "./revenuChart";
 function PrductCardGraph({gWidht , gHeight}) {
 
 
   return (
-    <div className="w-[300px] h-[320px] overflow-hidden  bg-[#F8F4FF] ">
-      <div className="px-[10px]  flex">
-        {/*------------ search value --------------- */}
+    <div
+      className={`w-[300px] h-[320px] overflow-hidden  bg-[#F8F4FF]  ${
+        gWidht ? `w-[${gWidht}]` : "289"
+      } ${gHeight ? `w-[${gHeight}]` : "289"}`}
+    >
+      {/* <div className="px-[10px]  flex">
+     
         <div>
           <p className="text-dark small-font ">Search Volume</p>
           <h3 className="medium-font text-secondary font-bold ">300000</h3>
@@ -16,7 +18,7 @@ function PrductCardGraph({gWidht , gHeight}) {
             <span>
               <FiArrowUpRight />
             </span>
-            {/*-------------- searcht avg value ---------- */}
+          
             <span className="font-[400]">+40.5%</span>
           </p>
         </div>
@@ -26,11 +28,15 @@ function PrductCardGraph({gWidht , gHeight}) {
           </span>
           <span>4 Other Tracking</span>
         </p>
-      </div>
+      </div> */}
 
       {/* graph  */}
       <div className=" w-full transform translate-y-[-80px]">
-        <RevenueChart cWidth={gWidht ? gWidht : '289'} height={gHeight ? gHeight : '350'} isAnimation = {false} />
+        <RevenueChart
+          cWidth={gWidht ? gWidht : "289"}
+          height={gHeight ? gHeight : "350"}
+          isAnimation={false}
+        />
       </div>
     </div>
   );

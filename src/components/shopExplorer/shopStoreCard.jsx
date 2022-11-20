@@ -17,12 +17,13 @@ import styled from 'styled-components';
 
 const GraphBg = styled.div`
   position: absolute;
-  top: 65px;
-  left: 0;
+  top: 55px;
+  left: -6px;
   width: 100%;
   height: 100%;
   opacity: 1;
   filter: blur(5px);
+  -webkit-filter:blue(5px) ;
   &::before {
     content: "";
     width: 100%;
@@ -30,7 +31,7 @@ const GraphBg = styled.div`
     background-color: #fff;
     background-size: cover;
     opacity: 0.6;
-    filter: blur(5px);
+    border-radius: 10px;
     position: absolute;
     top: 0;
     left: 0;
@@ -68,7 +69,7 @@ console.log(content);
         } `}
       >
         <GraphBg>
-          <ProductCardGraph width = {290} height = {350}  />
+          <ProductCardGraph width={295} height={390} />
         </GraphBg>
 
         <Card
@@ -122,7 +123,7 @@ console.log(content);
           {/* card graph  */}
           {content && content.status === "Brand" ? (
             <div className="mb-[18px] h-[120px] overflow-hidden bg-transparent">
-              <RevenueChart height="auto" width="100%" />
+              <RevenueChart width="289" height="110" />
             </div>
           ) : (
             ""
@@ -222,7 +223,7 @@ console.log(content);
               {/*----------------------------- button --------------------- */}
               <button
                 type="button"
-                className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px] shadow-sm"
+                className="bg-light rounded-md hover:bg-primary transition-colors duration-200 hover:text-light text-center text-secondary block w-[100%] py-[14px] "
               >
                 <Link to={"/shop_details"}>
                   {isExpired ? "Expired (Reveal Again)" : "Reveal This Store"}

@@ -44,7 +44,7 @@ const FilterModalContainer = styled.div`
 
   .modal {
     width: 100vw;
-    min-height: 200px;
+    min-height: 55vh;
     padding: 12px 10px;
     background-color: #fff;
     border-radius: 10px;
@@ -65,31 +65,31 @@ const FilterModalContainer = styled.div`
 
   @-webkit-keyframes fadeInModal {
     to {
-      transform: translateY(-30px);
-      -webkit-transform: translateY(-30px);
-      -moz-transform: translateY(-30px);
-      -o-transform: translateY(-30px);
-      -ms-transform: translateY(-30px);
+      transform: translateY(0);
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      -ms-transform: translateY(0);
     }
   }
 
   @-moz-keyframes fadeInModal {
     to {
-      transform: translateY(-30px);
-      -webkit-transform: translateY(-30px);
-      -moz-transform: translateY(-30px);
-      -o-transform: translateY(-30px);
-      -ms-transform: translateY(-30px);
+      transform: translateY(0);
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      -ms-transform: translateY(0);
     }
   }
 
   @keyframes fadeInModal {
     to {
-      transform: translateY(-30px);
-      -webkit-transform: translateY(-30px);
-      -moz-transform: translateY(-30px);
-      -o-transform: translateY(-30px);
-      -ms-transform: translateY(-30px);
+      transform: translateY(0);
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      -ms-transform: translateY(0);
     }
   }
 

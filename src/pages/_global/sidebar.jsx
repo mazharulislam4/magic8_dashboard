@@ -5,11 +5,11 @@ import styled from 'styled-components';
 // import from navData navbar data , link , page name etc 
 import navData from "../../components/nav/navData";
 // svg icon 
+import { Tooltip } from '@mui/material';
 import settingIcon from "../../assets/icon/setting.svg";
 import collapsLogo from '../../assets/image/collapsLogo.png';
 import logo from "../../assets/image/logo.png";
 import { NavbarTogllerContext } from '../../context/utilsContext';
-
 // styled component styling
 const Aside = styled.aside`
 width: ${(props) => props.autoCollapse ? '60px' : '295px'};
@@ -31,32 +31,39 @@ export const MenuItem = ({ toggleHandler, autoCollapse }) => {
       {navData
         ? navData.map((data) => {
             return (
-              <li key={data.id} >
+              <li key={data.id}>
                 {!autoCollapse ? (
                   <NavLink
                     to={data.link}
-                    key = {data.id}
-                    className={`text-light flex gap-x-[18px] pt-[21px] my-[17.5px] pb-[23px]  bg-no-repeat bg-cover bg-center pl-[18px] delay-500 duration-800 ease-in-out hover:bg-navbg initial-font rounded-[12px] `}
-                    onClick={toggleHandler}
-                  >
-                    <img src={data.icon} alt="navlink-icon" width={18} height={18} />
-                    {data.title}
-                  </NavLink>
-                ) : (
-                    <NavLink
                     key={data.id}
-                    to={data.link}
-                    className={`text-light px-[7px] py-[10px] my-[25px] autoCollapse flex justify-center  hover:bg-[#5A4DAD] rounded-md transition-opacity text-center  }`}
+                    className={`text-light flex gap-x-[18px] pt-[21px] my-[17.5px] pb-[23px]  bg-no-repeat bg-cover bg-center pl-[18px] delay-500 duration-800 ease-in-out hover:bg-navbg initial-font rounded-[12px] `}
                     onClick={toggleHandler}
                   >
                     <img
                       src={data.icon}
                       alt="navlink-icon"
-                      width= {26}
-                      height={26}
-                      className="text-center"
+                      width={18}
+                      height={18}
                     />
+                    {data.title}
                   </NavLink>
+                ) : (
+                  <Tooltip title={data.title}>
+                    <NavLink
+                      key={data.id}
+                      to={data.link}
+                      className={`text-light px-[7px] py-[10px] my-[25px] autoCollapse flex justify-center  hover:bg-[#5A4DAD] rounded-md transition-opacity text-center  }`}
+                      onClick={toggleHandler}
+                    >
+                      <img
+                        src={data.icon}
+                        alt="navlink-icon"
+                        width={26}
+                        height={26}
+                        className="text-center"
+                      />
+                    </NavLink>
+                  </Tooltip>
                 )}
               </li>
             );

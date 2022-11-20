@@ -16,6 +16,7 @@ const GraphBg = styled.div`
   height: 100%;
   opacity: 1;
   filter: blur(5px);
+  -webkit-filter: blur(5px);
   &::before {
     content: "";
     width: 100%;
@@ -23,7 +24,7 @@ const GraphBg = styled.div`
     background-color: #fff;
     background-size: cover;
     opacity: 0.6;
-    filter: blur(5px);
+    border-radius: 10px;
     position: absolute;
     top: 0;
     left: 0;
@@ -106,7 +107,7 @@ function ProductCard({ content }) {
           <Link to="/product_details">
             <button
               type="button"
-              className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] shadow-sm py-[14px]"
+              className="bg-light  rounded-md hover:bg-primary transition-colors duration-200 hover:text-light  text-center text-secondary block w-[100%]  py-[14px]"
             >
               Reveal This Product
             </button>

@@ -84,7 +84,7 @@ function RevenueChart({ width, height  , isAnimation}) {
               reset: false,
             },
 animations:{
-enabled: isAnimation ? isAnimation : true,
+enabled: isAnimation ? true : false,
 },
             zoom:{
               enabled:false,

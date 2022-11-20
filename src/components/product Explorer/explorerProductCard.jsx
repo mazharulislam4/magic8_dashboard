@@ -19,12 +19,12 @@ import styled from 'styled-components';
 
 const GraphBg = styled.div`
   position: absolute;
-  top: 60px;
-  left: 0;
+  top: 80px;
+  left: -6px;
   width: 100%;
   height: 100%;
-  opacity: 1;
   filter: blur(6px);
+  -webkit-filter: blur(5px);
   &::before {
     content: "";
     width: 100%;
@@ -32,7 +32,7 @@ const GraphBg = styled.div`
     background-color: #fff;
     background-size: cover;
     opacity: 0.6;
-    filter: blur(5px);
+    border-radius: 10px;
     position: absolute;
     top: 0;
     left: 0;
@@ -107,8 +107,8 @@ const nextBtn = useRef();
 
           {/* card graph  */}
           {content && content.status === "Brand" ? (
-            <div className="mb-[8px] h-[110px] mt-[-20px] overflow-hidden">
-              <RevenueChart width="100%" height="auto" />
+            <div className="mb-[8px] h-[110px] mt-[-20px]  overflow-hidden">
+              <RevenueChart width="289" height="110" />
             </div>
           ) : (
             ""
@@ -209,7 +209,7 @@ const nextBtn = useRef();
               <Link to={"/product_details"}>
                 <button
                   type="button"
-                  className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px]"
+                  className="bg-light  rounded-md hover:bg-primary transition-colors duration-200 hover:text-light  text-center text-secondary block w-[100%] py-[14px]"
                 >
                   {isExpired ? "Expired (Reveal Again)" : "Reveal This Store"}
                 </button>

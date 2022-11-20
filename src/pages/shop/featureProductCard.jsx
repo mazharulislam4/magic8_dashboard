@@ -54,9 +54,9 @@ function FeatureProductCard({content}) {
         {/*----------------------------- button --------------------- */}
         <button
           type="button"
-          className="bg-softDark border-2 rounded-md hover:bg-primary transition-colors duration-200 hover:text-light border-softDark text-center text-secondary block w-[100%] py-[14px]"
+          className="bg-light rounded-md hover:bg-primary transition-colors duration-200 hover:text-light text-center text-secondary block w-[100%] py-[14px]"
         >
-          <Link to={"/shop_details"}>Reveal This Stores</Link>
+          <Link to={"/shop_details"}>Reveal This Store</Link>
         </button>
       </div>
     </div>
