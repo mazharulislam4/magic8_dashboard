@@ -221,7 +221,7 @@ console.log(content);
               <div className="flex items-center gap-2 justify-center mb-[20px] mt-[62px] ">
                 <img src={bottol} alt="" width={21.5} height={25} />
                 <span className="text-center initial-font  text-secondary font-bold ">
-                  {content?.mana} {content?.mana} Mana
+                  {content?.mana} Mana
                 </span>
               </div>
               {/*----------------------------- button --------------------- */}
