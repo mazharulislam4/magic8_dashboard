@@ -53,7 +53,7 @@ function Dashboard() {
             </h2>
             {isMobile ? (
               <div className="overflow-hidden   relative w-[100vw]  py-[10px] ">
-                <div className="overflow-x-scroll scrollbar-hide flex pr-[50px] gap-8 w-[100vw]   ">
+                <div className="overflow-x-scroll scrollbar-hide flex pr-[50px] gap-4 w-[100vw]   ">
                   {storeData &&
                     storeData.map((data) => (
                       <StoreCard
@@ -90,7 +90,7 @@ function Dashboard() {
             </h2>
             {isMobile ? (
               <div className="overflow-hidden relative w-[100vw]  py-[10px] ">
-                <div className="overflow-x-auto scrollbar-hide flex pr-[50px] gap-8 w-[100vw]  ">
+                <div className="overflow-x-auto scrollbar-hide flex pr-[50px] gap-4 w-[100vw]  ">
                   {productData &&
                     productData.map((data) => (
                       <ProductCard
