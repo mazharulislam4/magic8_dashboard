@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import useIsMobile from "../../../hooks/useIsMobile";
 // filter 
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
 import FilterCheckBox from "./filterCheckBox";
 import filterUsingData from "./filteringData";
 import FilterModal from "./fliterModal";
 import SelectComponent from "./SelectComponent";
-// Datepicker 
-import "react-datepicker/dist/react-datepicker.css";
+
 
 const FilterComponent = () => {
 
@@ -79,136 +80,144 @@ if (isActive) {
         </form>
 
         {isMobile ? (
-          <div className="overflow-hidden w-[100vw] my-[20px] mobile_filter">
-            <div className="overflow-x-auto flex flex-nowrap gap-[10px] scrollbar-hide pl-[10px]">
+          <>
+            <Swiper
+            
+             slidesPerView={'auto'}
+             spaceBetween = {20}
+             className = "filter w-full my-[20px]"
+            >
+              <SwiperSlide>
+                <SelectComponent
+                  selectHandler={(e) => {
+                    setOpenedSelect({
+                      ...isOpenedSelect,
+                      country: false,
+                      revenue: false,
+                      average: false,
+                      date: true,
+                    });
+                    setActive(true);
+                  }}
+                  name={"date"}
+                  id={"date"}
+                  filterData={filterData}
+                  placeholder="Date"
+                />
+              </SwiperSlide>
 
-              <SelectComponent
-                selectHandler={(e) => {
-                  setOpenedSelect({
-                    ...isOpenedSelect,
-                    country: false,
-                    revenue: false,
-                    average: false,
-                    date: true,
-                  });
-                  setActive(true)
-                }}
-                name={"date"}
-                id={"date"}
-                filterData={filterData}
-                placeholder="date"
-              />
+              <SwiperSlide>
+                <SelectComponent
+                  selectHandler={(e) => {
+                    setOpenedSelect({
+                      ...isOpenedSelect,
+                      country: false,
+                      revenue: true,
+                      average: false,
+                      date: false,
+                    });
+                    setActive(true);
+                  }}
+                  name={"revenue"}
+                  id={"revenue"}
+                  filterData={filterData}
+                  placeholder="Revenue"
+                />
+              </SwiperSlide>
 
-              <SelectComponent
-                selectHandler={(e) => {
-                  setOpenedSelect({
-                    ...isOpenedSelect,
-                    country: false,
-                    revenue: true,
-                    average: false,
-                    date: false,
-                  });
-                   setActive(true);
-                 
-                }}
-                name={"revenue"}
-                id={"revenue"}
-                filterData={filterData}
-                placeholder="Revenue"
-              />
+              <SwiperSlide>
+                {/* Average Product Price filter  , slide 3 */}
+                <SelectComponent
+                  selectHandler={(e) => {
+                    setOpenedSelect({
+                      ...isOpenedSelect,
+                      country: false,
+                      revenue: false,
+                      average: true,
+                      date: false,
+                    });
+                    setActive(true);
+                  }}
+                  filterData={filterData}
+                  name={"average"}
+                  id="average"
+                  placeholder="Average Product Price "
+                />
+              </SwiperSlide>
 
-              {/* Average Product Price filter  , slide 3 */}
-              <SelectComponent
-                selectHandler={(e) => {
-                  setOpenedSelect({
-                    ...isOpenedSelect,
-                    country: false,
-                    revenue: false,
-                    average: true,
-                    date: false,
-                  });
-                   setActive(true);
-                   
-                }}
-                filterData={filterData}
-                name={"average"}
-                id="average"
-                placeholder="Average Product Price "
-              />
-
-              {/* ------------Country filter  slide 4 ------------ */}
-              <SelectComponent
-                selectHandler={(e) => {
-                  setOpenedSelect({
-                    ...isOpenedSelect,
-                    country: true,
-                    revenue: false,
-                    average: false,
-                    date:false,
-                  });
-                   setActive(true);
-                   
-                }}
-                name={"country"}
-                placeholder="Country"
-                id="country"
-                filterData={filterData}
-              />
-
-              <FilterModal
-                data={filterUsingData}
-                name={"revenue"}
-                closeHandler={(value) => {
-                  setFilterData({
-                    ...filterData,
-                    revenue: value,
-                  });
-                  setOpenedSelect({ ...isOpenedSelect, revenue: false });
-                   setActive(false);
-                }}
-                openModal={isOpenedSelect}
-              />
-              <FilterModal
-                data={filterUsingData}
-                name={"average"}
-                closeHandler={(value) => {
-                  setFilterData({
-                    ...filterData,
-                    average: value,
-                  });
-                  setOpenedSelect({ ...isOpenedSelect, average: false });
-                   setActive(false);
-                }}
-                openModal={isOpenedSelect}
-              />
-              <FilterModal
-                data={filterUsingData}
-                name={"country"}
-                closeHandler={(value) => {
-                  setFilterData({
-                    ...filterData,
-                    country: value,
-                  });
-                  setOpenedSelect({ ...isOpenedSelect, country: false });
-                  setActive(false);
-                }}
-                openModal={isOpenedSelect}
-              />
-              <FilterModal
-                data={filterUsingData}
-                name={"date"}
-                closeHandler={(value) => {
-                  setFilterData({
-                    ...filterData,
-                    date: value,
-                  });
-                  setOpenedSelect({ ...isOpenedSelect, date: false });
-                  setActive(false);
-                }}
-                openModal={isOpenedSelect}
-              />
-            </div>
-          </div>
+              <SwiperSlide>
+                {/* ------------Country filter  slide 4 ------------ */}
+                <SelectComponent
+                  selectHandler={(e) => {
+                    setOpenedSelect({
+                      ...isOpenedSelect,
+                      country: true,
+                      revenue: false,
+                      average: false,
+                      date: false,
+                    });
+                    setActive(true);
+                  }}
+                  name={"country"}
+                  placeholder="Country"
+                  id="country"
+                  filterData={filterData}
+                />
+              </SwiperSlide>
+            </Swiper>
+            <FilterModal
+              data={filterUsingData}
+              name={"revenue"}
+              closeHandler={(value) => {
+                setFilterData({
+                  ...filterData,
+                  revenue: value,
+                });
+                setOpenedSelect({ ...isOpenedSelect, revenue: false });
+                setActive(false);
+              }}
+              openModal={isOpenedSelect}
+            />
+            <FilterModal
+              data={filterUsingData}
+              name={"average"}
+              closeHandler={(value) => {
+                setFilterData({
+                  ...filterData,
+                  average: value,
+                });
+                setOpenedSelect({ ...isOpenedSelect, average: false });
+                setActive(false);
+              }}
+              openModal={isOpenedSelect}
+            />
+            <FilterModal
+              data={filterUsingData}
+              name={"country"}
+              closeHandler={(value) => {
+                setFilterData({
+                  ...filterData,
+                  country: value,
+                });
+                setOpenedSelect({ ...isOpenedSelect, country: false });
+                setActive(false);
+              }}
+              openModal={isOpenedSelect}
+            />
+            <FilterModal
+              data={filterUsingData}
+              name={"date"}
+              closeHandler={(value) => {
+                setFilterData({
+                  ...filterData,
+                  date: value,
+                });
+                setOpenedSelect({ ...isOpenedSelect, date: false });
+                setActive(false);
+              }}
+              openModal={isOpenedSelect}
+            />
+          </>
         ) : (
           // : it's mean else of  ternary
           <div className="flex items-center gap-x-[15px] my-[18px]">
@@ -223,7 +232,6 @@ if (isActive) {
                     date: true,
                   });
                   setActive(true);
-                  
                 }}
                 name={"date"}
                 id={"date"}
@@ -240,11 +248,9 @@ if (isActive) {
                   });
                   setOpenedSelect({ ...isOpenedSelect, date: false });
                   setActive(false);
-
                 }}
                 openModal={isOpenedSelect}
               />
-
             </div>
             <div className="relative">
               <SelectComponent
@@ -257,7 +263,6 @@ if (isActive) {
                     date: false,
                   });
                   setActive(true);
-                 
                 }}
                 name={"revenue"}
                 id={"revenue"}
@@ -292,7 +297,6 @@ if (isActive) {
                     date: false,
                   });
                   setActive(true);
-                   
                 }}
                 name={"average"}
                 id={"average"}
@@ -328,7 +332,6 @@ if (isActive) {
                     date: false,
                   });
                   setActive(true);
-                   
                 }}
                 name={"country"}
                 id={"country"}
