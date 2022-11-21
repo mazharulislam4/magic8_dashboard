@@ -61,7 +61,7 @@ const nextBtn = useRef();
       {/* card  */}
 
       <div
-        className={`card md:w-[289px]  w-[325px] h-[380px] rounded-md product_card_shadow ShopExplorerProductCard relative overflow-hidden ${
+        className={`card md:w-[289px]  w-[300px] h-[380px] rounded-md product_card_shadow ShopExplorerProductCard relative overflow-hidden ${
           content && content.status === "brand" ? "bg-light" : ""
         } `}
       >

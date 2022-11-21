@@ -67,7 +67,7 @@ function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , pl
       >
         <label
           htmlFor={id}
-          className="flex items-center extra-small-font justify-center pr-2 "
+          className="flex items-center extra-small-font justify-center  "
         >
           <input
             type="text"
@@ -75,13 +75,13 @@ function FilterByDays({getDataHandler , willOpen, isDropdown, preData, data , pl
             readOnly
             id={id}
             placeholder={placeholder}
-            className="py-[8px]  placeholder:text-center bg-transparent text-secondary placeholder:text-secondary text-[13px] placeholder:extra-small-font focus:outline-none cursor-pointer w-[100%] block "
+            className="py-[8px]  bg-transparent text-secondary placeholder:text-secondary text-[14px] placeholder:extra-small-font focus:outline-none cursor-pointer w-[100%] block "
             onClick={(e) => {
               e.stopPropagation();
               willOpen();
             }}
           />
-          <img src={arrowIcon} alt="selece" width={20} />
+          <img src={arrowIcon} alt="select" width={20} />
         </label>
       </div>
       {/* date list  */}

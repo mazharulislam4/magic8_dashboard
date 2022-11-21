@@ -2,7 +2,8 @@ import { motion, useWillChange } from "framer-motion";
 import React from "react";
 import { AiFillFire } from 'react-icons/ai';
 import styled from "styled-components";
-
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
 import ProductCard from "../../components/dashboard/productCard";
 import StoreCard from "../../components/dashboard/storeCard";
 import FilterComponent from "../../components/global/filterComponent/FilterComponent";
@@ -52,19 +53,22 @@ function Dashboard() {
               </span>
             </h2>
             {isMobile ? (
-              <div className="overflow-hidden   relative w-[100vw]  py-[10px] ">
-                <div className="overflow-x-scroll scrollbar-hide flex pr-[50px] gap-4 w-[100vw]   ">
-                  {storeData &&
-                    storeData.map((data) => (
+              <Swiper
+                slidesPerView={"auto"}
+                spaceBetween={30}
+                className="mySwiper"
+              >
+                {storeData &&
+                  storeData.map((data) => (
+                    <SwiperSlide key={data.id}>
                       <StoreCard
-                        key={data.id}
                         content={{
                           ...data,
                         }}
                       />
-                    ))}
-                </div>
-              </div>
+                    </SwiperSlide>
+                  ))}
+              </Swiper>
             ) : (
               <ProductCardGrid>
                 {storeData &&
@@ -89,19 +93,23 @@ function Dashboard() {
               </span>
             </h2>
             {isMobile ? (
-              <div className="overflow-hidden relative w-[100vw]  py-[10px] ">
-                <div className="overflow-x-auto scrollbar-hide flex pr-[50px] gap-5 w-[100vw]  ">
-                  {productData &&
-                    productData.map((data) => (
+              <Swiper
+              slidesPerView={'auto'}
+              spaceBetween = {30}
+               className="mySwiper"
+              >
+                {productData &&
+                  productData.map((data) => (
+                    <SwiperSlide >
                       <ProductCard
                         key={data.id}
                         content={{
                           ...data,
                         }}
                       />
-                    ))}
-                </div>
-              </div>
+                    </SwiperSlide>
+                  ))}
+              </Swiper>
             ) : (
               <ProductCardGrid>
                 {productData &&

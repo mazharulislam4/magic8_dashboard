@@ -64,7 +64,7 @@ console.log(content);
       {/* card  */}
 
       <div
-        className={`card md:w-[289px] w-[325px] h-[380px] rounded-md product_card_shadow ShopExplorerProductCard relative overflow-hidden ${
+        className={`card md:w-[289px] w-[300px] h-[380px] rounded-md product_card_shadow ShopExplorerProductCard relative overflow-hidden ${
           content && content.status === "brand" ? "bg-light" : ""
         } `}
       >
@@ -225,14 +225,15 @@ console.log(content);
                 </span>
               </div>
               {/*----------------------------- button --------------------- */}
+                 <Link to={"/shop_details"}>
               <button
                 type="button"
                 className="bg-light rounded-md hover:bg-primary transition-colors duration-200 hover:text-light text-center text-secondary block w-[100%] py-[14px] "
               >
-                <Link to={"/shop_details"}>
+             
                   {isExpired ? "Expired (Reveal Again)" : "Reveal This Store"}
-                </Link>
               </button>
+                </Link>
 
               {(content && content.status === "Hidden") || isExpired ? (
                 <h4 className="text-[12px] text-[#FF4545] my-[15px] text-center ">

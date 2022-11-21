@@ -3,7 +3,7 @@ import Chart from "react-apexcharts";
 // import graphbg from '../../assets/image/graphbg.svg';
 function RevenueChart({ width, height  , isAnimation}) {
   return (
-    <div className="revenue-chart">
+    <div className="revenue-chart w-auto mx-auto">
       <Chart
         type="area"
         width={width}

@@ -93,6 +93,14 @@ body {
   }
 }
 
+.apexcharts-canvas {
+  width: 100% !important;
+}
+
+.apexcharts-svg {
+  width: 100% !important;
+}
+
 .revenue-chart .apexcharts-canvas svg {
   background: url("./assets//image/graphbg.svg") !important;
   background-repeat: no-repeat !important;

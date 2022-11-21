@@ -63,10 +63,10 @@ function ProductCard({ content }) {
     <div>
       <h2 className="medium-font text-dark my-3 ml-2">{content?.status}</h2>
       {/* card  */}
-      <div className="w-[289px] h-[320px] rounded-md  relative product_card_shadow  overflow-hidden  ">
+      <div className="w-[18.5rem]  h-[320px] rounded-md  relative product_card_shadow  overflow-hidden  ">
         {/* content body */}
         <GraphBg>
-          <ProductCardGraph  />
+          <ProductCardGraph />
         </GraphBg>
 
         <Card className="px-[21px] py-[16px] bg-transparent ">

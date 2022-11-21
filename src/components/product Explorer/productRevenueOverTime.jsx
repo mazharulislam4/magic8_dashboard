@@ -16,7 +16,7 @@ function RevenueOverTime() {
   const [selectData, setSelectData] = useState(null);
 
   return (
-    <div className="xl:w-[500px] w-full min-h-[400px] overflow-hidden bg-[#F8F4FF] ">
+    <div className=" w-full min-h-[400px] overflow-hidden bg-[#F8F4FF] ">
       {/* header  */}
       <div className="flex justify-between md:px-[20px] gap-x-2 px-[10px] ">
         <div>
@@ -24,7 +24,7 @@ function RevenueOverTime() {
             Revenue over time
           </h2>
         </div>
-        <div className="item-self-baseline pt-[10px] md:w-[180px]  w-[40%] shadow-sm rounded-md shrink ">
+        <div className="item-self-baseline pt-[10px] md:w-[180px]  w-[45%]  rounded-md shrink ">
           {/* select  */}
           <FilterByDays
             placeholder="This Month"
@@ -66,7 +66,7 @@ function RevenueOverTime() {
       </div>
       {/* graph  */}
       <div className="w-full">
-        <RevenueChart cWidth={500} height={350} />
+        <RevenueChart cWidth={600} height={290} />
       </div>
     </div>
   );

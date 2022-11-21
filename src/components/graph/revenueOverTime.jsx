@@ -17,7 +17,7 @@ function RevenueOverTime() {
     const [selectData, setSelectData] = useState(null);
 
   return (
-    <div className="xl:w-[500px] w-full min-h-[400px] overflow-hidden  bg-[#F8F4FF] ">
+    <div className="2xl:w-[500px] w-full min-h-[400px] overflow-hidden  bg-[#F8F4FF] ">
       {/* header  */}
       <div className="flex  pt-[10px] px-[10px] gap-x-2  justify-between items-center">
         <h2 className="text-[20px] font-[400]  ">Revenue over time</h2>
@@ -67,7 +67,7 @@ function RevenueOverTime() {
 
       {/* graph  */}
       <div className='mt-[20px] w-full'>
-        <RevenueChart cWidth={500} height = {350} isAnimation = {true} />
+        <RevenueChart cWidth={900} height = {350} isAnimation = {true} />
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ const ForLarge = ()=>{
     const [isSelectOpen, setSelectOpen] = useState(false);
     const [selectData, setSelectData] = useState(null);
 
-const card = ` border-[1px] pl-[20px] rounded-md border-[#E4E4E4] h-[100%] flex  flex-col justify-center md:w-1/5 w-[300px] py-[25px]  lg:border-0 lg:border-r-[1px] lg:border-l-[1px] lg:border-[#EAEAEA]  `;
+const card = ` border-[1px] pl-[20px] rounded-md border-[#E4E4E4] h-[100%] flex  flex-col justify-center lg:w-1/5 w-[350px] py-[25px]  lg:border-0 lg:border-r-[1px] lg:border-l-[1px] lg:border-[#EAEAEA] shrink  `;
 
   return (
     <div className="flex   my-[10px] px-[5px]   lg:h-[108px] items-center   rounded-lg flex-wrap   justify-center lg:border-[1px] border-[#E4E4E4] ">
@@ -35,7 +35,7 @@ const card = ` border-[1px] pl-[20px] rounded-md border-[#E4E4E4] h-[100%] flex 
           id="statistik-1"
           preData={days}
           data={selectData}
-          styles={{ border: "none", padding: " 5px 0 " , height: "100%"}}
+          styles={{ border: "none", padding: " 5px 0 " , height: "100%" } }
         />
       </div>
 
@@ -108,10 +108,10 @@ const ForMobile = ()=>{
 const card = ` flex  flex-col justify-center  w-full`;
 
   return (
-    <div className="border-2 border-[#E4E4E4] py-[10px] rounded-md px-[10px]">
+    <div className="border-2 border-[#E4E4E4] py-[10px] rounded-md pl-[15px] pr-2 ">
       {/* part 1 */}
 
-      <div className={`${card} pl-[0] w-[40%] mb-[15px]`}>
+      <div className={`${card} pl-[0] mb-[15px]`}>
         <FilterByDays
           placeholder="7 days"
           willOpen={() => {
@@ -127,11 +127,11 @@ const card = ` flex  flex-col justify-center  w-full`;
           id="statistik-2"
           preData={days}
           data={selectData}
-          styles={{ border: "none", padding: "0" }}
+          styles={{ border: "none", padding: "0", width: "95px" }}
         />
       </div>
 
-      <div className="flex items-center ">
+      <div className="flex items-center justify-between ">
         {/* revenue card  */}
         <div className={card}>
           <p className="mb-[6px] extra-small-font text-dark">Revenue</p>
@@ -146,7 +146,7 @@ const card = ` flex  flex-col justify-center  w-full`;
           </div>
         </div>
         {/* order card  */}
-        <div className={`${card} w-[50%]`}>
+        <div className={`${card} `}>
           <p className="mb-[6px] extra-small-font text-dark">Orders</p>
           <div className="flex items-center gap-x-[5px] ">
             <h2 className="medium-font text-secondary">304</h2>
@@ -161,7 +161,7 @@ const card = ` flex  flex-col justify-center  w-full`;
       </div>
       {/* part 2   */}
 
-      <div className="flex items-center my-3">
+      <div className="flex items-center justify-between my-3">
         <div className={`${card}  `}>
           <p className="mb-[6px] extra-small-font text-dark">Avg order value</p>
           <div className="flex items-center gap-x-[5px]">
@@ -175,7 +175,7 @@ const card = ` flex  flex-col justify-center  w-full`;
           </div>
         </div>
         {/* shopping card  */}
-        <div className={card}>
+        <div className={`${card} `}>
           <p className="mb-[6px] extra-small-font text-dark">
             Shopping charged
           </p>

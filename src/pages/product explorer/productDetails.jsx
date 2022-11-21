@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
 import prodcutImg from "../../assets/image/product.png";
 import BackButton from '../../components/global/BackButton';
 import FilterByDays from "../../components/global/filterByDays";
@@ -9,6 +10,18 @@ import ExplorerProductCard from "../../components/product Explorer/explorerProdu
 import ProductRevenueOverTime from "../../components/product Explorer/productRevenueOverTime";
 import VendorDetails from '../../components/product Explorer/vendorDetails';
 import useIsMobile from '../../hooks/useIsMobile';
+
+import styled from 'styled-components';
+const ProductCardGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.18rem, 1fr));
+  grid-row-gap: 30px;
+  grid-column-gap: 20px;
+  place-items: center;
+  @media (max-width: 1024px) {
+    place-items: center;
+  }
+`;
 
 
 
@@ -43,7 +56,7 @@ function ProductDetails() {
               </figure>
               {/* ========---------filter by days --------------======== */}
 
-              <div className="w-[180px] inline-block">
+              <div className="md:w-[200px] inline-block">
                 <FilterByDays
                   placeholder="Small / matcha"
                   willOpen={() => {
@@ -58,7 +71,7 @@ function ProductDetails() {
                   }}
                   preData={size}
                   data={selectData}
-                  styles={{ width: "180px", padding:'5px 15px' }}
+                  styles={{ width: "180px", padding: "5px 15px" }}
                 />
               </div>
               {/* vendor and product from vendor.jsx details  */}
@@ -80,31 +93,36 @@ function ProductDetails() {
         </div>
 
         {/* aside  */}
-        <div className="xl:w-[600px] lg:w-[550px] xl:h-screen  overflow-y-auto overflow-x-hidden xl:pb-[150px]  py-[10px]  px-2 md:my-[0] my-[20px] ">
+        <div className="xl:w-[600px] xl:h-screen  overflow-y-auto overflow-x-hidden xl:pb-[150px] w-full  py-[10px]  px-2 md:my-[0] my-[20px] ">
           <div>
-            <h2 className='extra-small-font text-secondary my-[10px]'>Others Product people are tracking</h2>
+            <h2 className="initial-font text-secondary my-[10px]">
+              Others Product people are tracking
+            </h2>
           </div>
           <div className=" ">
             {isMobile ? (
-              <div className="overflow-hidden relative w-[100vw]  py-[10px] ">
-                <div className="overflow-x-auto scrollbar-hide flex pr-[50px] gap-8 w-[100vw]  ">
-                  {products &&
-                    products.map((data) => (
+              <Swiper
+              slidesPerView={'auto'}
+              spaceBetween = {30}
+              className = "mySwiper"
+              >
+                {products &&
+                  products.map((data) => (
+                    <SwiperSlide key={data.id}>
                       <ExplorerProductCard
-                        key={data.id}
                         content={{
                           ...data,
                         }}
                       />
-                    ))}
-                </div>
-              </div>
+                    </SwiperSlide>
+                  ))}
+              </Swiper>
             ) : (
-              <div className=" flex xl:flex-col xl:items-center justify-center flex-wrap gap-x-8">
+              <ProductCardGrid>
                 {products.map((data) => (
                   <ExplorerProductCard key={data.id} content={data} />
                 ))}
-              </div>
+              </ProductCardGrid>
             )}
           </div>
         </div>

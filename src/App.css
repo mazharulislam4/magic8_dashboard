@@ -21,15 +21,13 @@
 
 .mySwiper .swiper-slide {
   width: 289px !important;
-  margin-right: 20px !important;
+  margin-right: 30px !important;
+}
+
+.mySwiper .swiper-slide > div {
+  width: 289px !important;
 }
 
 .produc_card_slider .swiper-slide {
   width: 65px !important;
-}
-
-.react-datepicker-popper {
-  z-index: 1000 !important;
-  position: fixed;
-  top: 0;
 }

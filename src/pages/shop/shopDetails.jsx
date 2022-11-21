@@ -1,10 +1,11 @@
 import React from "react";
-import styled from "styled-components";
-
 import {
   AiFillFacebook, AiFillLinkedin, AiFillMail, AiFillTwitterSquare
 } from "react-icons/ai";
 import { RiFileSearchFill } from "react-icons/ri";
+import styled from "styled-components";
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import StoreCard from "../../components/dashboard/storeCard";
 import BackButton from "../../components/global/BackButton";
@@ -46,9 +47,8 @@ function ShopDetails() {
               <BackButton />
             </div>
 
-          
-              <StatistikCard />
-        
+            <StatistikCard />
+
             {isMobile ? (
               <>
                 <div className="flex justify-between items-center">
@@ -82,29 +82,32 @@ function ShopDetails() {
               ""
             )}
             {/*----------------------- product graph------------------  ---------*/}
-            <div className="flex gap-x-6 gap-y-5 lg:flex-nowrap flex-wrap">
+            <div className="flex gap-x-6 gap-y-5 2xl:flex-nowrap justify-between flex-wrap">
               <RevenueOverTime />
               <TopSellingProduct />
             </div>
 
-            <div className="my-[50px] ">
-              <h2 className="text-secondary large-font my-[20px] px-[10px]  w-[100%]  ">
+            <div className="my-[20px] ">
+              <h2 className="text-secondary md:text-[18px] text-[14px] md:my-[20px] my-[10px] px-[10px]  w-[100%]  ">
                 Stores others have tracked
               </h2>
               {isMobile ? (
-                <div className="overflow-hidden scrollbar-hide relative w-[100vw]  py-[10px] ">
-                  <div className="overflow-x-auto scrollbar-hide flex pr-[50px] gap-5 w-[100vw]  ">
-                    {storeData &&
-                      storeData.map((data) => (
+                <Swiper 
+                slidesPerView={'auto'}
+                spaceBetween = {30}
+                className="mySwiper"
+                >
+                  {storeData &&
+                    storeData.map((data) => (
+                      <SwiperSlide key={data.id}>
                         <StoreCard
-                          key={data.id}
                           content={{
                             ...data,
                           }}
                         />
-                      ))}
-                  </div>
-                </div>
+                      </SwiperSlide>
+                    ))}
+                </Swiper>
               ) : (
                 <ProductCardGrid>
                   {storeData &&
