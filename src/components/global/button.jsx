@@ -11,7 +11,7 @@ const Btn = styled.button`
   background-color: ${(props) => (props.bg ? props.bg : "#fff")};
   box-shadow: 0px 4px 10px rgba(159, 159, 159, 0.25);
   border-radius: 8px;
-  transition: background 0.6s ease-in-out, color 0.4s ease-in-out;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
   &:hover {
     color: ${(props) => (props.texthover ? props.texthover : "#fff")};
     background-color: ${(props) => (props.hoverbg ? props.hoverbg : "#8646EE")};

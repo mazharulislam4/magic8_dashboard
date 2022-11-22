@@ -33,7 +33,7 @@ function Shop() {
 
   return (
     <div
-      className={`w-[100%] lg:h-screen md:pb-[120px] pb-[100px] bg-softDark  custom-container relative ${
+      className={`w-[100%] lg:h-screen md:pb-[120px] pb-[100px] bg-softDark overflow-x-hidden  custom-container relative ${
         isList ? "overflow-y-hidden" : "overflow-y-auto"
       } `}
     >
@@ -64,7 +64,7 @@ function Shop() {
               ))}
             </ProductCardGrid>
           ) : (
-            <div className="h-screen overflow-auto  ">
+            <div className="h-screen w-full overflow-x-auto xl:flex  justify-center ">
               <ListView />
             </div>
           )}

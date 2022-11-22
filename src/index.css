@@ -76,6 +76,10 @@ body {
   width: 255px !important;
 }
 
+.profile_avatar_nav .active {
+  background-color: #f8f8f8;
+}
+
 .product_card_shadow {
   box-shadow: 0 0 42px -23px #aeaeae;
 }

@@ -53,7 +53,7 @@ function ProductExplorer() {
             {/* products  */}
 
             {isList ? (
-              <div className="h-screen overflow-auto  ">
+              <div className="h-screen w-full overflow-x-auto xl:flex  justify-center ">
                 <ListView />
               </div>
             ) : (

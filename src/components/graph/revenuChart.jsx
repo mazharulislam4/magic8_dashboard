@@ -30,7 +30,7 @@ function RevenueChart({ width, height  , isAnimation}) {
               },
               {
                 x: 2014,
-                y: 240,
+                y: 250,
               },
               {
                 x: 2015,
@@ -46,7 +46,7 @@ function RevenueChart({ width, height  , isAnimation}) {
               },
               {
                 x: 2018,
-                y: 245,
+                y: 300,
               },
               {
                 x: 2019,

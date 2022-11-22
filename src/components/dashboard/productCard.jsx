@@ -4,14 +4,14 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import bottol from "../../assets/icon/bottol.svg";
 
- import ProductCardGraph from "../graph/productCardGraph";
+import RevenueChart from "../graph/revenuChart";
 // styled component 
 import styled from 'styled-components';
 
 const GraphBg = styled.div`
   position: absolute;
-  top:88px;
-  left: -6px;
+  top:20px;
+  left: 0px;
   width: 100%;
   height: 100%;
   opacity: 1;
@@ -65,10 +65,13 @@ function ProductCard({ content }) {
       {/* card  */}
       <div className="w-[18.5rem]  h-[320px] rounded-md  relative product_card_shadow  overflow-hidden  ">
         {/* content body */}
-        <GraphBg>
-          <ProductCardGraph />
+        <GraphBg className="flex justify-center items-center ">
+          {content && content.status === "Brand" ? (
+            ""
+          ) : (
+            <RevenueChart width={289} height={110} />
+          )}
         </GraphBg>
-
         <Card className="px-[21px] py-[16px] bg-transparent ">
           <h2 className="text-dark small-font font-[400] mb-[14px] pt-[4px]">
             Created By {content?.date}
@@ -107,7 +110,7 @@ function ProductCard({ content }) {
           <Link to="/product_details">
             <button
               type="button"
-              className="bg-light  rounded-md hover:bg-primary transition-colors duration-200 hover:text-light  text-center text-secondary block w-[100%]  py-[14px]"
+              className="bg-softDark  rounded-md hover:bg-primary transition-colors duration-200 hover:text-light  text-center text-secondary block w-[100%]  py-[14px]"
             >
               Reveal This Product
             </button>

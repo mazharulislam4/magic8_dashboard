@@ -118,14 +118,30 @@ const FilterModalContainer = styled.div`
     top: calc(100% + 10%);
     overflow: hidden;
     background-color: transparent;
-
+    animation: fadeIn 0.1s forwards linear;
+    -webkit-animation: fadeIn 0.1s forwards linear;
+    -moz-animation: fadeIn 0.1s forwards linear;
     .modal {
       max-width: 230px;
       min-height: 200px;
       position: relative;
+      animation: fadeInModal 0.1s forwards linear;
+      -webkit-animation: fadeInModal 0.1s forwards linear;
+      -moz-animation: fadeInModal 0.1s forwards linear;
     }
   }
 `;
+
+
+const Overlay = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+`
 
 function FilterModal({ data, closeHandler, openModal, name }) {
   const [userCustomSelectData, setUserCustomSelectData] = useState({
@@ -143,7 +159,6 @@ function FilterModal({ data, closeHandler, openModal, name }) {
   }
 
   const [userData, setUserData] = useState();
-// close modal body click 
 
 
   function userSubmitHandler(e) {
@@ -160,6 +175,7 @@ function FilterModal({ data, closeHandler, openModal, name }) {
         closeHandler(userData ? userData : "");
       }}
     >
+      <Overlay></Overlay>
       <div
         className={`modal ${openModal[name] ? "active" : "modal"} shadow-xl `}
       >

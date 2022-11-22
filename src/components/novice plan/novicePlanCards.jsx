@@ -1,11 +1,10 @@
-import { motion, useWillChange } from 'framer-motion';
 import React from "react";
 import { Link } from "react-router-dom";
 
 
 export default function NovicePlanCards() {
-   const willChange = useWillChange();
-   
+
+  
   return (
     <section className="manaPlan">
       <div
@@ -25,13 +24,8 @@ export default function NovicePlanCards() {
 
       <div className="flex flex-col md:flex-row  gap-9 justify-center xl:gap-[26px] items-center flex-wrap  ">
         {/* card 1 ----------------------------> Novice plan------------------------ */}
-        <motion.div
-          className="w-[338px] min-h-[604px] bg-softDark rounded-md px-[30px] relative "
-          initial={{ x: -100 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.4 }}
-          style={{ willChange }}
-        >
+        <div
+          className="w-[338px] min-h-[604px] bg-softDark rounded-md px-[30px] relative " >
           <div>
             <h3 className="medium-font text-green pt-[32px] ">Novice Plan</h3>
             <p className="small-font text-secondary mt-[15px]">
@@ -58,16 +52,11 @@ export default function NovicePlanCards() {
               <li>Track Up Unlimited Stores</li>
             </ul>
           </div>
-        </motion.div>
+        </div>
 
         {/* card 1 ----------------------------> foreture plan------------------------ */}
-        <motion.div
-          className="w-[338px] min-h-[604px] scale-105  bg-primary rounded-md px-[30px] relative "
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.05}}
-          transition={{ duration: 0.4 }}
-          style={{ willChange }}
-        >
+        <div
+          className="w-[338px] min-h-[604px] scale-105  bg-primary rounded-md px-[30px] relative " >
           <div>
             <div className="absolute top-[-16px] left-[50%] translate-x-[-50%] text-center py-[8px] px-[1.63rem] rounded-sm inisital-font whitespace-nowrap  bg-[#FFC93E] ">
               <h5>Most Popular</h5>
@@ -101,15 +90,10 @@ export default function NovicePlanCards() {
               <li>See Store Owner Date</li>
             </ul>
           </div>
-        </motion.div>
+        </div>
         {/* card 1 ----------------------------> Oracle plan------------------------ */}
-        <motion.div
-          className="w-[338px] min-h-[604px] bg-softDark rounded-md px-[28px] relative "
-          initial={{ x: 100 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.4 }}
-          style={{ willChange }}
-        >
+        <div
+          className="w-[338px] min-h-[604px] bg-softDark rounded-md px-[28px] relative ">
           <div>
             <h3 className="medium-font text-cyan pt-[32px]">Oracle Plan</h3>
             <p className="small-font text-secondary mt-[15px]">
@@ -140,7 +124,7 @@ export default function NovicePlanCards() {
               <li>Export Data as CSV</li>
             </ul>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

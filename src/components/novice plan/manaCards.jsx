@@ -1,8 +1,5 @@
 import omg from '../../assets/icon/omg.svg';
 
-import {
-  motion, useWillChange
-} from "framer-motion";
 import React from 'react';
 
 const MANA = {
@@ -32,7 +29,7 @@ const btn = `py-[14] font-primary medium-font block w-[100%] border-2 py-[14px] 
 
 function ManCards() {
 
- const willChange = useWillChange();
+
 
   return (
     <section className="manacard">
@@ -50,15 +47,7 @@ function ManCards() {
       {/*---------------------- mana card container ---------------------*/}
       <div className="flex flex-col md:flex-row  gap-9 justify-center xl:gap-[26px] items-center flex-wrap my-[28px]">
         {/* ------------bottol mana card -------------------- */}
-        <motion.div
-          className={boxStyle}
-          initial={{ x: -100 }}
-          animate={{
-            x: 0,
-          }}
-          transition={{ duration: 0.5 }}
-          style={{ willChange }}
-        >
+        <div className={boxStyle}  >
           <h4 className="text-[20px] font-[500] text-secondary ">
             {MANA.bottol.title}
           </h4>
@@ -146,18 +135,10 @@ function ManCards() {
           <button type="button" className={`${btn} text-primary`}>
             ${MANA.bottol.price}
           </button>
-        </motion.div>
+        </div>
         {/* ------------bottol Three mana card -------------------- */}
 
-        <motion.div
-          className={boxStyle}
-          initial={{ y: -100 }}
-          animate={{
-            y: 0,
-          }}
-          transition={{ ease: [0.17, 0.67, 0.83, 0.67] }}
-          style={{ willChange }}
-        >
+        <div className={boxStyle}>
           <h4 className="text-[20px] font-[500] text-secondary">
             {MANA.ThreeBottol.title}
           </h4>
@@ -366,17 +347,9 @@ function ManCards() {
           <button type="button" className={`${btn} text-primary`}>
             {MANA.ThreeBottol.price} (Save {MANA.ThreeBottol.discount} %)
           </button>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className={boxStyle}
-          initial={{ x: 100 }}
-          animate={{
-            x: 0,
-          }}
-          transition={{ ease: [0.17, 0.67, 0.83, 0.67] }}
-          style={{ willChange }}
-        >
+        <div className={boxStyle}  >
           <h4 className="text-[20px] font-[500] text-secondary ">
             {MANA.cauldron.title}
           </h4>
@@ -421,7 +394,7 @@ function ManCards() {
           <button type="button" className={`${btn} text-primary`}>
             ${MANA.cauldron.price} (Save {MANA.cauldron.discount} %)
           </button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

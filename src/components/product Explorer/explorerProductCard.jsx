@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { Autoplay, Navigation } from "swiper";
+import { Navigation } from "swiper";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import bottol from "../../assets/icon/bottol.svg";
@@ -11,7 +11,6 @@ import leftArrow from "../../assets/icon/leftArrow.svg";
 import rightArrow from "../../assets/icon/rightArrow.svg";
 import productSaveHeart from "../../assets/icon/saveHeart.png";
 import sellerImg from "../../assets/image/seller.svg";
-import ProductCardGraph from "../graph/productCardGraph";
 import RevenueChart from "../graph/revenuChart";
 // styled component 
 import styled from 'styled-components';
@@ -19,12 +18,13 @@ import styled from 'styled-components';
 
 const GraphBg = styled.div`
   position: absolute;
-  top: 80px;
-  left: -6px;
+  top: 28px;
+  left: 0;
   width: 100%;
   height: 100%;
-  filter: blur(6px);
-  -webkit-filter: blur(5px);
+  
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
   &::before {
     content: "";
     width: 100%;
@@ -65,11 +65,11 @@ const nextBtn = useRef();
           content && content.status === "brand" ? "bg-light" : ""
         } `}
       >
-        <GraphBg>
+        <GraphBg  className="flex justify-center items-center ">
           {content && content.status === "Brand" ? (
             ""
           ) : (
-            <ProductCardGraph width={350} height={380} />
+            <RevenueChart width={289} height={110} />
           )}
         </GraphBg>
         <Card
@@ -125,7 +125,7 @@ const nextBtn = useRef();
               </h4>
               {/* slider  */}
               <div className="flex gap-1 items-center w-[15.5rem] ">
-                <button ref={prevBtn}>
+                <button type="button" ref={prevBtn}>
                   <img src={leftArrow} alt="" width={8} height={7} />
                 </button>
                 {/* slides  */}
@@ -133,10 +133,6 @@ const nextBtn = useRef();
                   <Swiper
                     slidesPerView={3}
                     spaceBetween={5}
-                    autoplay={{
-                      delay: 3000,
-                      disableOnInteraction: false,
-                    }}
                     navigation={{
                       prevEl: prevBtn.current,
                       nextEl: nextBtn.current,
@@ -145,7 +141,7 @@ const nextBtn = useRef();
                       swiper.params.navigation.prevEl = prevBtn.current;
                       swiper.params.navigation.nextEl = nextBtn.current;
                     }}
-                    modules={[Navigation, Autoplay]}
+                    modules={[Navigation]}
                     breakpoints={{
                       0: {
                         slidesPerView: 3,
@@ -196,7 +192,7 @@ const nextBtn = useRef();
                     </SwiperSlide>
                   </Swiper>
                 </div>
-                <button ref={nextBtn}>
+                <button type="button" ref={nextBtn}>
                   <img src={rightArrow} alt="" width={8} height={7} />
                 </button>
               </div>
@@ -213,7 +209,7 @@ const nextBtn = useRef();
               <Link to={"/product_details"}>
                 <button
                   type="button"
-                  className="bg-light  rounded-md hover:bg-primary transition-colors duration-200 hover:text-light  text-center text-secondary block w-[100%] py-[14px]"
+                  className="bg-softDark  rounded-md hover:bg-primary transition-colors duration-200 hover:text-light  text-center text-secondary block w-[100%] py-[14px]"
                 >
                   {isExpired ? "Expired (Reveal Again)" : "Reveal This Store"}
                 </button>

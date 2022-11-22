@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { Autoplay, Navigation } from "swiper";
+import { Navigation } from "swiper";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import bottol from "../../assets/icon/bottol.svg";
@@ -10,15 +10,14 @@ import signalIcon from "../../assets/icon/fi-rr-signal-alt.svg";
 import leftArrow from '../../assets/icon/leftArrow.svg';
 import rightArrow from '../../assets/icon/rightArrow.svg';
 import sellerImg from '../../assets/image/seller.svg';
-import ProductCardGraph from "../graph/productCardGraph";
 import RevenueChart from "../graph/revenuChart";
 // styled component 
 import styled from 'styled-components';
 
 const GraphBg = styled.div`
   position: absolute;
-  top: 88px;
-  left: -7px;
+  top: 20px;
+  left: 0;
   width: 100%;
   height: 100%;
   opacity: 1;
@@ -56,7 +55,7 @@ function ProdcutCard({content , isExpired}) {
 const prevBtn = useRef()
 const nextBtn = useRef();
 
-console.log(content);
+
 
   return (
     <div>
@@ -68,11 +67,11 @@ console.log(content);
           content && content.status === "brand" ? "bg-light" : ""
         } `}
       >
-        <GraphBg>
+        <GraphBg className="flex justify-center items-center ">
           {content && content.status === "Brand" ? (
             ""
           ) : (
-            <ProductCardGraph width={325} height={380} />
+            <RevenueChart width={289} height={110} />
           )}
         </GraphBg>
 
@@ -148,10 +147,6 @@ console.log(content);
                   <Swiper
                     slidesPerView={3}
                     spaceBetween={5}
-                    autoplay={{
-                      delay: 3000,
-                      disableOnInteraction: false,
-                    }}
                     navigation={{
                       prevEl: prevBtn.current,
                       nextEl: nextBtn.current,
@@ -160,7 +155,7 @@ console.log(content);
                       swiper.params.navigation.prevEl = prevBtn.current;
                       swiper.params.navigation.nextEl = nextBtn.current;
                     }}
-                    modules={[Navigation, Autoplay]}
+                    modules={[Navigation]}
                     breakpoints={{
                       0: {
                         slidesPerView: 3,
@@ -225,15 +220,14 @@ console.log(content);
                 </span>
               </div>
               {/*----------------------------- button --------------------- */}
-                 <Link to={"/shop_details"}>
-              <button
-                type="button"
-                className="bg-light rounded-md hover:bg-primary transition-colors duration-200 hover:text-light text-center text-secondary block w-[100%] py-[14px] "
-              >
-             
+              <Link to={"/shop_details"}>
+                <button
+                  type="button"
+                  className="bg-softDark rounded-md hover:bg-primary transition-colors duration-200 hover:text-light text-center text-secondary block w-[100%] py-[14px] "
+                >
                   {isExpired ? "Expired (Reveal Again)" : "Reveal This Store"}
-              </button>
-                </Link>
+                </button>
+              </Link>
 
               {(content && content.status === "Hidden") || isExpired ? (
                 <h4 className="text-[12px] text-[#FF4545] my-[15px] text-center ">
