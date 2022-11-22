@@ -24,7 +24,7 @@ function ListView() {
   const prevButton = useRef(null);
   const nextButton = useRef(null);
 
-  console.log(nextButton);
+
 
   return (
     <div className="w-[80.08rem] h-[100%] xl:min-h-[200px] rounded-lg shadow-xl  bg-light overflow-y-auto ">
@@ -59,7 +59,7 @@ function ListView() {
                   <img src={graph} alt="" />
                 </figure>
               </td>
-              <td className={rowStyle}>
+              <td className={rowStyle} key={row}>
                 <div className="flex gap-1  items-center w-[15.5rem] pointer-events-auto ">
                   <button type="button" ref={prevButton}>
                     <img src={leftArrow} alt="" width={8} height={7} />
