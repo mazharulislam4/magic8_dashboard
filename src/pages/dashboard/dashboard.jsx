@@ -139,7 +139,7 @@ const sidebarCollapeHandler = ()=>{
         <div className="relative  ">
           <div
             className={` absolute top-[50%] transform translate-y-[-50%]   z-50  xl:block hidden   
-            ${isCollapse ? "right-[4px]" : "left-[0]"}
+            ${isCollapse ? "right-[5px]" : "left-[2px]"}
 
             `}
           >

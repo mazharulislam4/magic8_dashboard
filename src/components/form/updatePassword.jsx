@@ -76,7 +76,7 @@ const submitHandler = (e)=>{
             <input
               type="submit"
               onSubmit={submitHandler}
-              className={`${input} extra-small-font bg-primary text-light m-0 hover:bg-light hover:text-secondary transition-[background] duration-500  cursor-pointer block w-[100%] shadow-0 focus:shadow-0 `}
+              className={`${input} extra-small-font bg-primary text-light m-0 hover:bg-[#7827FC] hover:text-light transition-[background] duration-500  cursor-pointer block w-[100%] shadow-0 focus:shadow-0 `}
             />
           </div>
         </div>

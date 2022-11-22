@@ -11,7 +11,7 @@ function ProfileInfo({content}) {
         </div>
         <div className="sub-btn">
           <Link
-            to="/account"
+            to="/buy_more_mana"
             className="py-[15px] my-2 px-[20px] initial-font text-primary bg-light rounded-[8px] "
           >
             Manage Subscriptions

@@ -14,7 +14,7 @@ const Btn = styled.button`
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
   &:hover {
     color: ${(props) => (props.texthover ? props.texthover : "#fff")};
-    background-color: ${(props) => (props.hoverbg ? props.hoverbg : "#8646EE")};
+    background-color: ${(props) => (props.hoverbg ? props.hoverbg : "#7827FC")};
   }
 
   @media (max-width: 640px) {
