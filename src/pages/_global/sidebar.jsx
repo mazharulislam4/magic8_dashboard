@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import navData from "../../components/nav/navData";
 // svg icon 
 import { Tooltip } from '@mui/material';
-import settingIcon from "../../assets/icon/setting.svg";
+import whiteManaBotoll from '../../assets/icon/bottolWhite.svg';
 import collapsLogo from '../../assets/image/collapsLogo.png';
 import logo from "../../assets/image/logo.png";
 import { NavbarTogllerContext } from '../../context/utilsContext';
@@ -145,26 +145,39 @@ export function Sidebar({ autoCollapse }) {
         {!autoCollapse ? (
           <div className="pl-[15px] pr-[24px] justify-self-end py-8 absolute bottom-0">
             <NavLink
-              to="/setting"
+              to="/buy_more_mana"
               className={`flex gap-2  text-light select-none `}
               style={({ isActive }) => (isActive ? { color: "cyan" } : {})}
               onClick={toggleHandler}
             >
-              <img src={settingIcon} alt="setting" /> Buy More Mana
+              <img
+                src={whiteManaBotoll}
+                alt="buy more mana"
+                width={18}
+                height={18}
+              />
+              Buy More Mana
             </NavLink>
           </div>
         ) : (
-          <div className=" justify-self-end py-8 absolute bottom-0 flex justify-center">
-            <NavLink
-              to="/setting"
-              className={` text-light select-none flex justify-center px-3 py-2 rounded-sm`}
-              style={({ isActive }) =>
-                isActive ? { backgroundColor: "#5a4dad" } : {}
-              }
-            >
-              <img src={settingIcon} alt="buymoremana" width={24} height={24} />
-            </NavLink>
-          </div>
+          <Tooltip title={"Buy More Mana"} placement="right">
+            <div className=" justify-self-end py-8 absolute bottom-0 flex justify-center">
+              <NavLink
+                to="/buy_more_mana"
+                className={` text-light select-none flex justify-center px-3 py-2 rounded-sm hover:bg-[#5A4DAD]`}
+                style={({ isActive }) =>
+                  isActive ? { backgroundColor: "#5a4dad" } : {}
+                }
+              >
+                <img
+                  src={whiteManaBotoll}
+                  alt="buy more mana"
+                  width={26}
+                  height={26}
+                />
+              </NavLink>
+            </div>
+          </Tooltip>
         )}
       </div>
     </Aside>
