@@ -42,8 +42,8 @@ function Shop() {
           {/* filter section  */}
           <div className="flex sm:gap-x-[20px] gap-x-[10px] mb-[30px]">
             <Button
-              hoverbg={"#7827FC"}
-              texthover={"#fff"}
+              hoverbg={"#fff"}
+              texthover={"#000"}
               bg={"#8646EE"}
               color="#fff"
             >
