@@ -14,7 +14,7 @@ function CollapseBtn({handler}) {
   return (
     <button
       type="button"
-      className={`text-primary bg-[#E3E3E3] h-[130px] w-[17px] text-[1.4rem] hover:text-cyan rounded-tr-full flex justify-center items-center rounded-br-full ${
+      className={`text-primary bg-[#F8F8F8] h-[130px] w-[18px] text-[1.5rem] hover:text-cyan rounded-tr-full flex justify-center items-center rounded-br-full ${
         isRotate ? "rotate-180" : "rotate-0"
       } `}
       onClick={() => {

@@ -19,7 +19,6 @@ const ProductCardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.18rem, 1fr));
   grid-gap: 15px;
-
   place-items: center stretch;
   @media (max-width: 1024px) {
     place-items: center;
@@ -140,7 +139,7 @@ const sidebarCollapeHandler = ()=>{
         <div className="relative  ">
           <div
             className={` absolute top-[50%] transform translate-y-[-50%]   z-50  xl:block hidden   
-            ${isCollapse ? "right-[0]" : "left-[0]"}
+            ${isCollapse ? "right-[4px]" : "left-[0]"}
 
             `}
           >

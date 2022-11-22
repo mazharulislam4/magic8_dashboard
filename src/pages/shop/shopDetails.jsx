@@ -23,7 +23,7 @@ const ProductCardGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(18.18rem, 1fr));
   grid-row-gap: 30px;
   grid-column-gap: 20px;
-  place-items: center;
+
   @media (max-width: 1024px) {
     place-items: center;
   }
@@ -87,8 +87,8 @@ function ShopDetails() {
               <TopSellingProduct />
             </div>
 
-            <div className="my-[20px] ">
-              <h2 className="text-secondary md:text-[18px] text-[14px] md:my-[20px] my-[10px] px-[10px]  w-[100%]  ">
+            <div className="my-[25px] ">
+              <h2 className="text-secondary md:text-[18px] text-[14px] md:my-[20px] my-[10px]  w-[100%]  ">
                 Stores others have tracked
               </h2>
               {isMobile ? (
