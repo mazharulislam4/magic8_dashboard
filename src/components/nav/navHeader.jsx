@@ -80,7 +80,7 @@ const NavHeader = ({data}) => {
 
   return (
     <NavHead className="flex justify-between items-center  xl:gap-[70px] ">
-      <Link to={link}>
+     
         <Title className="lg:text-center leading-[30px] py-[10px]  2xl:extra-lagre-font xl:large-font lg:medium-font md:small-font ">
           {/* title  */}
           <h1 className="sm:text-left md:text-center">
@@ -88,12 +88,14 @@ const NavHeader = ({data}) => {
               ? title.replace(highLight, "")
               : ""}
             {/* highlight text into the title  */}
+            <Link to={link}>
             <strong
               style={{ color: highLightColor }}
               className="2xl:extra-lagre-font xl:large-font lg:medium-font "
             >
               {title && title.includes(highLight) ? highLight : ""}
             </strong>
+            </Link>
           </h1>
           <div className="flex gap-2 items-center md:justify-center">
             <img
@@ -111,7 +113,7 @@ const NavHeader = ({data}) => {
             </p>
           </div>
         </Title>
-      </Link>
+    
       <ProgressContainer>
         <ProgressBar
           width="100%"

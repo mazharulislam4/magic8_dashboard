@@ -15,7 +15,7 @@ const headerData = {
   dividar: "/",
   token: "Mana",
   highLightColor: "#8646EE",
-  link:'/account'
+  link:'/buy_more_mana'
 };
 
 

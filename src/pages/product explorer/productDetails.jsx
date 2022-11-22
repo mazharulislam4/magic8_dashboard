@@ -95,7 +95,7 @@ function ProductDetails() {
         {/* aside  */}
         <div className="xl:w-[600px] xl:h-screen  overflow-y-auto overflow-x-hidden xl:pb-[150px] w-full  py-[10px]  px-2 md:my-[0] my-[20px] ">
           <div>
-            <h2 className="initial-font text-secondary my-[10px]">
+            <h2 className="initial-font text-secondary px-5 my-[10px]">
               Others Product people are tracking
             </h2>
           </div>
