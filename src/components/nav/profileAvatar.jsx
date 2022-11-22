@@ -72,7 +72,7 @@ export default function ProfileAvatar({ userAvatar, hambar }) {
           </li>
           <li className="my-[10px]   ">
             <NavLink
-              to={"/account"}
+              to={"/buy_more_mana"}
               className="py-[8px] text-secondary  px-[5px] rounded-md hover:bg-softDark  flex items-center gap-x-[8px] text-[13px] md:text-initial  "
               onClick={manuOpenHandler}
             >

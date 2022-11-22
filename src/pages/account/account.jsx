@@ -1,15 +1,33 @@
-import React from 'react';
+import React from "react";
+import UpdatePassword from "../../components/form/updatePassword";
+import BackButton from "../../components/global/BackButton";
+import ContactInfo from "./contactInfo";
+import ProfileInfo from "./profileInfo";
+const profileData = {
+  id: 1,
+  novice: "novice",
+  status: "active",
+  renew: "11/12/2023",
+};
 
-import BackButton from '../../components/global/BackButton';
-import NovicePlanTab from '../../components/novice plan/novicePlanTab';
 export default function Account() {
   return (
     <div className="custom-container ">
-      <div className=" xl:h-screen overflow-y-auto overflow-x-hidden md:pb-[150px] pb-[100px] rounded-t-xl bg-light">
-        <div className='my-[15px] ml-[20px]'>
+      <div className="xl:h-screen overflow-y-auto overflow-x-hidden xl:pb-[130px] pb-[80px] bg-light rounded-t-xl px-2">
+        <div className="my-[10px] mx-2 ">
           <BackButton />
         </div>
-        <NovicePlanTab />
+        <div className="flex flex-col items-center ">
+          <div className="w-full md:w-auto">
+            <ContactInfo />
+          </div>
+          <div className="my-[20px] w-full md:w-auto">
+            <UpdatePassword />
+          </div>
+          <div>
+            <ProfileInfo content={profileData} />
+          </div>
+        </div>
       </div>
     </div>
   );

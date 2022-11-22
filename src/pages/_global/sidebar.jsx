@@ -150,7 +150,7 @@ export function Sidebar({ autoCollapse }) {
               style={({ isActive }) => (isActive ? { color: "cyan" } : {})}
               onClick={toggleHandler}
             >
-              <img src={settingIcon} alt="setting" /> Setting
+              <img src={settingIcon} alt="setting" /> Buy More Mana
             </NavLink>
           </div>
         ) : (
@@ -162,7 +162,7 @@ export function Sidebar({ autoCollapse }) {
                 isActive ? { backgroundColor: "#5a4dad" } : {}
               }
             >
-              <img src={settingIcon} alt="setting" width={24} height={24} />
+              <img src={settingIcon} alt="buymoremana" width={24} height={24} />
             </NavLink>
           </div>
         )}

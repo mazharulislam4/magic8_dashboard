@@ -44,17 +44,8 @@ const sidebarCollapeHandler = ()=>{
       {/* <FreeManaModal status={earnManaModal} /> */}
 
       <div className="xl:h-screen xl:flex  xl:overflow-hidden   pb-[90px] bg-light rounded-t-xl">
-        <div
-          className={`absolute  top-[40%] z-50 right-[2px]  xl:block hidden `}
-        >
-          <CollapseBtn
-            handler={() => {
-              sidebarCollapeHandler();
-            }}
-          />
-        </div>
         <motion.div
-          className="md:px-[20px] xl:h-screen overflow-y-auto overflow-x-hidden py-[20px] md:pb-[130px]  bg-light xl:grow"
+          className="md:px-[20px] xl:h-screen overflow-y-auto overflow-x-hidden py-[20px]   bg-light xl:grow xl:pb-[90px] "
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
@@ -145,34 +136,50 @@ const sidebarCollapeHandler = ()=>{
           </div>
         </motion.div>
         {/*--------------------- --------------right sidebar layout -------------------------------- */}
-        <div
-          className={` xl:h-screen  relative   border-l-2 border-[#E4E4E4]  bg-light  md:pb-[160px] ${
-            isCollapse
-              ? "xl:w-[0px] overflow-hidden"
-              : "xl:w-[455px] overflow-visible "
-          } `}
-        >
-          {/* container  */}
-          <div className=" px-[12px] overflow-y-auto xl:h-screen  overflow-x-hidden ">
-            <h2 className="large-font text-secondary pt-4 text-left ">
-              Global Order Feed
-            </h2>
-            {customersData
-              ? customersData.map((data) => {
-                  return (
-                    <OrderedCustomers
-                      key={data.id}
-                      content={{
-                        title: data.title,
-                        fullName: data.user_name,
-                        price: data.price,
-                        xs: data?.xs,
-                        avatar: data.avatar,
-                      }}
-                    />
-                  );
-                })
-              : ""}
+
+        <div className="relative  ">
+          <div
+            className={` absolute top-[50%] transform translate-y-[-50%]   z-50  xl:block hidden   
+            ${isCollapse ? "right-[0]" : "left-[0]"}
+
+            `}
+          >
+            <CollapseBtn
+              handler={() => {
+                sidebarCollapeHandler();
+              }}
+            />
+          </div>
+
+          <div
+            className={` xl:h-screen  relative   border-l-2 border-[#E4E4E4]  bg-light  ${
+              isCollapse
+                ? "xl:w-[0px] overflow-hidden"
+                : "xl:w-[455px] overflow-visible "
+            } `}
+          >
+            {/* container  */}
+            <div className=" px-[20px] xl:pb-[160px]  overflow-y-auto xl:h-screen  overflow-x-hidden ">
+              <h2 className="large-font text-secondary pt-4 font-bold text-left ">
+                Global Order Feed
+              </h2>
+              {customersData
+                ? customersData.map((data) => {
+                    return (
+                      <OrderedCustomers
+                        key={data.id}
+                        content={{
+                          title: data.title,
+                          fullName: data.user_name,
+                          price: data.price,
+                          xs: data?.xs,
+                          avatar: data.avatar,
+                        }}
+                      />
+                    );
+                  })
+                : ""}
+            </div>
           </div>
         </div>
       </div>
